@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uhrzeit Vorschlag</title>
+</head>
+<body>
+    <h1>Uhrzeit Vorschlag</h1>
+    <label for="uhrzeit">Uhrzeit:</label>
+    <input type="text" id="uhrzeit" name="uhrzeit" placeholder="hh:mm">
+
+    <button onclick="vorschlagGeben()">Andere Uhrzeit vorschlagen</button>
+
+    <p id="vorschlag"></p>
+
+    <h2>12:30 Uhr</h2>
+    <!-- Hier können Bilder eingefügt werden -->
+    <!-- <input type="file" accept="image/*"> -->
+    
+    <script>
+        function vorschlagGeben() {
+            var uhrzeitInput = document.getElementById("uhrzeit");
+            var vorschlagParagraph = document.getElementById("vorschlag");
+
+            if (uhrzeitInput.value !== "") {
+                vorschlagParagraph.textContent = "Nein Luca, wir gehen um 12:30 Uhr!";
+                uhrzeitInput.value = ""; // Uhrzeit löschen
+            } else {
+                alert("Bitte geben Sie eine Uhrzeit ein.");
+            }
+        }
+    </script>
+</body>
+</html>
