@@ -29,18 +29,18 @@
 <body>
     <h1>12:30 Uhr</h1>
     
-    <h3>Willst Du zu einer anderen Uhrzeit gehen?</h3>
-    <label for="uhrzeit">Uhrzeit:</label>
+    <h3>Du willst zu einer anderen Uhrzeit gehen?</h3>
+    <p><label for="uhrzeit">Uhrzeit:</label>
     <input type="text" id="uhrzeit" name="uhrzeit" placeholder="hh:mm">
 
-    <button onclick="vorschlagGeben()">Andere Uhrzeit vorschlagen</button>
+    <button onclick="vorschlagGeben()">Andere Uhrzeit vorschlagen</button></p>
 
     <p id="vorschlag"></p>
 
     <h3>Du willst wissen, was es heute gibt?</h3>
-    <div id="gericht"></div>
+    <p><div id="gericht"></div>
     <button onclick="generateGericht()">Was gibt es heute?</button>
-    <div id="loading" style="display:none;">Requesting Data via Mensa-API</div>
+    <div id="loading" style="display:none;">Requesting Data via Mensa-API</div></p>
     
     <!-- Hier können Bilder eingefügt werden -->
     <!-- <input type="file" accept="image/*"> -->
