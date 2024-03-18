@@ -24,31 +24,31 @@
     #loading {
         margin-top: 20px;
     }
+    #site {
+    	position: relative;
+	top: 0px;
+	left: 0px;
+    }
     #different_time {
-	width: 100px;
-	height: 100px;
+        position: absolute;
 	top: 0px;
 	left: 0px;
     }
     #meal_prediction {
-	width: 100px;
-	height: 100px;
 	position: absolute;
-	top: 0px;
+	top: 250px;
 	left: 0px;
     }
     #images {
-	width: 100px;
-	height: 100px;
 	position: absolute;
-	top: 0px;
+	top: 500px;
 	left: 0px;
     }
 </style>
 </head>
 <body>
     <h1>12:30 Uhr</h1>
-    
+    <div id=site>
     <div id="different_time"><h3>Du willst zu einer anderen Uhrzeit gehen?</h3>
     <p><label for="uhrzeit">Uhrzeit:</label>
     <input type="text" id="uhrzeit" name="uhrzeit" placeholder="hh:mm">
@@ -68,6 +68,7 @@
     <img src="anti_glibber_gang.png" alt="Anti Glibber Gang" width="250" height="250"> 
     <img src="mensa_gold_mitglied.png" alt="Mensa Gold Mitglied" width="250" height="250">
     <img src="kaiserschmarrn_liebhaber.png" alt="Kaiserschmarrn Liebhaber" width="250" height="250">
+    </div>
     </div>
     
     <script>
