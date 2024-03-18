@@ -4,6 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wann Mensa heute?</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #gericht {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+    .rotate {
+        animation: rotate 2s ease-in-out;
+    }
+    @keyframes rotate {
+        0% { transform: rotateX(0deg); }
+        50% { transform: rotateX(720deg); }
+        100% { transform: rotateX(0deg); }
+    }
+    #loading {
+        margin-top: 20px;
+    }
+</style>
 </head>
 <body>
     <h1>12:30 Uhr</h1>
@@ -16,6 +37,10 @@
 
     <p id="vorschlag"></p>
 
+    <h3>Du willst wissen, was es heute gibt?</h3>
+    <div id="gericht"></div>
+    <button onclick="generateGericht()">Was gibt es heute?</button>
+    <div id="loading" style="display:none;">Requesting Data via Mensa-API</div>
     
     <!-- Hier können Bilder eingefügt werden -->
     <!-- <input type="file" accept="image/*"> -->
@@ -34,6 +59,58 @@
             } else {
                 alert("Bitte geben Sie eine Uhrzeit ein.");
             }
+        }
+
+        function generateGericht() {
+            var herkunftSuffixes = {
+                "Curry": "es",
+                "Gulasch": "er",
+                "Braten": "er",
+                "Suppe": "e",
+                "Eintopf": "er",
+		"Bowl verschieden garniert": "e",
+		"Teller": "er",
+		"Nuggets": "e",
+		"Schnitzel": "es",
+		"Cordon Bleu": "es",
+		'Ragout "Indische Art"': "es",
+		"Gyros": "es",
+		"Puffer": "e",
+		"Currywurst vegan": "e",
+		"Käse gebacken": "er"
+            };
+
+            var herkunft = ["Indisch", "Ungarisch", "Fränkisch", "Asiatisch"];
+            var art = ["Hähnchen", "Rinder", "Schweine", "Hütten", "MSC Alaska Seelachsfilet", "Kraut", "Kartoffel", "Gemüse", "Blumekohl", "Auberginen", "Rote Beete", "Hirten"];
+            var hauptbestandteil = ["Curry", "Gulasch", "Braten", "Suppe", "Eintopf", "Bowl verschieden garniert", "Teller", "Nuggets", "Schnitzel", "Cordon Bleu", 'Ragout "Indische Art"', "Gyros", "Puffer", "Currywurst vegan", "Käse gebacken"];
+            var beilage = ["Tomatenreis", "Kartoffeln", "Reisnudeln", "Wintergemüse", "Pommes frites", "Baguettebrötchen", "Mango, Chili, Avocado und Chiasamen", "Sauerkraut", "Käse und Ei", "Barbecue Dip und Coleslaw", "Kräuter-Dip", "Pinienkernen", "Kichererbsen und Reis", "Basmatireis", "Tzatziki", "Honig-Senf-Dip", "Limettendip", "Kräuter-Dip", "Soße"];
+
+            var randomHauptbestandteilIndex = Math.floor(Math.random() * hauptbestandteil.length);
+            var randomHauptbestandteil = hauptbestandteil[randomHauptbestandteilIndex];
+            var randomHerkunftSuffix = herkunftSuffixes[randomHauptbestandteil];
+
+            var randomHerkunftIndex = Math.floor(Math.random() * herkunft.length);
+            var randomArtIndex = Math.floor(Math.random() * art.length);
+            var randomBeilageIndex = Math.floor(Math.random() * beilage.length);
+
+            var gericht = "";
+
+            var gerichtElement = document.getElementById("gericht");
+            var loadingElement = document.getElementById("loading");
+
+            loadingElement.style.display = "block";
+            gerichtElement.classList.add("rotate");
+
+            setTimeout(function() {
+                var randomHerkunft = herkunft[randomHerkunftIndex] + randomHerkunftSuffix;
+                var randomArt = art[randomArtIndex];
+                var randomBeilage = beilage[randomBeilageIndex];
+
+                gericht = randomHerkunft + " " + randomArt + "-" + randomHauptbestandteil + " mit " + randomBeilage;
+                gerichtElement.innerText = gericht;
+                gerichtElement.classList.remove("rotate");
+                loadingElement.style.display = "none";
+            }, 2000);
         }
     </script>
 </body>
