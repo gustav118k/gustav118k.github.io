@@ -7,7 +7,7 @@
     <style>
     body {
         font-family: Arial, sans-serif;
-        text-align: center;
+        text-align: left;
     }
     #gericht {
         font-size: 1.5em;
@@ -24,29 +24,51 @@
     #loading {
         margin-top: 20px;
     }
+    #different_time {
+	width: 100px;
+	height: 100px;
+	top: 0px;
+	left: 0px;
+    }
+    #meal_prediction {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+    }
+    #images {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+    }
 </style>
 </head>
 <body>
     <h1>12:30 Uhr</h1>
     
-    <h3>Du willst zu einer anderen Uhrzeit gehen?</h3>
+    <div id="different_time"><h3>Du willst zu einer anderen Uhrzeit gehen?</h3>
     <p><label for="uhrzeit">Uhrzeit:</label>
     <input type="text" id="uhrzeit" name="uhrzeit" placeholder="hh:mm">
 
     <button onclick="vorschlagGeben()">Andere Uhrzeit vorschlagen</button></p>
 
-    <p id="vorschlag"></p>
+    <p id="vorschlag"></p></div>
 
-    <h3>Du willst wissen, was es heute gibt?</h3>
+    <div id="meal_prediction"><h3>Du willst wissen, was es heute gibt?</h3>
     <p><div id="gericht"></div>
     <button onclick="generateGericht()">Was gibt es heute?</button>
-    <div id="loading" style="display:none;">Requesting Data via Mensa-API</div></p>
-    
+    <div id="loading" style="display:none;">Requesting Data via Mensa-API</div></p></div>
+
+    <div id="images">
     <!-- Hier können Bilder eingefügt werden -->
     <!-- <input type="file" accept="image/*"> -->
     <img src="anti_glibber_gang.png" alt="Anti Glibber Gang" width="250" height="250"> 
     <img src="mensa_gold_mitglied.png" alt="Mensa Gold Mitglied" width="250" height="250">
-    <img src="kaiserschmarrn_liebhaber.png" alt="Kaiserschmarrn Liebhaber" width="250" height="250"> 
+    <img src="kaiserschmarrn_liebhaber.png" alt="Kaiserschmarrn Liebhaber" width="250" height="250">
+    </div>
     
     <script>
         function vorschlagGeben() {
