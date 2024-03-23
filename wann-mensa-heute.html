@@ -44,6 +44,11 @@
 	top: 450px;
 	left: 0px;
     }
+    #time_suggestion {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+    }
 </style>
 </head>
 <body>
@@ -51,9 +56,9 @@
     <div id=site>
     <div id="different_time"><h3>Du willst zu einer anderen Uhrzeit gehen?</h3>
     <p><label for="uhrzeit">Uhrzeit:</label>
-    <input type="text" id="uhrzeit" name="uhrzeit" placeholder="hh:mm">
+    <div id=time_suggestion><input type="text" id="uhrzeit" name="uhrzeit" placeholder="hh:mm">
 
-    <button onclick="vorschlagGeben()">Andere Uhrzeit vorschlagen</button></p>
+    <button onclick="vorschlagGeben()">Andere Uhrzeit vorschlagen</button></div></p>
 
     <p id="vorschlag"></p></div>
 
@@ -69,6 +74,7 @@
     <img src="mensa_gold_mitglied.png" alt="Mensa Gold Mitglied" width="250" height="250">
     <img src="kaiserschmarrn_liebhaber.png" alt="Kaiserschmarrn Liebhaber" width="250" height="250">
     <img src="KKK.jpeg" alt="KKK" width="250" height="250">
+    <img src="Screenshot 2024-03-23 123253.png" alt="spice" width="250" height="250">
     </div>
     </div>
     
