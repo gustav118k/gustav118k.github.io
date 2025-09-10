@@ -1,4 +1,4 @@
-function vorschlagGeben() {
+const vorschlagGeben = async () => {
   var uhrzeitInput = document.getElementById("uhrzeit");
   var vorschlagParagraph = document.getElementById("vorschlag");
 
@@ -7,8 +7,10 @@ function vorschlagGeben() {
     return;
   }
 
+  const text = uhrzeitInput.value;
+
   try {
-    const res = await fetch("https://your-project-name.vercel.app/api/ask", {
+    const res = await fetch("https://mensa-llm-backend.vercel.app/api/ask", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text }),
@@ -22,7 +24,7 @@ function vorschlagGeben() {
   }
 
   uhrzeitInput.value = ""; // Uhrzeit löschen
-}
+};
 
 function generateGericht() {
   var herkunftSuffixes = {
