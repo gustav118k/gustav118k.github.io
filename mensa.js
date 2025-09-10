@@ -7,11 +7,20 @@ function vorschlagGeben() {
     return;
   }
 
-  if (uhrzeitInput.value == "12:30") {
-    vorschlagParagraph.textContent = "Alles klar Luca, wir gehen um 12:30 Uhr!";
-  } else {
-    vorschlagParagraph.textContent = "Nein Luca, wir gehen um 12:30 Uhr!";
+  try {
+    const res = await fetch("https://your-project-name.vercel.app/api/ask", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text }),
+    });
+          
+    const data = await res.json();
+    vorschlagParagraph.textContent = data.answer || data.error || "No response";
+  } catch (err) {
+    console.error(err);
+    vorschlagParagraph.textContent = "Failed to reach API";
   }
+
   uhrzeitInput.value = ""; // Uhrzeit löschen
 }
 
