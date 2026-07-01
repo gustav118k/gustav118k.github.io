@@ -1,59 +1,66 @@
-    body {
-        font-family     : Arial, sans-serif;
-        text-align      : left;
-    }
-    #gericht {
-        font-size       : 1.5em;
-        margin-bottom   : 20px;
-    }
-    .rotate {
-        animation       : rotate 2s ease-in-out;
-    }
-    @keyframes rotate {
-        0% { transform  : rotateX(0deg); }
-        50% { transform : rotateX(720deg); }
-        100% { transform: rotateX(0deg); }
-    }
-    @keyframes rainbow {
-        0% { color      : rgb(255, 0, 0); }     /* Red */
-        16.67% { color  : rgb(255, 127, 0); }  /* Orange */
-        33.33% { color  : rgb(255, 255, 0); }  /* Yellow */
-        50% { color     : rgb(0, 255, 0); }     /* Green */
-        66.67% { color  : rgb(0, 0, 255); }   /* Blue */
-        83.33% { color  : rgb(75, 0, 130); }   /* Indigo */
-        100% { color    : rgb(143, 0, 255); }  /* Violet */
-    }
+/* ============================================================
+   Seitenspezifische Styles für wann-mensa-heute
+   (Corporate Layout liegt in style.css)
+   ============================================================ */
 
-    #loading {
-        margin-top      : 20px;
-    }
-    #site {
-    	position           : relative;
-	    top                    : 0px;
-	    left                   : 0px;
-    }
-    #different_time {
-        position        : absolute;
-	    top                    : 0px;
-	    left                   : 0px;
-    }
-    #meal_prediction {
-	position               : absolute;
-	top                    : 200px;
-	left                   : 0px;
-    }
-    #images {
-	position               : absolute;
-	top                    : 450px;
-	left                   : 0px;
-    }
-    #thanks {
-	position               : absolute;
-	top                    : 750px;
-	left                   : 0px;
-    }
-    #time_suggestion {
-	display                : flex;
-	flex-wrap              : wrap;
-	gap                    : 8px;
-    }
+/* Eingabe + Button nebeneinander */
+#time_suggestion {
+    display         : flex;
+    flex-wrap       : wrap;
+    gap             : 8px;
+}
+
+/* Platz für KI-Antwort & Gericht:
+   Höhe reicht für ~280 Zeichen, damit nichts springt */
+.answer-box {
+    min-height      : 5em;
+    margin-top      : 16px;
+    padding         : 12px 16px;
+    background      : #fff;
+    border          : 2px solid var(--ink);
+    border-radius   : 8px;
+}
+
+#gericht {
+    font-size       : 1.3em;
+}
+
+.rotate {
+    animation       : rotate 2s ease-in-out;
+}
+
+@keyframes rotate {
+    0%   { transform: rotateX(0deg); }
+    50%  { transform: rotateX(720deg); }
+    100% { transform: rotateX(0deg); }
+}
+
+#loading {
+    margin-top      : 12px;
+    color           : var(--purple);
+}
+
+/* Badges */
+.badges {
+    display         : flex;
+    flex-wrap       : wrap;
+    gap             : 16px;
+}
+
+.badges img {
+    width           : 200px;
+    height          : 200px;
+    object-fit      : cover;
+    border          : 3px solid var(--ink);
+    border-radius   : 12px;
+}
+
+/* Label nur für Screenreader */
+.visually-hidden {
+    position        : absolute;
+    width           : 1px;
+    height          : 1px;
+    overflow        : hidden;
+    clip            : rect(0 0 0 0);
+    white-space     : nowrap;
+}

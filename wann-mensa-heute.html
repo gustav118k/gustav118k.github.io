@@ -4,41 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wann Mensa heute?</title>
-    <link rel="stylesheet" href="./mensa.css">
-    <link rel="stylesheet" href="./mensa.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/mensa.css">
 </head>
 <body>
-    <h1>12:30 Uhr</h1>
-    <div id=site>
-    <div id="different_time"><h3>Du willst zu einer anderen Uhrzeit gehen?</h3>
-    <p><label for="uhrzeit">Uhrzeit:</label>
-    <div id=time_suggestion><input type="text" id="uhrzeit" name="uhrzeit" placeholder="hh:mm">
+    <header class="site-header">
+        <a class="brand" href="/">Gustav Hammer</a>
+        <nav>
+            <a href="/">Start</a>
+            <a href="/wann-mensa-heute" aria-current="page">Wann Mensa heute?</a>
+            <!-- Später: <a href="/fotoblog">Fotoblog</a> -->
+        </nav>
+    </header>
 
-    <button onclick="vorschlagGeben()">Andere Uhrzeit vorschlagen</button></div></p>
+    <main>
+        <!-- 1. Uhrzeit -->
+        <h1>12:30 Uhr</h1>
 
-    <p id="vorschlag"></p></div>
+        <!-- 2. + 3. Andere Uhrzeit -->
+        <section id="different_time">
+            <h3>Du willst zu einer anderen Uhrzeit gehen?</h3>
+            <div id="time_suggestion">
+                <label for="uhrzeit" class="visually-hidden">Uhrzeit</label>
+                <input type="text" id="uhrzeit" name="uhrzeit" placeholder="hh:mm">
+                <button onclick="vorschlagGeben()">Andere Uhrzeit vorschlagen</button>
+            </div>
+            <!-- 4. KI-Antwort (Platz für max. 280 Zeichen reserviert) -->
+            <p id="vorschlag" class="answer-box"></p>
+        </section>
 
-    <div id="meal_prediction"><h3>Du willst wissen, was es heute gibt?</h3>
-    <p><div id="gericht"></div>
-    <button onclick="generateGericht()">Was gibt es heute?</button>
-    <div id="loading" style="display:none;">Requesting Data via Mensa-API</div></p></div>
+        <!-- 5. + 6. Was gibt es heute -->
+        <section id="meal_prediction">
+            <h3>Du willst wissen, was es heute gibt?</h3>
+            <button onclick="generateGericht()">Was gibt es heute?</button>
+            <!-- 7. Generiertes Gericht -->
+            <div id="gericht" class="answer-box"></div>
+            <div id="loading" style="display:none;">Requesting Data via Mensa-API</div>
+        </section>
 
-    <div id="images">
-    <!-- Hier können Bilder eingefügt werden -->
-    <!-- <input type="file" accept="image/*"> -->
-    <img src="anti_glibber_gang.png" alt="Anti Glibber Gang" width="250" height="250"> 
-    <img src="mensa_gold_mitglied.png" alt="Mensa Gold Mitglied" width="250" height="250">
-    <img src="kaiserschmarrn_liebhaber.png" alt="Kaiserschmarrn Liebhaber" width="250" height="250">
-    <img src="KKK.jpeg" alt="KKK" width="250" height="250">
-    <img src="spice.png" alt="spice" width="250" height="250">
-    </div>
+        <!-- 8. Badges -->
+        <section id="images">
+            <h3>Badges</h3>
+            <div class="badges">
+                <img src="/anti_glibber_gang.png" alt="Anti Glibber Gang">
+                <img src="/mensa_gold_mitglied.png" alt="Mensa Gold Mitglied">
+                <img src="/kaiserschmarrn_liebhaber.png" alt="Kaiserschmarrn Liebhaber">
+                <img src="/KKK.jpeg" alt="Kaiserschmarrn Kenner Klub">
+                <img src="/spice.png" alt="Spice">
+            </div>
+        </section>
 
-    <div id=thanks><h3>Danke an</h3>
-    - <a href="https://www.scherehoch.de">Lasse</a>
-    - Leonie
-    </div>
-    </div>
-    
-    <script src="./mensa.js"></script>
+        <!-- 9. Acknowledgement -->
+        <section id="thanks">
+            <h3>Danke an</h3>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/kraehner/">Lasse</a></li>
+                <li>Leonie</li>
+                <!-- Weitere Personen: einfach ein <li> ergänzen -->
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        © Gustav Hammer
+    </footer>
+
+    <script src="/mensa.js"></script>
 </body>
 </html>

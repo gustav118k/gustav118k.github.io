@@ -3,19 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coole Überraschung</title>
+    <title>Gustav Hammer</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>Willkommen auf meiner coolen Website!</h1>
+    <header class="site-header">
+        <a class="brand" href="/">Gustav Hammer</a>
+        <nav>
+            <a href="/" aria-current="page">Start</a>
+            <a href="/wann-mensa-heute">Wann Mensa heute?</a>
+            <!-- Später: <a href="/fotoblog">Fotoblog</a> -->
+        </nav>
+    </header>
 
-    <!-- Link zur Website -->
-    <p>Mein <a href="https://www.irif.fr/~haberm//haindex.html" target="_blank">ha-Index</a> ist 93</p>
+    <main>
+        <h1>Gustav Hammer</h1>
 
-    <p>Checkt auch mal diese coole <a href="https://fabianbammes.de" target="_blank">Website</a> aus</p>
+        <h2>Stuff</h2>
+        <ul class="link-list">
+            <li><a href="/wann-mensa-heute">Wann Mensa heute?</a></li>
+            <!-- Weitere Projekte: einfach ein <li><a href="...">Name</a></li> ergänzen -->
+        </ul>
 
-    <!-- Versteckte Botschaft im Quellcode -->
+        <h2>Kontakt</h2>
+        <ul class="link-list">
+            <li><a id="email-link" href="#">E-Mail wird geladen …</a></li>
+            <!-- Weitere Kontaktmöglichkeiten: einfach ein <li><a href="...">Name</a></li> ergänzen -->
+        </ul>
+    </main>
+
+    <footer class="site-footer">
+        © Gustav Hammer
+    </footer>
+
     <script>
-        console.log("Wow, du schaust sogar in den Quellcode! Du bist ein echter Code-Detektiv!");
+        // E-Mail wird erst per JavaScript zusammengesetzt,
+        // damit sie im Quelltext nicht als Klartext steht (Scraper-Schutz).
+        (function () {
+            var user = "info";
+            var domain = ["gustav-hammer", "de"].join(".");
+            var addr = user + "@" + domain;
+            var el = document.getElementById("email-link");
+            el.textContent = addr;
+            el.setAttribute("href", "mail" + "to:" + addr);
+        })();
     </script>
 </body>
 </html>
