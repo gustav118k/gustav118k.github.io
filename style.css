@@ -1,0 +1,150 @@
+/* ============================================================
+   Corporate Layout – gustav-hammer.de
+   Wird von allen Seiten eingebunden.
+   ============================================================ */
+
+:root {
+    --bg        : #F7F4F3;  /* Haupt-Hintergrund */
+    --ink       : #550527;  /* Text & Überschriften */
+    --green     : #688E26;  /* Buttons / Aktionen */
+    --orange    : #FAA613;  /* Hover / Highlights */
+    --purple    : #731DD8;  /* Links */
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin          : 0;
+    background      : var(--bg);
+    color           : var(--ink);
+    font-family     : Arial, Helvetica, sans-serif;
+    line-height     : 1.6;
+    min-height      : 100vh;
+    display         : flex;
+    flex-direction  : column;
+}
+
+/* ---------- Header / Navigation ---------- */
+.site-header {
+    display         : flex;
+    flex-wrap       : wrap;
+    align-items     : center;
+    justify-content : space-between;
+    gap             : 12px;
+    padding         : 16px 24px;
+    border-bottom   : 3px solid var(--ink);
+}
+
+.site-header .brand {
+    font-size       : 1.2em;
+    font-weight     : bold;
+    color           : var(--ink);
+    text-decoration : none;
+}
+
+.site-header nav {
+    display         : flex;
+    flex-wrap       : wrap;
+    gap             : 16px;
+}
+
+.site-header nav a {
+    color           : var(--purple);
+    text-decoration : none;
+}
+
+.site-header nav a:hover,
+.site-header nav a[aria-current="page"] {
+    border-bottom   : 2px solid var(--orange);
+}
+
+/* ---------- Inhalt ---------- */
+main {
+    flex            : 1;
+    width           : 100%;
+    max-width       : 760px;
+    margin          : 0 auto;
+    padding         : 32px 24px 48px;
+}
+
+h1 {
+    font-size       : 2.2em;
+    margin          : 0 0 8px;
+}
+
+h2, h3 {
+    margin-top      : 2em;
+    border-left     : 5px solid var(--orange);
+    padding-left    : 10px;
+}
+
+a {
+    color           : var(--purple);
+}
+
+a:hover {
+    color           : var(--orange);
+}
+
+/* Buttons */
+button {
+    background      : var(--green);
+    color           : var(--bg);
+    border          : none;
+    border-radius   : 6px;
+    padding         : 10px 16px;
+    font-size       : 1em;
+    cursor          : pointer;
+}
+
+button:hover {
+    background      : var(--ink);
+}
+
+/* Textfelder */
+input[type="text"] {
+    padding         : 10px 12px;
+    border          : 2px solid var(--ink);
+    border-radius   : 6px;
+    background      : #fff;
+    font-size       : 1em;
+}
+
+input[type="text"]:focus {
+    outline         : 2px solid var(--purple);
+}
+
+/* Link-Listen (Startseite: Projekte, Kontakt – einfach <li> ergänzen) */
+.link-list {
+    list-style      : none;
+    padding         : 0;
+    margin          : 0;
+}
+
+.link-list li {
+    margin          : 0;
+}
+
+.link-list a {
+    display         : block;
+    padding         : 12px 16px;
+    margin-bottom   : 10px;
+    background      : #fff;
+    border          : 2px solid var(--ink);
+    border-radius   : 8px;
+    color           : var(--ink);
+    text-decoration : none;
+}
+
+.link-list a:hover {
+    border-color    : var(--green);
+    color           : var(--green);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    padding         : 16px 24px;
+    border-top      : 3px solid var(--ink);
+    font-size       : 0.9em;
+    text-align      : center;
+}
