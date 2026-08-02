@@ -6,7 +6,6 @@
     <title>Find Penguins</title>
     <link rel="stylesheet" href="/style.css">
     <style>
-        /* Removes the default bullet points and adds a little spacing */
         #bucketlist ul {
             list-style-type: none;
             padding-left: 0;
@@ -14,9 +13,14 @@
         #bucketlist li {
             margin-bottom: 8px;
         }
-        /* Makes the cursor a pointer when hovering over the text */
+        /* Make the labels look like normal text since they are no longer clickable */
         #bucketlist label {
-            cursor: pointer;
+            cursor: default;
+            color: inherit; 
+        }
+        /* Optional: Makes the disabled checkboxes look a bit more solid */
+        #bucketlist input[type="checkbox"]:disabled {
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -25,7 +29,7 @@
         <a class="brand" href="/">Gustav Hammer</a>
         <nav>
             <a href="/">Start</a>
-            <a href="/wann-mensa-heute" aria-current="page">Wann Mensa heute?</a>
+            <a href="/wann-mensa-heute">Wann Mensa heute?</a>
             <!-- Später: <a href="/fotoblog">Fotoblog</a> -->
         </nav>
     </header>
@@ -38,18 +42,18 @@
         <section id="bucketlist">
             <h3>Bucket list</h3>
             <ul>
-                <li><label><input type="checkbox"> See a glacier</label></li>
-                <li><label><input type="checkbox"> Hike on top of a summit</label></li>
-                <li><label><input type="checkbox"> (Learn some Norwegian)</label></li>
-                <li><label><input type="checkbox"> Speak Swedish</label></li>
-                <li><label><input type="checkbox"> Learn more Swedish</label></li>
-                <li><label><input type="checkbox"> Take a swim in the ocean</label></li>
-                <li><label><input type="checkbox"> Sleep in a tent in the fjäll</label></li>
-                <li><label><input type="checkbox"> Make coffee in tiny Bialetti</label></li>
-                <li><label><input type="checkbox"> See reindeer</label></li>
-                <li><label><input type="checkbox"> See a moose</label></li>
-                <li><label><input type="checkbox"> Write some postcards</label></li>
-                <li><label><input type="checkbox"> Write at least one blog post</label></li>
+                <li><label><input type="checkbox" disabled> See a glacier</label></li>
+                <li><label><input type="checkbox" disabled> Hike on top of a summit</label></li>
+                <li><label><input type="checkbox" disabled> (Learn some Norwegian)</label></li>
+                <li><label><input type="checkbox" disabled> Speak Swedish</label></li>
+                <li><label><input type="checkbox" disabled> Learn more Swedish</label></li>
+                <li><label><input type="checkbox" disabled> Take a swim in the ocean</label></li>
+                <li><label><input type="checkbox" disabled> Sleep in a tent in the fjäll</label></li>
+                <li><label><input type="checkbox" disabled> Make coffee in tiny Bialetti</label></li>
+                <li><label><input type="checkbox" disabled> See reindeer</label></li>
+                <li><label><input type="checkbox" disabled> See a moose</label></li>
+                <li><label><input type="checkbox" disabled> Write some postcards</label></li>
+                <li><label><input type="checkbox" checked disabled> Write at least one blog post</label></li>
             </ul>
         </section>
 
