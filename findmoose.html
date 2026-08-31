@@ -6,22 +6,40 @@
     <title>Find Moose</title>
     <link rel="stylesheet" href="/style.css">
     <style>
+        /* ---------- Bucket List & Checkboxes ---------- */
+
+        /* Make checkboxes use your green theme color */
+        input[type="checkbox"] {
+            accent-color: var(--green);
+            
+            /* Optional: Makes the checkboxes slightly larger and easier to see */
+            width: 1.2em;
+            height: 1.2em;
+            cursor: pointer;
+        }
+
+        /* Bucket list layout rules from earlier */
         #bucketlist ul {
             list-style-type: none;
             padding-left: 0;
         }
+
         #bucketlist li {
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Adds space between the checkbox and the text */
         }
-        /* Make the labels look like normal text since they are no longer clickable */
+
         #bucketlist label {
             cursor: default;
             color: inherit; 
         }
-        /* Optional: Makes the disabled checkboxes look a bit more solid */
+
         #bucketlist input[type="checkbox"]:disabled {
-            opacity: 1;
+            opacity: 0.8;
         }
+
         img {
             max-width: 100%;
             height: auto;
@@ -72,6 +90,8 @@
                 <li><label><input type="checkbox" checked disabled> Go to a sauna</label></li>
                 <li><label><input type="checkbox" checked disabled> Hitch a ride with a stranger</label></li>
                 <li><label><input type="checkbox" disabled> Take a dip in a lake</label></li>
+                <li><label><input type="checkbox" disabled> Get Swedish B1</label></li>
+                <li><label><input type="checkbox" disabled> Find a job / internship</label></li>
             </ul>
         </section>
 
@@ -464,6 +484,10 @@
             <p>Danke an alle, die mich mitgenommen haben. Ich bin einfach extrem froh, dass alles an einem Tag geklappt hat!</p>
 
             <img src="/travel_pictures/hemavan_fjallstation_30_08_26.webp" alt="hemavan fjallstation">
+            
+            <h4>Montag 31.08. Hemavan -> Umeå</h4>
+
+            <p>In der Fjällstation habe ich die Sauna benutzt und morgens Kaffe in der French Press zubereitet. Dann habe ich den Vormittag damit verbracht, diesen Blog zu schreiben. Jetzt sitze ich im Bus nach Umeå. Die letzte Woche war aufregend und es war cool alleine unterwegs zu sein, nur wage Pläne zu haben und trotzdem auf alles vorbereitet zu sein. Ich wwoofe nochmal in Schweden ab dem 02. September. Für danach würde ich gerne mal eine Beschäftigung finden.</p>
         </section>
     </main>
 
