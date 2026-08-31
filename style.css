@@ -175,4 +175,5 @@ input[type="text"]:focus {
 #bucketlist label {
     cursor: default;
     color: inherit; 
+    pointer-events: none; /* This stops clicks on the text! */
 }
