@@ -149,54 +149,30 @@ input[type="text"]:focus {
     text-align      : center;
 }
 
-/* ---------- Bucket List Checkboxes ---------- */
+/* ---------- Bucket List & Checkboxes ---------- */
+
+#bucketlist input[type="checkbox"] {
+    accent-color: var(--green); /* Now this will work! */
+    width: 1.2em;
+    height: 1.2em;
+    
+    /* This completely ignores mouse clicks, acting like 'disabled' */
+    pointer-events: none; 
+}
+
 #bucketlist ul {
     list-style-type: none;
     padding-left: 0;
 }
 
 #bucketlist li {
-    margin-bottom: 10px;
-}
-
-/* Flexbox aligns the checkbox and text neatly */
-#bucketlist label {
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+#bucketlist label {
     cursor: default;
-}
-
-/* 1. Hide the default browser checkbox and draw a custom green box */
-#bucketlist input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--green);
-    border-radius: 4px;
-    background-color: var(--bg);
-    margin: 0;
-    position: relative;
-}
-
-/* 2. Fill it with green when checked */
-#bucketlist input[type="checkbox"]:checked {
-    background-color: var(--green);
-}
-
-/* 3. Add a checkmark symbol inside when checked */
-#bucketlist input[type="checkbox"]:checked::after {
-    content: '✔';
-    color: var(--bg);
-    font-size: 14px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centers the checkmark */
-}
-
-/* 4. Prevent the browser from graying it out because it is "disabled" */
-#bucketlist input[type="checkbox"]:disabled {
-    opacity: 1;
+    color: inherit; 
 }
