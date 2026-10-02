@@ -149,6 +149,17 @@ input[type="text"]:focus {
     text-align      : center;
 }
 
+.site-footer a {
+    color           : var(--purple);
+    text-decoration : none;
+    margin          : 0 4px;
+}
+
+.site-footer a:hover {
+    color           : var(--orange);
+    text-decoration : underline;
+}
+
 /* ---------- Bucket List & Checkboxes ---------- */
 
 #bucketlist input[type="checkbox"] {
