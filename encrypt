@@ -1,0 +1,58 @@
+#!/usr/bin/env node
+// Verschlüsselt alle <p> einer HTML-Datei, die noch kein data-encrypted (und kein data-plain) haben.
+// Nutzung: ./encrypt findmoose.html -p MyPassword123
+//
+// Format pro Absatz (Base64): salt(16) | iv(12) | Ciphertext | GCM-Tag(16)
+// Schlüssel: PBKDF2-SHA256, 600000 Iterationen -> AES-256-GCM. Muss zum Script in findmoose.html passen.
+
+const fs = require("fs");
+const crypto = require("crypto");
+const ITERATIONS = 600000;
+const P = /<p(\s[^>]*)?>([\s\S]*?)<\/p>/g;
+
+const [file, flag, password] = process.argv.slice(2);
+if (!file || flag !== "-p" || !password) {
+    console.error("Nutzung: ./encrypt <datei.html> -p <passwort>");
+    process.exit(1);
+}
+
+function decrypt(data, key) {
+    const iv = data.subarray(16, 28);
+    const body = data.subarray(28);
+    const d = crypto.createDecipheriv("aes-256-gcm", key, iv);
+    d.setAuthTag(body.subarray(body.length - 16));
+    return Buffer.concat([d.update(body.subarray(0, body.length - 16)), d.final()]).toString("utf8");
+}
+
+let html = fs.readFileSync(file, "utf8");
+
+// Salt der Seite wiederverwenden, falls schon Absätze verschlüsselt sind.
+// Dabei wird geprüft, dass das Passwort dazu passt (sonst hätte die Seite zwei Passwörter).
+let salt = null, key = null;
+for (const m of html.matchAll(P)) {
+    if (/\bdata-encrypted\b/.test(m[1] || "")) {
+        const data = Buffer.from(m[2].trim(), "base64");
+        salt = data.subarray(0, 16);
+        key = crypto.pbkdf2Sync(password, salt, ITERATIONS, 32, "sha256");
+        try { decrypt(data, key); }
+        catch { console.error("Fehler: Passwort passt nicht zu den bereits verschlüsselten Absätzen."); process.exit(1); }
+        break;
+    }
+}
+if (!salt) {
+    salt = crypto.randomBytes(16);
+    key = crypto.pbkdf2Sync(password, salt, ITERATIONS, 32, "sha256");
+}
+
+let encrypted = 0, skipped = 0;
+html = html.replace(P, (match, attrs = "", content) => {
+    if (/\bdata-(encrypted|plain)\b/.test(attrs)) { skipped++; return match; }
+    const iv = crypto.randomBytes(12);
+    const c = crypto.createCipheriv("aes-256-gcm", key, iv);
+    const ct = Buffer.concat([c.update(content, "utf8"), c.final(), c.getAuthTag()]);
+    encrypted++;
+    return `<p${attrs} data-encrypted>${Buffer.concat([salt, iv, ct]).toString("base64")}</p>`;
+});
+
+fs.writeFileSync(file, html, "utf8");
+console.log(`Verschlüsselt: ${encrypted} Absätze, übersprungen: ${skipped}`);

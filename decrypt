@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+// Entschlüsselt alle <p data-encrypted> einer HTML-Datei und entfernt das Flag.
+// Nutzung: ./decrypt findmoose.html -p MyPassword123
+// Bei falschem Passwort wird die Datei nicht verändert.
+
+const fs = require("fs");
+const crypto = require("crypto");
+const ITERATIONS = 600000;
+const P = /<p(\s[^>]*)?>([\s\S]*?)<\/p>/g;
+
+const [file, flag, password] = process.argv.slice(2);
+if (!file || flag !== "-p" || !password) {
+    console.error("Nutzung: ./decrypt <datei.html> -p <passwort>");
+    process.exit(1);
+}
+
+const keys = new Map(); // ein Schlüssel pro Salt
+function decrypt(data) {
+    const salt = data.subarray(0, 16);
+    const id = salt.toString("hex");
+    if (!keys.has(id)) keys.set(id, crypto.pbkdf2Sync(password, salt, ITERATIONS, 32, "sha256"));
+    const iv = data.subarray(16, 28);
+    const body = data.subarray(28);
+    const d = crypto.createDecipheriv("aes-256-gcm", keys.get(id), iv);
+    d.setAuthTag(body.subarray(body.length - 16));
+    return Buffer.concat([d.update(body.subarray(0, body.length - 16)), d.final()]).toString("utf8");
+}
+
+let html = fs.readFileSync(file, "utf8");
+let count = 0;
+try {
+    html = html.replace(P, (match, attrs = "", content) => {
+        if (!/\bdata-encrypted\b/.test(attrs)) return match;
+        const plain = decrypt(Buffer.from(content.trim(), "base64"));
+        count++;
+        return `<p${attrs.replace(/\s*data-encrypted(="[^"]*")?/, "")}>${plain}</p>`;
+    });
+} catch {
+    console.error("Fehler: Falsches Passwort. Datei wurde nicht verändert.");
+    process.exit(1);
+}
+
+fs.writeFileSync(file, html, "utf8");
+console.log(`Entschlüsselt: ${count} Absätze`);
