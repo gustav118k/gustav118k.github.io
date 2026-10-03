@@ -18,50 +18,37 @@
     <main>
         <h1>Impressum</h1>
 
-        <section>
-            <h2>Angaben nach TMG (Telemediengesetz)</h2>
+        <h2>Angaben gemäß § 5 DDG</h2>
+        <p>
+            Gustav Hammer<br>
+            Goethestraße 3<br>
+            91054 Erlangen
+        </p>
 
-            <h3>Verantwortlicher für den Inhalt</h3>
-            <p>
-                Gustav Hammer<br>
-                Goethestraße 3<br>
-                91054 Erlangen<br>
-            </p>
+        <h3>Kontakt</h3>
+        <p>
+            E-Mail: <span class="contact-email">info [at] gustav-hammer [dot] de</span>
+        </p>
 
-            <h3>Kontakt</h3>
-            <p>
-                E-Mail: <span id="contact-email">wird geladen …</span>
-            </p>
+        <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
+        <p>
+            Gustav Hammer<br>
+            Anschrift wie oben
+        </p>
 
-            <h3>Verantwortung für externe Inhalte</h3>
-            <p>
-                Diese Website enthält Links zu Websites Dritter. Ich bin für deren Inhalte nicht verantwortlich.
-                Die Betreiber der verlinkten Seiten tragen die Verantwortung für ihre Inhalte.
-            </p>
+        <h3>Haftung für Links</h3>
+        <p>
+            Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe.
+            Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.
+            Zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße erkennbar. Werden mir Rechtsverletzungen bekannt,
+            entferne ich derartige Links umgehend.
+        </p>
 
-            <h3>Hosting & Betreiber</h3>
-            <p>
-                Diese Website wird gehostet auf <strong>GitHub Pages</strong> (GitHub Inc., San Francisco, USA).
-                Weitere Informationen finden Sie in den
-                <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank">
-                    Datenschutzbestimmungen von GitHub
-                </a>.
-            </p>
-
-            <h3>Haftungsausschluss</h3>
-            <p>
-                Der Inhalt dieser Website wird mit größter Sorgfalt erstellt. Ich übernehme jedoch keine Garantie
-                für die Aktualität, Richtigkeit und Vollständigkeit der Inhalte. Die Nutzung dieser Website erfolgt
-                auf eigenes Risiko des Besuchers.
-            </p>
-
-            <h3>Urheberrecht</h3>
-            <p>
-                Die Inhalte dieser Website (Text, Bilder, Layout) sind – sofern nicht anders vermerkt –
-                urheberrechtlich geschützt. Eine Vervielfältigung oder Nutzung außerhalb der engen Grenzen
-                des Urheberrechts ist ohne Zustimmung nicht zulässig.
-            </p>
-        </section>
+        <h3>Urheberrecht</h3>
+        <p>
+            Die Texte und Fotos auf dieser Website sind, sofern nicht anders gekennzeichnet, von mir erstellt und
+            urheberrechtlich geschützt. Eine Verwendung außerhalb der Grenzen des Urheberrechts bedarf meiner Zustimmung.
+        </p>
     </main>
 
     <footer class="site-footer">
@@ -69,12 +56,16 @@
     </footer>
 
     <script>
-        // E-Mail wird per JavaScript zusammengesetzt
+        // E-Mail-Adresse erst im Browser zusammensetzen (Scraper-Schutz).
+        // Ohne JavaScript bleibt die lesbare Form "info [at] gustav-hammer [dot] de" stehen.
         (function () {
-            var user = "info";
-            var domain = ["gustav-hammer", "de"].join(".");
-            var addr = user + "@" + domain;
-            document.getElementById("contact-email").textContent = addr;
+            var addr = "info" + "@" + ["gustav-hammer", "de"].join(".");
+            document.querySelectorAll(".contact-email").forEach(function (el) {
+                var a = document.createElement("a");
+                a.href = "mail" + "to:" + addr;
+                a.textContent = addr;
+                el.replaceChildren(a);
+            });
         })();
     </script>
 </body>
