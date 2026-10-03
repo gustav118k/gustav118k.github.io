@@ -19,6 +19,16 @@
         font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
         .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
         .tg .tg-0lax{text-align:left;vertical-align:top}
+
+        /* Verschlüsselte Absätze: Base64-Kauderwelsch umbrechen statt überlaufen */
+        p[data-encrypted] {
+            word-break: break-all;
+            font-family: monospace;
+            font-size: 0.8em;
+            color: var(--purple);
+            opacity: 0.6;
+        }
+        #pw-status { margin-top: 8px; min-height: 1.6em; }
     </style>
 </head>
 <body>
@@ -34,6 +44,17 @@
     <main>
         <!-- Header -->
         <h1>Find Moose</h1>
+
+        <!-- data-plain: wird von ./encrypt nicht verschlüsselt -->
+        <section id="passwort">
+            <h3>Passwort</h3>
+            <p data-plain>Passwort eingeben, um verschlüsselten Text anzuzeigen</p>
+            <div class="input-row">
+                <input type="password" id="pw-input" placeholder="Passwort" autocomplete="current-password">
+                <button id="pw-button" type="button">Entschlüsseln</button>
+            </div>
+            <div id="pw-status" aria-live="polite"></div>
+        </section>
 
         <!-- Bucket List -->
         <section id="bucketlist">
@@ -663,5 +684,67 @@
         © Gustav Hammer | <a href="/impressum">Impressum</a> | <a href="/datenschutz">Datenschutz</a>
     </footer>
 
+    <script>
+        // Entschlüsselt alle <p data-encrypted> im Browser. Muss zu ./encrypt passen.
+        // Format (Base64): salt(16) | iv(12) | Ciphertext + GCM-Tag(16)
+        (function () {
+            const ITERATIONS = 600000;
+            const input = document.getElementById("pw-input");
+            const button = document.getElementById("pw-button");
+            const status = document.getElementById("pw-status");
+
+            function b64ToBytes(b64) {
+                const bin = atob(b64.trim());
+                const out = new Uint8Array(bin.length);
+                for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+                return out;
+            }
+
+            async function deriveKey(password, salt) {
+                const base = await crypto.subtle.importKey(
+                    "raw", new TextEncoder().encode(password), "PBKDF2", false, ["deriveKey"]);
+                return crypto.subtle.deriveKey(
+                    { name: "PBKDF2", salt: salt, iterations: ITERATIONS, hash: "SHA-256" },
+                    base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+            }
+
+            async function unlock() {
+                const password = input.value;
+                const paragraphs = document.querySelectorAll("p[data-encrypted]");
+                if (!password) { status.textContent = "Bitte Passwort eingeben."; return; }
+                if (paragraphs.length === 0) { status.textContent = "Es gibt keinen verschlüsselten Text."; return; }
+
+                button.disabled = true;
+                status.textContent = "Entschlüssele …";
+                const keys = new Map();
+                try {
+                    // Erst alles entschlüsseln, dann einsetzen – bei falschem Passwort bleibt alles wie es ist
+                    const results = [];
+                    for (const p of paragraphs) {
+                        const data = b64ToBytes(p.textContent);
+                        const salt = data.slice(0, 16), iv = data.slice(16, 28), ct = data.slice(28);
+                        const id = salt.join(",");
+                        if (!keys.has(id)) keys.set(id, await deriveKey(password, salt));
+                        const plain = await crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, keys.get(id), ct);
+                        results.push([p, new TextDecoder().decode(plain)]);
+                    }
+                    for (const [p, html] of results) {
+                        p.innerHTML = html;
+                        p.removeAttribute("data-encrypted");
+                    }
+                    document.getElementById("passwort").hidden = true;
+                } catch (e) {
+                    status.textContent = "Falsches Passwort.";
+                    input.value = "";
+                    input.focus();
+                } finally {
+                    button.disabled = false;
+                }
+            }
+
+            button.addEventListener("click", unlock);
+            input.addEventListener("keydown", function (e) { if (e.key === "Enter") unlock(); });
+        })();
+    </script>
 </body>
 </html>

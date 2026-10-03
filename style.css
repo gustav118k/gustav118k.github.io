@@ -102,7 +102,8 @@ button:hover {
 }
 
 /* Textfelder */
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
     padding         : 10px 12px;
     border          : 2px solid var(--ink);
     border-radius   : 6px;
@@ -110,8 +111,16 @@ input[type="text"] {
     font-size       : 1em;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="password"]:focus {
     outline         : 2px solid var(--purple);
+}
+
+/* Textfeld + Button nebeneinander (wie beim Uhrzeitvorschlag) */
+.input-row {
+    display         : flex;
+    flex-wrap       : wrap;
+    gap             : 8px;
 }
 
 /* Link-Listen (Startseite: Projekte, Kontakt – einfach <li> ergänzen) */
