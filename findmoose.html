@@ -20,14 +20,17 @@
         .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
         .tg .tg-0lax{text-align:left;vertical-align:top}
 
-        /* Verschlüsselte Absätze: Base64-Kauderwelsch umbrechen statt überlaufen */
-        p[data-encrypted] {
+        /* Verschlüsselte Elemente: Base64-Kauderwelsch umbrechen statt überlaufen */
+        [data-encrypted] {
             word-break: break-all;
             font-family: monospace;
             font-size: 0.8em;
             color: var(--purple);
             opacity: 0.6;
         }
+        ul[data-encrypted] { list-style: none; padding-left: 0; }
+        /* Bilder ohne src (noch verschlüsselt): nur alt-Text anzeigen */
+        img[data-src] { font-style: italic; color: var(--purple); opacity: 0.6; }
         #pw-status { margin-top: 8px; min-height: 1.6em; }
     </style>
 </head>
@@ -59,7 +62,7 @@
         <!-- Bucket List -->
         <section id="bucketlist">
             <h3>Bucket list</h3>
-            <ul>
+            <ul data-plain>
                 <li><label><input type="checkbox" checked> See a glacier</label></li>
                 <li><label><input type="checkbox" checked> Hike on top of a summit</label></li>
                 <li><label><input type="checkbox" checked> (Learn some Norwegian)</label></li>
@@ -86,238 +89,233 @@
             <h3>02.08.26</h3>
             
             <!-- Image here -->
-            <img src="/travel_pictures/02_08_26.jpg" alt="02.08.26">
+            <img data-src="/travel_pictures/02_08_26.jpg" alt="route to Oslo">
 
             <!-- Text here -->
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlCPxzjQiz2qAH0/h/fBKddlkhTpOnbvy6u7hSb78snfEWEuemcvaONG+kCkQU4D4bQvPqc8Fh7ybLg==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZignRrnJ417GVgHJr39rEiMyEpEWZuPi5OnWF7Ghtk9ZkjkUZcXpEjzgA/mKQ8LN301Rb+GBAa0dkmw==</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlJ3FNb7QdpDLC+MJWgJLo0a14F3CU8gzXuPeYQqK0aG81n/Cl/7ITynv2/0NCIFJL98z08G6oksgiFNCh5HEDSovX9lFqr3aqLyvbo1znKH+pLYqHxibCge3GTS3kTQZv+/5AFhTvsw4JsOna8XCWj01oULWoPl5TPsSbMFkaABP7grXMhGuZTSm9RzLIrC+Dyrf2RJDiygHH3QsEtdNqmzbGjNUB84CYyG82ZCDITZdxtdiF6TEEUYUXzVb1j9bj+L1e59jLVsSHN8rYumcWPo+J8K1sfk94Q==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZikVAQIFMZnYqaZcZZhhlS51uXtNIti8u6k2gzK1+w8iMhUR87+kT+4ZrEfqnnmBoc+hpDWUY9799tm5Sk+eNZVul5G3aabnZaI9yhhM8tlQ6JQaAYGM+i+cD/fjynl1cHvRA4xkdsZne+Rwca68PEvEWtqShvY4Yga4zZBuc406YQvYX0x2Y8DtQL9MFdhzCBzay8UnFx1jvYS/VFmoZXDoximt9c+94smEOwQbNMF0uawCwwSpZ5YjoqKvkMVEU/4pgs30xnfwbr2jxxegXpKEDWr6ikrDsnw==</p>
 
-            <img src="/travel_pictures/Holmenkollen_02_08_26.webp" alt="Holmenkollen">
+            <img data-src="/travel_pictures/Holmenkollen_02_08_26.webp" alt="Holmenkollen">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlDidLGg3UAgtM6I+ewjd9QW3b3O62W6h/gH/wpS5Bvi6omKjpC5V3ozHHK6RicPSwuNhRwwHMU3jdegQTVbyLBc7vgL02P11irzQMwUjJQ/iuC1bGfOPad3ka306cfeH4eigPK2lRmZ8zrco3iidPYOSwaQgnfSaCtr8L2Z2yh01de8i3UdYC9xh606TMJ+vqteCBvqU6o46AS4UK683gk5stshnFujFOfkEko0DA3T4LI4HGK7XcvN/Tn6zQDoGI3EQGM1Bd4GszkEdKb/CBCamaGd0w+kvNT/qbszj+FXpzsPet1NO4bICbpEQI1hwM+OWK2gaOZ+vvrbuCG8=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZit1F5jOW2RBvKI+Hgd4VtELEcY55FJ3cPpXxW5mBwIe0yFoxOjMNnToo+RmEjrnm1fSkYKbHrUFMX8+d4vCNc/FvdslOaL7gaTjhCZszM7ZB8xEWb/8pnZwVSgddibR1NvFopmpysQyX1k3xW/GXvBjXETvykZ664MNBchyo4LcTRrONj+Eq/YbAiy6lRjkmvD93qbXphffggP4jIUSLUHN5kp2a8T1qanQ1/x1x4bxIbIlaVTt1Ph3KPvzhGOo0tx2bV2/YwPsPGyOZ6GNnh7ujMjbdzQHTBgv/UnsCH1jPeV2PlpNtIrLYJQK8Veij3U+/U4J1A8l/B35Kg1M=</p>
 
-            <img src="/travel_pictures/Oslofjord_02_08_26.webp" alt="Oslofjord">
+            <img data-src="/travel_pictures/Oslofjord_02_08_26.webp" alt="Oslofjord">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlEFxU7EPyxbCn+P2qL2RiKhP+4suwess57NGjXQGdkwyb6zDe9CrckIH07ciZZk+JAn8dxlq+MmOE4OvS8A8pzUsptgGaBAe2sfw2PZEX/U=</p>
-            <ul>
-                <li>Im ICE: Ein Masseur, der auch astrologische Coachings anbietet</li>
-                <li>Im Flixbus: Ein Bikepacker, der schon 22 Länder bereist hat und Schwedisch, Arabisch, Französisch und etwas Englisch kann</li>
-                <li>Im Bahnhof Oslo: Eine Bikepackerin, die von Stockholm nach Helsinki geradelt ist</li>
-                <li>Im Bahnhof Oslo: Ein Junge, der wollte, dass ich an einem Zweig Lavendel rieche</li>
-            </ul>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiqpJfFFK4DA+mZSSna74IlIDgFqg/YSnbQ55NxiU5mKa0qc24zaSPbxbJKjA6rwgar55htl9dKW0Hc8r5V5DObh7QVto6rm6eMNTNSNW/Sw=</p>
+            <ul data-encrypted>wWNx/++tPWOJSgKIBVBZiuJyKncZXAp+Fzo4T2bYGm1u4TY3UAQHTXm9xDB30IJlSMVPD14oppmLrTejw2vpzOD2BVvtVwahf7mA9HtSxT+b5UIu5X2aGmPi8UB7+aZLeTFIciFZ1uD77ARV/UeEkF7u3nF1sMT6Ekwjve1KKClVunsVqeFl6MOgz/dFM+gxZLinpr+8cHKJ+iAvvCX5SGQcp35UXEIlT29mhKV9y67S/Py9FUhWhFzGVGEtzXaXtGXri9qk0937lNFS/Ch/TjFsMyQ8FGrJ0Zpc+osDwLN0ycHgk/aMtv7M1sWTecwnrExId9SolShFTqTENbiyNeEFDjKqmnUge4FFpj2YkpC60b9eKOlcVV6awdJKDkBBSZFWfWF5Sc6zYJ6HWsg9peUglFlCZtJnbtGfjoMgIpil9we673+dkJphIv51yfq9qNiX2Qrdk9Pnat/fNxha44YdECM4AtBR7iljFwz1qTMfy5n5CNPh40xMjbWYeJy3PKV2xtBi1OqC/4/pDq9xWHqZbANEldXr2Dkdv1FXLjtgMWzPEVjyG9YkL8CR6ivgRklqhYvFqdXZ+HjFWGaGPtZYVedykBO6zv/q9fpl8/Vw+xUrlMF5WN5+Ct082jfWHCV3IMQnj29xqATeyFAH7PtKQrltF6IfJA==</ul>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlP80+5kzMKza4ArQ2SZFUyzKIGZsh80ZNlcemG8mnBSVonU3iMWDCttny2l1Gq8VYepgOREU8FDa3kGR8YPgb5pQF2mdRFXV+InMa+qM4SH1v6x8OmGVsmgnmiYmysSkSTRNOL7bD4W+gNr68ktQrdDO</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZivhYOIeWysAE8cZcpY2pV0b0SEc0Eyrx55rP8zspqppsnz3JJFXoRkL9ST4Pb25FfrrtlSlRZfoE9WZkIOonlyDM0HCJGzuLlZ7nC3K+4dte6mcELMQpi/xZ1PsHYQ/gYTVdSZshC8MQI77hyVDeDS5a</p>
         </section>
 
         <section id="03_08_26">
             <h3>03.08.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlDMetXLRb2W1NTx7vsARZr66JyJIG2nVrxSIu6xqEOFBx+HhqooXO7Q5DsCey0VmWR3XaQr9sE/PiFyeHBoVuezP55uazKCTSdugGaOtCsP6+QlKqhWdEmZFyCesocW/rrra6rwI51gzq1Uc2AwOXuLRPNtWmI1TLsRhWelAiJQsl78SGlZT07jx8UBVQcOQm4mqEBQ+jWW/kU69RyC0bPSgprJwsRIXPRb/QL6sNYLVUb9on6tQhXt3Xxi225TfWdT2JuHqcrhUzBJqkuUxAVtM08yqGzO1V4D/DETY9aTeafUHiXBXSLwuOLRxIqzNQzwzbZ7Zh64EkCcSojyNU+QHFj2LXiiAwR7MvKEXma84SaWHSQ4Yg17CXLta6inv1sUp1mgp5puw</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZigpoRu344xwiNAUTlvFfUYznn2ZGD9poAitcLPYNvsZmT9St4xFlGcUZ15DaNmvhf6JzG5bMuu9t3294bQarT3Weeiu4Tl8EWlhNkdfD181MY3QBS4sM7GZUs82ZBvjnTvkea7RVUttzrjjUoBFHCy7xwoyzYwAUhU1CNJn6Nx8TWO2/qmo8m37HpZN84wvnLIzOc3qenLIFmh2U+/FP40NHPDtWba2K/D7gx+i4OQegXdJVa6LJVx/fqb1bxLxlDS5Mq+bH6pkB0JoE6R50SFwXSP+tKJTKg2vg3NSV/aBWE6muB9YDj+r/qKBDKkdN6YGNmZMls1Q7YJy5wbXMfifzFYCsidYOZJjfwLGhrAbfH4Kvnfewpc26DmbNAyyiGmnAdWfEZrde</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlLQL3Cu4O3ILaCeu+I6IqnzFvwlGANs+fKse4yg7iGb7AXkfq8wOkenLBPr9TGMpHW5mAuf54bC0NRedV2yg91aVOYIOBNRXj7d9jVtyxahkJ5ES2WqKBU2zolNwMTXWUz4CrUoNMkwCiRjouvJRZ1prBqxsjV1Tz0Cxx55hHZ819abrkRH467RkIe+3XX6+beI2FywK/AZ+IutqTN3m/NfQc/vfFVNeISwpQ7K+6CsY/IDktMYj0lBPQ8N30taq55kwuC9fVf3VK4OsbNuj</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZikjIu1+lZZpde1yeIxV6Ktoq7g7S/mCkJVmMt+Lfzy2SfC4EP+YY0LLTvyU3OrFEIHckLS5+wlqmSYojmp6YNhQ2rYMg4vGAJzV13iCIyACsc8zvmZK4G0I/7vC8xJGMpLyaPMP6KUQhN/Bey0EMFIkNtKq7o7Exe48P3NJh1pRnkIhdbdvi3s1JhMx3aunOLPSpPJqv6A0ZhNOa0fEECfiua/7VUJBncvt0PWovTrUvuLxDrcrgKSqk3xLAiA7tr0lANl2pmlLLs55mNoFo</p>
         </section>
 
         <section id="04_08_26">
             <h3>04.08.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlGt8A8Xxcy0hjIPemhpwt9CBa5IT+zqG0HkI+efhBX3lY6R5RNaSx+OuNjMi4LlXtPRspAemlg3xutJdJJJhSecgDAI5C4A3X8ultDaCzYrtw/sYXMI0DYlHBq72DSVAG+ZklyAiSGGAomRxfU9DKCFGr0VW5VhGGLgvLs5ilEIwZC2R+9YPwCGHiCS/Sc7om4w52Z+rvUYIyHqywEES7KMck+KdTTDXmcL118vf0DeeU5iAas65phm939uhcwSqZmIrAyC04cH0fNQK9AxIIKAo3wkdr1olo5958GIog4EJFfuHR17K9ArXtLCr+Mg0/8AeAR+8MvQSXFYdbdVeMr2F4xHa64sHgw9Fj7dQEvL4n4bBMH96Q5NdZkv/Rv+ldjA=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZilAT1eF1EkIHyGVFSdZorx3754guBAnnpDXg5EHDEsY7yvd2OTOsno9LVpucIXNQBnBkapepq54iKDmw8M7ZLWJYYrAUts2raq0/s6wLE8c1RaewgpIb6oyBQMpj+OgAT3nMUf9pwy2p9slQ3+T1bbchGVYf0onO/j32ElbIhGB8e/Pj5MGO0F0Yh91G9W8LWUe4e83emYOh8PldAltR4fzBdYsUdP33tOe5BmYM3QuB3mrMfOufkbY3GILg1cdJDsmIYNjplIvRYgB0dgmBc0OBZgG9/hd9wet3NTJEmOyamskJP4CnDihuKXVEhZ1azg+ZdWBaaHtlhUdFSizDS4198wSYpuhdCT+fxnhH4ulOL66RYZloJ6usbp7qk4g2AYY=</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlPORFH2RoSWEzZG4u18xUZ7pyj57f9uLDHMEs2IiA7kFH8RPJPq4OkxCODIH7do8+iUlcJWSG5B6D7nPWwqjwiLGa3tzPbrNrRec9ukbiJ53+aikinV5/iaRi1w06Br9VsUzuzhsEe7OwRRzr3RDiJE3yxgJZm6Sjl5VnZ/BLTZn3DF2rJcldU0CPT//stGwWqZHwEwyNNq0HZqaU9fyFURdrQmzn3g3webDwTa8m00DdhgJu8I=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZinmkckFT9SiIMgQ7xQ1Pw5JLJgEzIsw8mCRdjho+sqkRs5uCO9UEoQq5w7Ugt7sx12ZpBMYB8+XAlXs71VVEFzGmDWxSe5s3hGgLfkieVZoi47F2gO3Du0gP58821rW8+1uYb8Tkhd1FAc2iJvM0i58h9RYFevr5Aaa4EKGJ6ugutbKrrgYijabZlKrnkg2o0i8xLVoXUcBOS2GYaNsnhtvz2aCxY+bCpdo4EuQCsygC9QYUTlc=</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlIVuDDSP5vfEnWe/4l0BJfJBRQ5ab7lRtVsSa/c9ZOsB++RLvOdE4gEezkyIKeTYjeA31Kbp</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZihIPPYsB5iCpTr/LCVoYQgnOjdLTXFm3bDR0IWT8AJuKF5I3JcMYw3HYzyyudtxkTR9SW0z2</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlM735V6gOX/BdI5BqE5O43fu04IZaweVNf9TT3yepyaq89G4Bh3bDPINxihiDP2WqlE=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZihJZHilbig9wgvbjfxasMn+LW/tkxFBHlmHFFBiNggQYoh0QDp8F0cmnGB2sPynNGoo=</p>
 
-            <img src="/travel_pictures/sjoebakken_04_08_26.webp" alt="sjobakken">
+            <img data-src="/travel_pictures/sjoebakken_04_08_26.webp" alt="sjobakken">
         </section>
 
         <section id="06_08_26">
             <h3>06.08.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlMyNvVu5qQqqGQLsW5QMmNa9ubjFvJDQK1B2XbD5IzQY9XziE4J2DnitBPVALoayFPvW8zZvxrKl2F9w9JFdrrQw7m/3T+gCJf4ag7WWJIzx2jS9yQS4IgOWrVnsy619P9tIrlu9REQqmZdIN0Nraju4vCNCfYNPeTZAbRIV/3NyK69ILksrRKCcAldNF1o8SSwMH8PN2z15t0ktkUtAGQL5sHmVBQ1etCq1vpWqY59cM2R85rvX3qSRk9pqibpjva2jgb61GcZLiYyQormXfgS/wEE+mtRuG7qnw0zJcBeH6H8g6J5ZnTdwQ0uW+Kt7z/owX/1FETKR4jZXT0PSjMWcjGA07xx6EANz+R/lkLvE70eBjnqrjHTfMWv3pZOi+XqILU2PZyP76No1dG4PpZZwp6xjjkLEN6Y3r8H6zepFS7CqdtbmyynFEw==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZit+6VdhTD5/CD8FA9v8v5xbZ/f4hkVwI5IjqFJx9DljA0trX5S3fv6rYgpuj1rflLbwpZVQtVxAHGMDjRxDEAQyonqmKWU3fS0UhrqZzH1o+0XW9wIcdp1rFWEF5fdfeShCDJ1KTytH4ZtoN/ufs9RFzpmfZVn1Pkzd07wULUYnEzlvD1TUmbx6DfFdQoJvF/AiT/mu/R90ge5/kltAWMwDcQf4fmrHD+qt69CxFwEUhhBmx9OuavK/l6wjG/4ZYvGKHR4y1MmvyburQv7j/v3AgucVbgd/JNiHwWwguMejfvMdUoiOhFgRpFWLMaT2tQ8a0eg3x01bfjbOPHk/IWjZ2pyec4grNZ/4fSWyaLTV6plJ6CBNGRqUREChFu3g2dcGOHu7kKlBehoMGddJW7IfPkrDxgSQitv/OU2B07cHLNkncyHCklUur6A==</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlNF7SCSIcPmdBmBNPJjIrAifS8Ncx91ExLBM8U/ao3NFJysDBR5+8Edq8PRqFIHQuVtCCmKUBgjZmsOJA9T4ns3Cixjn2HKgGlw3iUq/F8Nt51a2eCGtDET8oVEPOHJbDvCYdhz2zkHxraf/9YPpzlDMlaJ01SNa8XqZxey/gWKTBd/3JeHyhJZiVoInkC4BF7hjQbWtrbJgQn/rk7aFwQ==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZivoZIfszX4MfBB75Ba7cb10y3IKVQfTncEHKdAzzXPCfeqYHQTbrEJzOLIhu0p96J3FgdL2v0IJCsvzmMjXQlJF+4gmht+ghuRgLMXYAp4fYNrPOUOb7K+5mVHur2LkE2baje2yHZmgfV46H6nqyez6AvQckpwafFCUW7mKdjPe8AerSxIFZasWkr8hSylLbNazByEBv1BypWeiXX2GVPg==</p>
 
-            <img src="travel_pictures/fjord_05_08_26.webp">
+            <img data-src="/travel_pictures/fjord_05_08_26.webp" alt="fjord">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlBAWeDHMoZMl2L9SxJbL/NCqwmXobu+vX4Fww7jgGerF8kZaVqtW0S9X8uEfdIKSumstBWVIQxoll8IKvsTS1D4dTZQlhis=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZilLpDD2Dcml2BvTl701XMCct+06EJX7RD5tr9qB+t2MzeR9OkG5wrvXpwXslreQrPq0b8H4xeDDQp1peT+o6RSHjkncg0Pw=</p>
 
-            <img src="travel_pictures/waterfall_05_08_26.webp" alt="waterfall">
+            <img data-src="/travel_pictures/waterfall_05_08_26.webp" alt="waterfall">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlAK+Na9UMGOTl2vEbUG/AzGB4r5HmhDYyxhl3TckjLwhzY71lw6hRwNrZJ0ZfmwyGGmwsHgzWSrRRZAFJWZWVc5euUZe2OsWYfKeVt/qVLVRnffZ8vsIaFDtmnqsnJMCQ0ENnqAEeWJSTzGWP3f85ozT4CshuYvtJv0sB7RpvxLOOVfw7+euPNOP43foNUH+7cwn+0NVXLvbQUiXAGiG5IjI</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZim2LyFh2qlt/cGmUj6pdsbZ6kwvWoOeD3kvcOb3BGPZnjy+OetQEKCvjiihaEvmzK+Ce9yq1EKOvD1gGQlYQv/4nKus1RRjS6j2vW+OVzu1IrLD8GnYH2/uJIHB75u6shfFXMMMM14mjJhJQazZoBJfMI2mfGpueTHWwLp7FRSdbDUCXrmVfT4lyiriwlTYtuz6XkevSaxTO6VFYXReddQTj</p>
         </section>
 
         <section id="08_08_2026">
             <h3>08.08.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlJ4tfiT3y5BZxoIReN82RehXPpyvbGudImSMk4IYoXuoFBk2o+B8zof6UMFEGjEb/vDreM3Cx9kuY7z/o9pyJCaXYuKHAHIol03zXnkKUAhzGsotfSnYraE8Ka+c8iOCvZ+Qu0ENbxCypA17cY9J5CZxUz+o7fxeBl2daodhhFZ4t47og0qN4SEvJ3u92t/NYK/LQ6KbkXIbJyt87+/lQaawJ4W2kSgiEL56QcFxRvPjWtvT2UMury4iuXKDyXi8qf9BYc3FrOb1gUbDocHnkhooAb/1h13zk2TWipVeJ+fRcRzNCQbQIZNpQ85q+9bK0KUlE7q7AQ==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZioUrVOchEDMoo9vAJRLT/zwnyoN6rY9SAX1lw5GhGbD53xgx44HC/cG1c7dNeXaRjqlICKmcZK1GQPnqhyZ/Xsti4m9MonSEM52v10OlqZtGGE+wGvSICI/tPjO+Jw/XKxhLZfxl7vYAJQNHNEZ8KmHTh8Kv7a0kegFwJiRhPgPdmkwYSYP+297OOqyZJZQxpbo7Q8x25YpLT2wYEXlyTVPTG4VZEz9wxz89XroT2T2UkYL4tNp3ykf5kehSdhFL5Euvtr8uVJwpxE14MyfBNaCVRmIK77x+oHjbft/tWFX01hP+o6wvv/ghaxxeobpC2MEz/YrLSQ==</p>
 
-            <img src="/travel_pictures/ferry_07_08_26.webp">
+            <img data-src="/travel_pictures/ferry_07_08_26.webp" alt="ferry">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlIEsMuTAxfcmJHcJe3ja/9yXCNGlPT4Dc0IcR117iWwmUrDBvLFWNDnYBBNfmohol7swDKbeg3q++xnQ3kW1qdzlZO6P9KW34u9vW+I+XwPEjo+4b/S1GrV2kwKJntE0PWKhuG77DjoYLPi2O1LX9kOINYedc7Iaa42Ki1/JnD7LhNVZCZZ2MKEBKMAexpQERywEvbLu</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZilueuYhfKdBTGkiFEWIqiZ5QGZiotUdsLgJ5/023tL/2eAEdF8UIEfPolxODkJLWDfGWq9iGpkqU1vvEwHckSFXX6rOYin0sGZJ1RwjGbc4eUzVhi9kBuHesv12KjZXT4Y2gCSnUiCCqWmgXnKEFStuWDrvu9uVv1blKTCWH2uKh6CTmLDdzMYdqTq9y6beiZkW0cPOw</p>
 
-            <img src="/travel_pictures/clouds_07_08_26.webp">
+            <img data-src="/travel_pictures/clouds_07_08_26.webp" alt="clouds">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlO0umpMabTgziThB9hDQK2VSm5bGi7jUDIjwcbuLcj9XMyGttz6eQtZcoNjCdHvwVEpmTIq10NTHJETGW+5M5DNZostV9PId4HZU9FGFG4Eu2NmtOeqZjog5SJ3P8YnnnkRCdNVOHHstTw4MscFlqTG5KAig4vtD58rV2DdIpbB5wNhyfmYrh7LydsfS</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZirPijGKSnMxiq0fTv76KQV6wT37zXNd5tBkJr/mBxyCnOWEWKpRc3h7TADbV9AYthVEv42v0NS4HE1atLQs4PYMRsrey/yQgaADBF/BLy9/d5S4OFGW4F4/lOwhcfUX92tY407kYA9g3r1VxVGxq35A5/j1TO+ssbyxMkcNzPbx2CN7lUKvF5CIktDeF</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlITNJWKXU81W8R3AUVd5l042JCy1pu9t2IfM49QjNCQVbohd8eY25X8UqEv3NfpUdru8tMt1lohIWyTTakwfI98ONUGkEdUWU0N05jF4+Wf3wKtWQtIFdVcjtyQq9o9hK/l9gfNTZ4fZ9aXLXWGtF9ahZ656CpjnFa23nCK2jQlXfVAlgpZ4hWKyGo4pGmfb7Mi/EtCqEjgj0PUojTMoZcB8STsR1zBWdB5OSOD9IX7HMYrYLhoohhhvcuM+WwV4QnFLcTSDpFqw+NvmCq9DdGRsoSmcUNVQyY2nqIDuQ1bUZEJwz9KcZPhgw3z9Ckr3vc8cU/MHdZ9PE0bzUOvE+y5EuFh9//k0jN9zbMPP2y4pOC7SupXEgYTv6YUalOBm99vmwuxRL3z+N5bGAuwTwNFiSxh8Qz0pthzC43pm4YtYMgXtz6U9vk6m3b2tQjBl8DyqC8+syeUQPqunEymF4TQavCvgxVcjJlH1QH/c6Bt8FhlrpRzwCTHagX/ABUq8IwDLAN1Xh5rMCaWgQv+XHpMnhnSB/zdKCHPjBl1AJCR9CXSDtUqY6WEcpt+TPKW6RFKJj6BOK5UvDLHjGkkRR2llE+V5UyzM5PnYWKlp36IQqNxEg8yjHWh3IUoDC2LYLBLPcNmy/h1kbBespnyxXQ26jRkBUorSl2zfNuCM7K15PcAiAjY=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiisM6sjWVzM8Texa4DP32lzkevpavaziQfkdLtEJDzDEKkzO9cTf33kzQ8wNj/Gpd9MNXWbV0j/KatWPKuQ4pcvah7GzH/qZxpdBICutLyWA+d2Iv6trER8UvpPINiwjnP4TEMeL5Dv8kuhAL510tQzEGMMDLh31tibIY1psidGdlFTYXlxgp/JgnInPPi6O0Q+Cl0QZ9B0kDV8IYOPiO6j/IMfGEFjZhSGR/A7CX6Y6IOFhhpacD7dO2dd41kgUYHuVEMxXABR/6ncVwq9Ot4Ovflc8cJcvxcCZK/KGIIanHwEYWkaI/somN/DKkQudKVAIVwd6LSOe287Hn3fEAzrJfPpw9bPguDcCVtpCsC1VCR1EoxI5gfZHKdktYnLvt6JLVhigkmo+m7mnV8CnWTWYpxXCSedmpkPmlHVI0a+vs64ObqRu1afyMl7CQDaaKSvQoq6XCPa7Q32KwKRz3B5vzMcAFkZJKP1QKUTZsXJX3F0V/yQcfrLXJGhelzC+cKrLrBQYBSPcFyK1jMBE4gFLYib2d3rucblSzrtMrSUKCtsqT6aMipbJ6S1hzSdYfN98vHR8xsb0qOIscpnN4d6owgECIavh2A1Ed8ofc+At5N4XzoopiG4LSLU+mLWUIr42P6hLMGKiQyA4eIf1STgft65Dtvg5RJvrNkHveQhN4dKgJ44=</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlFNIA11ooYLJFqTDJyDqFCYSYFz9c9sB5rAALCYPSWgTIxmzxyNn1kCiQNPmST914Zo651TZJG3FHufk7TDcnCpHn/R9uY7TWID0x1YOTO1rLMk4nP5jxehjnG+JcnJ8cqt2qnNBxWqOhD9yoZI9qthynOJufYaic+MVDw5iwk/F+8Ea2otDlDsKXteNUHlsXOEa/odRD7HVns5dCyoMAZqtLplzqeg=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZikUt21pOpnaA68GEs12/VDn4x+pXzF/fQY4lS5HleMrQER6INs87HuJORBGW9IHgg9tXgXITGQJhyGEBxDJY64gjZaeSo9j4LJ3WIa5qniT7CffMQ2QAtlFjxc7i881mrwXPfVYRpL/DgFYZqw7SuG8kSdeGY87wfCCuZ4d5QKaA1Ftu/aGjjdZmW+EXN6aqDmVSibLu2RjD62lc1M8GFUe1Gxp08U0=</p>
         </section>
 
         <section id="09_08_26">
             <h3>09.08.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlDkgggEfimvyYnqQRfbf99TmRjl9SH9e3ewsXFTxBOPpqEDoXpt2LugFYQ4lN4S3vfJjo8MNE443r3u9HYmyjy+VofavKGXLDfiKStN7AVmHMwKpj78r7ttytJHFJW34w2UMx1JQ9BUN2eec1ISi81DUALuZd3y88KZFVkFq8jM8dEi1nscgs63BWHRfKuM9Sh7Vn8N38X2LRLvBzwE24+cHBhitBc9vW94fIdx/cLUoVYfOAH4vzxB7KHnJSFhmZsfC5f1T0LGP3YshRleGHoqMifyRXiP1vRZq3/2Di4L30SnduzGFqQg1ZfHqa9tk36D9Tm3LQJw943Lr1BtExrj1gSJf1pspf/8Jth06YJfBys8/vaDEWqLJsDRLbzNVyAj9PPRBloqruuDc2KMKpC+mY1I0ObC5IYanPgCb/Um/2cKYV3Tt2wYyXeaZiPIozhzN/GNgSwehmDcRZciYMviNxxRRiKlLsKn52wq0V93L+3n1+gads+ObuTiP0JeQCsqrSWckqFYoD5IK9NFujbDtSdGWgS5wNb4rLR10x+gR9SWAI5y7EKIaDQKTNWxhUZLjVJ7J+ssdNTneDrMQUPViC6MXqOxNEinOHNcxtgjDmlJWTZnudIq7sWL/M4N1m5/r8x7+</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZin1SAD5rXmDVK5SFu4HEu1NQenDuQQ0Ru3k03pCildQx3PH53IOQFAZOFu/qPF/a+PDQpwE2K0VI/86psOfhcvveDPdj2OSQxSf9kja6lloOA7IceUsnKevAvVykYdnquAXfqWL00ogwfhGGRiR0YiJ/hK7/nczjWgKfV+9Jdya/u/pKgvbrAKHSQVZgjyCVxMfddyu75kSlxbCirR29BhmWjqyK0eX139rLmlxWJRyIgszvsLpxynt8BnKX/iFK5zV/q07pbg6wGykw9b7AyRHFdKLCtClLHI3dYjtPxtYKkTMeZ0zVEEbxV4q5ClDfRe1x62YbucSYAjf9sJgQPHFKkAMKO4dEI52OsL7CxrtfuecqbSL94yC8YmLdFxc+U/jpoxs82mkEImi5GRCkBgpNOckrXiMacJI7tb08oPtfDGnue45xy+8IY5wiaBKAsFt7amhVBupRum4jL67ltlPPs4mzE1V4cyx8hg/k5dfbsnnZq1BjtIeXWKvyd2l4QX9dQY5tgwlktg8RjLoe9TnB78L3tpQI4ngy3FCDykuCA2W4qSNsFwIzXjiUk02/88aRLqkn5Gs6sGDXZ4uHqGGaMxU27lAznFr+FOOH55lfqdd8ZtDxxGdA7l80BvLpf9QJuF5y</p>
 
-            <img src="/travel_pictures/sjobakken_09_08_26.webp">
+            <img data-src="/travel_pictures/sjobakken_09_08_26.webp" alt="Sjøbakken">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlELIA9CneUUu2XM6w7sYnupqIeOrbGus+4ywHh1QJOhf2C68grr4HdhV71KUp+8/CZuOr9t2rSPouzmaT0W6XQLaoa/91TjF/sfPfYfhsWxXo8EF97gPNxoAdP2TL+AHmuwdoUjuCY7Lz0RgGXLhItsKc/5pyMV9xAdsDFdUTt4R4v63iMKKV/Wvfsqzw7+9smpfE1CIY+x0rNI7DRsP80xOJ3h8Qqbrg11uqTSSRErxLvpVPixwzw/4Z6OWJy9+kGsgTOxzQycqc2Ph2SBLUhodb3EBNIb42lIokGpY6qvkD8IRYxZruvLQoG/02gu9rSQQPXazaKmXKz/kHKz1DVHXGPjdIhXTIYF25Nx6fiPeolH78diD33nSa4w2nO1sfJGMOBUAUiYT7WjHQWxoN5S3m5iqrKc5XYM=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZikUodz/Oky9Wp2K20wIya5Ew6Wz32Yg0kh6DHJNbfDvQzA3GtKccsaXUX3oNGrO8MqjZQWm5TwYeHvptV29Rf8jaDjJ/nz8uYwqxihC0A2aU+qKCW2aNvIck96gHG/Zlsxok9vj78NA+N9VBaCvsDYhgfyeBn/X/3xlTEvjekUclMN2E8AtYKtn6pRdmhp/6lGAwV0m7Zgzhp6zNRNWeeleUfG9nBMzz5YhnHB+5rNVFDkT0eAD++BU+iogVgawOCOn+oW7EQL2S59dio+jaL71mfDHBNM2yKvApLjId6nz/z0xpdHA+jlu494fLMd6TM3WrujWUe/n5BpWIiYhUXRBKI4eVzn/qXoURqOBRva/BHlGdYaZqpLMQPqp9fILh4pDfFVX87DyAZAXclucl0BkojmrXM7a4OFo=</p>
 
-            <img src="/travel_pictures/uni_nesna_09_08_26.webp">
+            <img data-src="/travel_pictures/uni_nesna_09_08_26.webp" alt="University in Nesna">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlKNu2qw97QqpFBJ9EXe5jwaL+EO1jxbGwYDisOYOtWwWosgPVktHqnvWf+97T5OltaUncrKGADQaJL0bbl3yzweQwvFPf/VzlSe9pacQnbX7Z9Xe3KQl9ZCKKxoW7DISjIFVrpSZ4HTx8QZW76epNPDGmDGknLqag7W4yS40t+gKWbE5SKNN0KAFKocovMYs+y46GuUtkYsQuVYrLldQQ0l11hf4+Tj8B5jF8XP3Q3wBhaNzBlhXaUxm3hcJ9OyZuaBugCVy8E5BOmDI+Q9ePQjhZdLsBrW27XlPdRnkWlbYVk6nwjV29E++O7BPQ8U+HFqZ3p66KfCOpw2bzfc=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZitdaHDkrXBzvdaeACcosl+D09LsCTEZn8e9cZ4kUxs5YNKckm7LCy8bGC/Z/+9bPvzOY6lf0n7EjOS3RDHUhQlXatpV2YvlrqRzAlCZD7lnefcFbn3nBn87MOhFVaxKNLJaREg0YheSOC32M27gFg5HbEC035JeGOKrqY/bNXalK507y9HQLOIzdKoSvcFoD17UVov0DkGfk8liUgRby3+9MroI0Xyq504TZjTK2Q8ZeWWB4IqCZw+KxxKdi1h0wgWEfdieppXMQFOz+zJTkRDY0mKwY8DHSx6qTzMbp4ttsA3zGTjh+05kt3SCJ91q26BNkWXvS7fZC4B9atDw=</p>
 
-            <img src="/travel_pictures/hubul_map_09_08_26.webp">
+            <img data-src="/travel_pictures/hubul_map_09_08_26.webp" alt="Hubul map">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlHwesId3gB5M3Pp2rJlETjtgBUlTKlKfDqcUeV5oiESjcdiDyDT24TDCAUgJeng52FW+OAaTqkyySXOvza2wu/7zc8FcyozNemaqcegnqmnm</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiovCCgn2gQM1HTg3GO2wghINE3jHjkhy5DnbgsdQRnX00fyltpKgH7vsVueLD7zzkOJ2ON6nUqFCGiVVzmIINxb/iV0XzU/Xp42jTjFAp5hm</p>
 
-            <img src="/travel_pictures/hubul_09_08_26.webp">
+            <img data-src="/travel_pictures/hubul_09_08_26.webp" alt="Hubul view">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlIYWgJdH7LjQBzqMj7rS/+Bca+T9GmTh9uhm/pcFoVZU6IXx8weuhFvu54IaOx5+dDV2mc7BLd/o6U+jscwicEOO85TqSEJDBQBSCOTi/7Cz7Z3/DJQ9JEsbYr7k9dWDCEfkoYVbBh94OHtPRicxELYifI6+</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZivLMrRDyjuZjaMQmiJCdl7VpFjzR6jRITrTE0iU6xYHZkTTLNGFz45u7uVWrrgDv/DF2Mckdr+8H2ZpYiSPX7l8GGCXeSuzXnqFoQNbLhfg2ihYafCkWnKOPdAY77EvR6uoMOcnVlcRE4lhiJSCPwCgv6Red</p>
 
-            <img src="/travel_pictures/dogs_09_08_26.webp">
+            <img data-src="/travel_pictures/dogs_09_08_26.webp" alt="dogs running">
         </section>
 
         <section id="11_08_26">
             <h3>11.08.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlMBsx2/w3WaPEWAUnc2aUvSTN+Izfj9H/VNVzRGxOwlBe9UIAg210v8VIGtoFp6ZwP4Pae7saSC9wVQYBpADthrAi1mX5bTYMdXhCk1KxMYu8aT+W/TiJm4P0Bv63HzFq/yt2YYRD3+yXURTyATcWzZgNmxWdt7T9eesJnvaicd0z9A69WgCySLqyJBga28wEHaISwnO4OpcACMp2riAan6oz8HaW7ial+X1matxPLKNAOomMT9KVeBeG4sNCKzOGHtQT3xsn0Psfq9Jst1+R2E4eXIp2PUL1Ih7HkaXfptTUpdfcLXgmhJz2e0TPElKH0VxLO5x44etfr8hqWfmYdE0sXPsIWAlkMTX7n9BcU8BdAStJWpgrexTOXRpcb+R2NRM5cDH8iN1LS3srQVO/abTEb6ywqvFFWdzBl/QUaEovEupenrf8Vig3Cfi0hRAoENbgzsFyzQtZh4ymfg1m4/oymBjJwcjeZg378nI5VqG7YqyNSp51ZaK0O93dzp8kXmajen8a98=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZioysD5hbP6o7Si18QG37bdpG2u9vJpTm/TcHIr0eyFY0t7SIyu1yZ9M+jXLuJ2gcCLNeOOS9SrqPzyigbbRUR/th/RpPP/+h0RKe1Zpi4eh9fyS71Se96kyjYHWoWbvSRjgaB0fKQ0mXbmuXAQXLPvARx0u/ojJ2nfTKjH9ej76lX7HwKNylnTqo0aMNeGntQeCxUx4xVLJpcl6VYj3SUt7EsRdGjzUGQ2KFTqYPLHXXkc1hLwkUOB8l5Q8AA0RkkjlRZniYcl6Yq8mZ68ggsSN8ib6YpPh0orpJPFrxyShK7s6mH/ozkYFmMt67MfEiG75SBmH9ctBAcrEjqG7L3HvMXwhvuTHyDGtX1ptd9x+PTccaCECP1Jn+qtVxoLUHLS4x1qaOoXDZSX7Q3JqbNipslUmISo7yuN+8RneyijrkKAYQPZNrWRC7ftWOOP5EWQ5/Y3YIDfsVKbAno47MT5sVlNPtVAQTcIg/NfRdPiDwBFQDc1g5pfutTokwVillE74CRlKrFRA=</p>
 
-            <img src="/travel_pictures/campfire_11_08_26.webp" alt="campfire">
+            <img data-src="/travel_pictures/campfire_11_08_26.webp" alt="campfire">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlDOJhdAvT77pfIGHva+ot2k5ya1PE7SkmQdbYQlIhGgxdvBX7AMO27ZgpP4A6jruw/YPV2UE8dIhMg9kRudVi+GpnuefkXfQB641VKljctL6hcOnE0tzLMU54J6MayiIwHrH+UjZOKbaEXsE3TA4SFt8myo+JnVy2b39DWi0yY+XNxRdf9oOp8eBXRxeNJlHSU1Puzk3O5/tfw4WKKvaO2BqznPMqjPl93qhm9fgPBwIO4WhUVzXW47xOC1EqDZXGBphrrP1BINo1bRio4fuTutQWChkvy13sTzRMkUqFpLRjO4pSDxQiJf62aADdE9mglsbu5wHYA/kT5BfYqzf2BZsIYo7ctSZWfI7PRc5ExQ=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZioUzqgMrWSK/OCKpxoZ9tvB7lrlPf1tRb8hqcgfoa08p+AD3qHwcXGTUKprxMAKYVk4dOFigLeAdVcWTUSN3AoqV/3wFkwehJxUsswbiZji8IHOxt9Yg6l5DCE3dRP9J8qL7UMvWISvYU2x2gKKOgmRdCMa+mlKkq3JLpWZ3eZ9ylG/xYZ9/kSsdKzCRJ9nzhVDe6hAH71EC4aGgDY42NtK1u++mHOJcvyMHe2Dz2pOpTNWbUno8psO7nZXSPmwjrq590ZqWEMx/6FUQWdbDV4sgHZ4yYXIg40LAxb4g5higqgPuuavtCoinhONSQfvDtmUnrQoGZ0dFl7tU0OV+U1XpQ0oImkABRhv9lnn67Js=</p>
 
-            <img src="/travel_pictures/waffle_11_08_26.webp" alt="waffle">
+            <img data-src="/travel_pictures/waffle_11_08_26.webp" alt="waffle">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlHQJCAWgUGChnjJxUvrdkS+0wuxXtjWwemed3+Dvqta6k3+tHnOZw+E7JQOnbggI1M7b/8Td+Osjj7YsF3kA8gBXvQJJRyJikGDBn6nMoYi5+nDK1j0b23VQ/F9f4+gn+Npqg5jyWEJdjvFHpzOam+1cCwPC+99uh8Q8YHA=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZimBsqQn4hKLcJlVFZUUmZ5SnMqpgHIAlKsok6WjTqvSV647G2WwaBtCAw3Utwah9Qq9r95oHEtWefnQconcNN/ZRLno/OhvY7YzpbDMyOHOqkNxSXKB8/kEB5sHBuBJCmrkGjjICHaExrC/V6XGkudozZa36lODd3o3y1uI=</p>
         </section>
 
         <section id="13_08_26">
             <h3>13.08.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlF3EbOswbOoQ55+gygL02XSvuIsWZIfLjOj5fiHBH++dJQf6S11s9OuP1YOVVZYTCnjQ6QJ0pH19x1A7lM5RqkYlhp0M+bzmQT9Vs7kSGYhPOlHKL6JHjEN4MWvf+8wsisXHojMyWgb4EN2ICS/4Uama5WA0IcAKfeiYp/cNpSlFXnmMu1i1SIbYiqaHngkADAY9Ef83lS2K3TmO63nojNql/85Iev4FMQii7rjgopAGyGrwBjuftDdPEzcv1jm5SlxP1EgJghWP+rEzUej6zoOKVd6yEnLVFax6I7ASW+ooaxo8U+iCZfbJk6OZFxJvpCH4HpMaRon7+RpS+eMKJGwIuhvi9Fz9RNFzrqJIs9Wey0hpqm1fTv1moczqgM7gzdnFu3BL/diPlXl19/tDYeMXm3G+acgbuJHXJnMCeKA1Fsx5b9dwOKAO3T4MPw9jqX7PiitTRpGkkhfXXaaNMZWWdF1tg/ziuh0ti8Lzki6oosjUt4thdUrGvDHWWvsOKU6t1skk6rf7EjiRLEZu2jVXXy1yP/WDSgkma1oXfAUJkW1lK3fRS57zCyVjk6Q9TJUDADa52CfI2DUsU97g2nWKPOWwf1zoNK7z2koi7pppl5vf+6iIbMvn2A5B6yZHMRZPBZdcTjGxfdQ1H7ImQn4u6ClpovyMOdYM0gyM1Dz4H7aiQL6Jw8wzJC4fw9xojD/w4ZzDTsA63pWPT3MBaAnOphG9O2WHjQFWVSGWlqtfaTMKCL1x2a79onZyiB5hEu1LawGtZsvrG18Wu2LIbdNc47rggMeSTAe7uJUahM+QexMa9r3sQDu4MCPRyQ8AY8yBXXQLNv6qtN/wIe995HoK/9msymUMQ8aukgkBD3R9Sy254A9JHMeDLR19XXdhFW4f/p6IZTVqwyF6fg==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZivt6ZsXHLX+PEcPvangFU70t1R/FEG7PaS5hBLI+TH3g33qOQJ5gvfngn+Wt+Iwn9B7XwY7ZYiAVpALpxG1dQNZVnTE4zhaVw7Ixrqh/z/rnyWmLxi7n+wG3zgL+2gkyQ9RshHHXYzN5cnEB2Sz9MN72h99EuEWSMJvSO7qHhuAin4XFdddtyPJ+M9hYbVxyfutsvRrhqavFCrKi1g/BF42p1qn9msqE3t8pCCws2v2UlPoZJrGUAE7b0Vx/NNNDWEr55arqgGtt7EDfToJxtfUQVA8uU1XwIc5z082fCqECJ4yhbisfUNVNeJ4lsRALL541I0GOkY94UPRPst0HMsAGaYZltHGDab8ieNZJqUnSGSFUL/LeI8blXGfZiGq9lNc7goHF+d4rFXUC7YApCjOlBCuM2A6a0wdGbgtaTaDvovK1c093b7tSTV9jbZwanCPzaFzTdK32FpV1bHWetfZ8mxtTPUuWDWUtJ5feZIrWCJNTgjRyn6rUFyW2xehmvLEiE9eA7chy0/cedw+rrSYbzq86q0rar9sDJn26H6K5tc31cAhoT1CeZBV6+BiLAqYjySv0QCGUbRjpaS3CWl57F3UPNWsmC59EVQqBK7VDeb7jnYu8cNMtZOhufJtxjB8hhVO431kkNf2/U0wJa7nfbvWqIF28ELFnVfD6smMGijdBp+OUtJ4wfxVdcRqsgca3rwAMu85Ibt+3im32yrjXhjXUJwXqAdJj5VD7ntAVzz+5EqRxfaoLXRWFo2AzjZOlKoNnPEuUZLWx1nJEOE9tni7oE04EGIoyV6AuLwwja8tgzW1x3qXYmoZUS5v72ZcCcVyTfou8l3xB176JOpQxzJQQcgzhKk1Ivb856jdtaRhOXPTPH1WMSYu3Cv/ktQQIUCtTQBEcdlAtlQ==</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlBS5Xat/vmmZn0R3JgulERxXoE1ZeArKbreEJZeKbWvOXDxE3jRnGrjYPxUmL0AFGY/mbvFM2+SNWBUcPvS9Ibwqjaw8Jha8Xyc+sqX8i1YT8znEgxj0CmawEyQuTC/zscDkBuwJDtbZuY6j9IX1d96W773+obpAXeS7VzmTy5gbHuVq5xWoJXdJeNz1YeWPWm2V0YCEAUiv6nvaUishyGL5u5VKd9uBOw==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiqnsCogE8zXo+YElFQAZsji/Y9ZYpceTOrWEFBiKfr8ltanAqIX6WIBSwNrtoTjJJUgwIWXcl0FH00N0ZKSexF1UvIWPex7v7l43tBf70SXNuUITL3/CC8jFOWgtoFnZ8pCDausMC4KUV6FwrMsB94XrEJLOoik534tsZ3reMUZH2tOe3W63GFr1K/4DWAB9KDMkJjHpBmQ4x8sKOGczLvHKxexndztQHA==</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlPRwBHTuVajEPCUcdZ/3dASbzAc3K+V84PUZBorl63+E3VxSfoKbLW720NZzbMXY0HfKNWKMaa8Bf/Cxm15y5JwPLhb1GBQkOyADzwF4RNK/SX+xdDaA+syrHUxuHDq3gYkfgaBsK+X+dT5layzVudAEdd5iTfO6zG7kC/r7xh6H6n2RWF3zMfEIQegfAQIMlINV</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiu7Ggkj0HUeiYB/nLpeWneV8HP1R0B+894Wxmmn3CM/Of/FDKbAwbNJlBKQaI4iVp0ZA3xAKMaGFewBJbiX3zd7Y7cqCEDNu1Ao3XymCYUkljWsSKuxWMzsboMc0X38M1sr+NoqkCrA+uay4hsMOZL5k7bpe3mWDDOUL84Yc6IYk2jPV5a/Wjg3oHr1RcWEEavfO</p>
         </section>
 
         <section id="17_08_26">
             <h3>17.08.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlK7YC+h/ohSEeZb+AvtbwM47A3e+n8u+UyDbtO5oESwWLYBVXoV0+CHBn8sfUNchcEr3M7DPZNx0fBwmO7qQPJ8517Co924iEd0EK60XvezqDuA9F8vRJvZAl7hoKCdXb6vEl504wmaMtj9dKoSjcmEsJpfwYfleqC7Ls/XRljd569JMcH9puL7n4DalM7PIUj9wMYCecCuIL1G2H5j4R2XnO+Uef4h5odKg9MDNJxuh9gfWmWkr/9+Mukc9NTHNDQC0X36IqljZnQHDzrHxBcMiox7O0GShcDXxLFYtHZwjBbn6KAUuXGBHc4N3KWDAiJIlawSIBA+h8SSno0n4TEaL1ICBvUER8YERWrpDkucU6357EWfPHhunKKcp034SQyzPhMxShNxSUCk2czYWq+eXoFn9p7XVRAq0BM2VaaIN+PwMhRrIk9kmrHK9fQJ3MlXtJKBXLhD1mJ8cA6MhhHuZEcTDBhyvW8Ffr9HDg6kDnIqkUeA91Icb1WzojM2bVlC5AhCMbEnnY887LBoq1avG+Y6ZBl6R/4DHTaHtDXL9qzMEC4B9z7c6JndXgeWwcgTLulShpZblEWf2qtcVTmhlpS75+K7x0KZjL+6j/EZCkbrBXxSCEEudGAB/rvMlTOuhD2J5SQhgMIJbwjrENY3iehdDSBsmxAmAWpfRBEtfGBq43wRh4NzOZ8xStWZys7ZCl6/4xNTCQVanpBybuS9b0igTvT/OOiw/rnhLkJOZhgMqtgrQiwkKYa22hUdG+jFF/c+OhYA=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZivdY1Qabc6GKVUJ6t7q/TZYuYFFkJPJ+jzwdR5+Mol7j21yeL4PEZpJAN1T+TedJeMQVBWXZLKIUkbz5pKca9nrN3KD+a2feZI1qim0Ycj0ZSgoWcJeTxvRlW83l6h9OvHH8gRuCZBfGbjRY+GiL2zmoVcuL+g7clGotF30XjbN+o/CJek3kve6voGTDnOwm5sFOO+Dd2Pb7KvA0cUHFBedGMQj3iyTvlCE2KeGLjkuWqFJPKLrA67Miz/W8k01ZMWmEiLsG2rRvJXDPVO94jQrmd74Xvbd6KEt45QC7yw/jWkWngeARtFqmrWI82lpkytrwtohh8CUrnPlRg4XD2XEcAFUF7YrVNk9PMyI2Na7KFif8awJusqVc+sNmsS8hAcLDlUNDO7G1qBk70ZGhj3PXhXPa4bjBvBj6+pkrX2CPRZzH9+IsRjxGYyHelxjLTpQqYm+Up2Ej0fUmteRqrSnj4IxevFmavXimNCiT9tT0dU9ptTxeRi7autlWIbKNAzLXtgwCxBhZF+NpmjXoW8HyASw2+YC7R8qFMWKumiPOzsbeKw1KD77HKrVMEi9xYO951ztZyZQBdG6S9Buhf2PER55uHVGJ1Aj6KEKS0k2BOnvGxatqgb67NCHgKYoSh7erfuSayy0rkw1DD2znr4JypbTTw75dkjjzINmiTk/W85bKF6Gb6MvTCBBxMV/1iALtzksWAU6NH5XcWCDaRx5IJxZQEChWPg9toGOwe9akWZDr0tVaVxMbtIuseg0FUA2UHgRY+zI=</p>
 
-            <img src="/travel_pictures/pizza_15_08_26.webp" alt="pizza">
+            <img data-src="/travel_pictures/pizza_15_08_26.webp" alt="pizza">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlDA8WVBjXet/jTIIUfDKeYzTI6/hZd7CNAYgAEd1fZsvhz2XdvunGmbc5EYGeell81vX2eiLvLjnAjlTvtS1Q3JRuiRMBlUH1J1gA+rY9KLwAf04MHdYxbFCp5JIa5pGuRWeQWX4e9XFV/Sjw7NXlAYbdXU2Ud4+BoT9/Wu9fA6501Kh5SX4gIoKbUL+rS54JTu4lRWwgIn2u6Z6ONmRi6Ebww+T/fq9Eur5eqhZxqwChoNqqtVFcVpJH2O64ac3VGwe/lOJufGu+iBbwwWKU05tT7hbdL2tph8ZFCyBYyKmDM/0KXGcEhWdYlJ/Te2AE8QGEjWD4r2Q3eJHOiJJSnzb2kjdIpDace+9M2asi45GDiBJuPd36wtb1d7Pb9CbFYPjDDvL4AU2Cvc8A4JR+9mClx/TKpjW5QXkQTDDHYYBJ4eSvNr3TFBiNdG1gS3R/laEUh4DSLPAUF9rBZsbX6LsC/ZZfDJhKxyZJZiqxZeCi/YFRv19/qcszOvznpQKhnTHYUg7Clr/0sRiGy6PLnwZ5hnY8TNeHwMnlZGZQjmwW5b84Otq29Ghf4M9H/0Um7PAJ/cQu1NXJWLPqG2PExqhP4nFiTtSAS/NCG9JrVslPqyyyW3Xfw==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiuRym0nr0ch35C8pngRUd0+D8wfIAzawDhvbnrZJRhr6qZkyESVUF3Osst7z9KGIzRC8p2YPwfOgL9GOsoGJA6/+Y9j6O4zp7mMwVj4vfTTeHsv67kebM9cGAxCaPn58vE2uFaH3EDiNHW59tVaSdSloR8WoC5BDSghXb+1W7ogpta98koxl4qiUuE51KKhO2HphBV1pqni89uCJ3PdQ+Exh6J8sARSG2ZwkPC+rKvoj19Mfvnb6mHr9ayGD65seWvXQC3Aphrx/HxDD5LiuZfMG5CNnRHx6so5ufzQrr0bFL7hgT9dCl60Mz57ibsay1oQyOpIeDcRKIAhrSz8c8Otmt8qPDCktZXtX5ak8fKfBsH+e8MVZWEzy+PKKH5l8XVKsC8ioWsL5QztJNm+/FnCLeBW9fBSwV5NJFmL7/8dm+AD8EnCerTxM4J97XqWk0zhzXiUsZOw5NZoBv6nPOP113H9+A/UG7Jrc5ooU1jG88Wrt+GxVGsM58+LsL6sjCkcmvc5prhBx2IfZAaOmLON9Zrtd8dHb9YI353JmfCHbxqp3onMFDP+9D8iHgXxF6nKk3gXG+6jzPDguRZMb8SiGCANQN0xPhiasekivu801ROUm1DpJ7Q==</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlKawvcSO/IUelEXNvLIKmmr+sf9Xxeysd/MfJd+z/TjeTfVSBT0/sP+Smd4WjcZm82+0vNmf3KNomi14MkCAaQ+W70Bi2lWzogLyiWpER8pA3Xwcjf9e5k6hu/N2wCf+LsUcYuzYADOkVeG0OpE3fcfaYWs8rlIU9gTOIEwDW4ddO4f8FIG6zemgNC/OFN7/rS0T34Yi/LKwHnqN6PTWY74IvtQe+uvG39Kmahq37+Ll2dYircQBBeDnUuKblrdNT+y6hKTp8/2MT+lE+NhKa7hb6EMBAK1u2mCdntI/oBKgr4ptg5UlrGG0aPpGjWcIf9dlksuYrrt9OWY+aLpUlx2E5IPOFr++fh2na99GdvnIHJQhRsiFAmSdVWcA0OI7R9ssIRDd52JlQIEYGph6L4mvJkUTTGivr/HCPPA40p7cp0RbOH9Pqpbz/I7rAiVK8tx4hlFtSKWKdj3A5bNVjhMvpxC5q3vfRTAtOchNSUZfX8HzEkyIE6SnJZM2UU7P96idkkiTfypv2P7BxU3HX1KFo18IIvDMJA4cMuCQ0Nezm780zQN0dwOFHRpWw/jm8BMpzmbB8Ulf8VnFrExv2zt7Bem26dMh0g==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZim9RWo4ForDTOPH++Q0MGPXmvSN2eB1Qk1IAprL1AkZ9AywyIMchCZhYaJ6zXWprrBQCb6L1x1w4tKjHgepfqF1zXSCeFwGrZLnasIZ40WhsPitEX1scV8A/E2gC7o3feY00nZ4bfkUuIM7C7kwW2k1nrlyrv350iuLHZOVC+xLEKwC+2ZD/Pwb5IR6wEfDJTvJ9aalgjjEYFpbb++P5j31lsBPkboqtBCH/QHeKnLGino8QIDKu3nOwYFMKWsc5APf56PGeQzxs2f6BNKy11R7JCM24sRyRGOIL90wkPgoWgM3W8ZWKDwrtwnwrwo5mYt4IGT2FNAxPBhLw225Krtzx+3oNiu8Rx3koKemwn91LgRn+jX7+PjIrVU4SplqQOJpAAHND/9eL7ZMmR+cyLhH7kS7JiZ38M+ZCXU0FuWhRQx9Cs8Sun0p1pdfGPAL8KJfFum713kV1nK7p5ofz8zIEu7Zsqfe3fK1/kRTqCkUs4pPQfruZpSSFZCz1dyahPt008cTRXpn+ssCEqMkPmcuHgMpS7bAlwRFBwpF+JU7odGgFgyxn1DDL93kJcU6LcSI9bgukDN42ZYgjd71aMa8kz2jwvcxLBQ==</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlNex1YjBy9ytpCFb089G/+NGrbdsVijjBBWjaoXGgz8zahjF88qk43B9I7koln420mvCCGSaNulm+3SHhsV6LKSOQTuMHg7v8gWxuOTVRl+3RiS9hyBbUMB0nDHITr2b9k3D0Abxig8B0T2PCFkb3WeJMHFTnBCxSeLcYN/3hz6Bwf8nRZcmOSDscXUnuOE7bu6cfnotjcEK9OJ7ZVEhOmkdYfEvjqlOzRBMkxQJri/1Z2smtMKXzRdr2tj5ptVdwJErrmak5k6kM1TwWPZ3z7uru94Drd9fXkongpEHErTbuKfNtl7mbu13JSxVt2NzbyEcgfLlPTf456rKj8R07B3+frjLQf9Pnm3sNSCHtTrMGgzRNegCBcgDJiEy3rEJE9UKj4UyoTrLXxwKEsWoHl9dOOqoQPBwdv8ko72CqQMJPuMoHRyszAh6S6DDLwPLn1r4As1tGdBFW5AFYBxpow70Ba3ntD35qY+n4WijECiLbmY0enN2Vg62PcYDzNfnLW0tnBLWSvImtuQvnMO1IVbLpqOz3IQ9XMnWNhREU8b1peWLFbhWNcC9QdThNpTaiaLxr9N7GdXt0AuCVaI7BjlB/TwtHGPGoxgMRyxZc4Xv8AvM47hr5Q/zGhipHUn+LQR3N7yNHQ==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiqwfgY3E7kAxzLMVhtG/Q849nRO247bO2/LqWkPdLdAuOO0987jbyqaouhse1x3TF8hvBDfRCP+BcmEhkbzuvSdZO1L5iutz6AvaZWVsKW/h5tFlfceHWyk5Z4BA2OxdkDGPjLRZqrNnRxU6jjz/1ML8tsDFwlSNBI1mmuPhJLEk2mT8U3lPC3am2VVlXdeGDPaki76pAsETwIlqA0cMF/T6HBDgMZAK027+/cAyhe4ZFNhJjLm51CykgIqNQ5qzEYMZVEEJSqZ5+WFhiyncPx6vHRMw13L4WExlzYkpdFXiYhHqsnxS78Q4GcvpIK+z8l5ViwWW/xcCiiqKYp+usN0b082+aTlNxYZgzdz8jZkuRafMqfm1xbspFbJAQzymbfugv++4jwj6pNHfkMUlsRb0VPCsF93kNdyIEANCDc/AA/jP5KyHASyIWY3REs7u1ysQ5j3SOwIK5XwUfQ7Qf+TbbVNWF5abh45S247DlU0b+rlfyMClLYY5fxqKk0fytvBGjSGoXSwBVxvmgzLBzNUSoe89BwlBurW75ft+o5aUdRQEqwHv9/qAFOiwGF+kREmjDN5C5lZC1129h4sz5g0dE6OhhVlOnfvsAl1px8vGEisTpGZLEoowJ5rOVi7rqkWVSE8Zxw==</p>
 
-            <img src="/travel_pictures/einbeere_15_08_26.jpeg" alt="einbeere">
+            <img data-src="/travel_pictures/einbeere_15_08_26.jpeg" alt="einbeere">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlBnn1exgW1zAXfpUbCTY1guiNCxw0/v5DhItWDzAKvfHFjzSZUM4Tv07ZyBg9tJRQ9vXh/LuL70eaABLmUrcjDrIj0ooAcPyrlXOmig=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZivLHt19CXVfrEe9S1/3XAOEuuDEyOcbsvf8+Yk4e3LeOt1hIgwLHQob+lyafDmcVyRzo1oPg5Osk2ci8sRpghqaT+n3JUInhRdr7coo=</p>
 
-            <img src="/travel_pictures/kanelbullar_17_08_26.webp" alt="kanelsnurror">
+            <img data-src="/travel_pictures/kanelbullar_17_08_26.webp" alt="kanelsnurror">
         </section>
 
         <section id="19_08_26">
             <h3>19.08.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlGtwZT0O22pl3biD1Ic5bKQnD4YLLSEqvt8fLzIjL35HNG18Qtg9wgAGd7sOXrH44lSOdv4r+igv+AAyAEjiD1gb59XwUvJCbRxIFgONwm18HlhqTstO2kMYKN816ePtc1NF2IRkVfNJzIQWDChkW9T/FarOzBdq6gnnO6aRP6r18DcxhtLujXnhBuWHd97NR80vyOJzu9pAE3rZNVN/cfKV8ZYTBX8Qi25sE/D23R+q5z8Fb54vHwUAr9Y8kcKOIGNAzDphoOdRqDlDGc4eim9d67m7+76jzq1BYVv3/HxfF22/7eRFW6RBYHtYG5gCD7ld6H1eyfQahzvXbAbYLhP3AjpkGs3rcV2HlU4Vv8qEzZPu/YwxxgDHuY1F6oJBcqEDkB+FJvU8b4ADLoKGoXzGqnTk0Cjdp2MnLjKoaCSBjGuPmhGHjZimFOOZ2mfMUQ==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZijhIZKtk/lHxBagkcDE9OH8RrKBcIG3QqhuIPZic2SQzHoiJZGtliM+3bSzDe/Czb5KYAc7eR3ocjjAsutJPyOa4c8BVTuAQLfjc4Hpy4YWj5m32LS3Auc+9kh29k00rcZTCpxWovLVtmoFORlyiksknueOZ+lU4ADrUIEGTaZcEjyw5isBGd4HkV/PQvDW4tnwguK3AFC9OaKAXw2YKXWyv0OWW292t8c1CDY/DZWtXZ8WHtbutQC6/eodhEO2Uk1SAYnOeGdQRCqnHcWMCe7BQJ9UYi9LJb4LUMhGmYAXOwmh3+DqG+5NfCluP6ztRr5M/Dcky8xuYbR3CpL49VfTdSvseb3tTyT9UI5TJQia/tLfKUujuPv9x5pn5D2l/KBk/ztDvVCDL5jvzH6hKA9kx4GA8N8uqhIzpiQJiwu55S5nkFoInfR7En5p93aowMw==</p>
 
-            <img src="/travel_pictures/hamaroytinden_map_14_08_26.jpeg" alt="hamaroytinden map">
+            <img data-src="/travel_pictures/hamaroytinden_map_14_08_26.jpeg" alt="hamaroytinden map">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlFg9r49kT0ZUO/f9gAx5rW2Eg5AT/aRsXkRmrkWP37KRhqxvfQNIFktTt+aaqvrcswf3Um7ijvOe8jatVb1qWkYFkQNUk4/kljO2hZSXCl/ciUheDKLuxZHFR0uwIIeRiwEWXKzUyyor38Z/D93o2f6lWbU1F7gL3fXTu/SeQPT7s6iEcBOQvfnIIKDkRWgavCZFIdup4v1y2u9jrji6EuP2j2jzTkh9O57prIRz4M7dI5nbyYB6L0LB4CCWePnY+uuAp4RlULHCwNvfIxB8Rc2GIbPBnqRSz5iG6EIW71nibi+AY4TB9sfMWjlsHs2ZyPftlBLbU3YVL2FhhbR5mF2JWW7AnPAFZ/q2/+uxupau4cr1nnRLQNuVKus+</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiuCKSeA3mZg629Y/aA1FKzUiNJbr3NJbnZmhskBnlB5XO6njIyXVYJSJQj4cEDazRIJI2bfkNOKoE1n1BI6q2yM1R1VDG0m1XZmtbcU+ltpkzKVscQHX0EGVPqY2BQdpsToWMb6SP6qDD+UdNP9BZYCjTilbry5wiQmcZOi0JIn7eZ0gENtHiPCntbrBQEd2r0KZeuQk7mhOcBGBK4mwgp5XlHLZsryMHTdRFutbMh8J64tY9HAwWVcomQHTycgPrr2jMqeIFenKivkqrgH/cJJjiZApNGYGblHrgp7/+DprOXglkog4Ch0ZvGBTgVLiqCUdbKx/ub5Yhvq6kWSR55sRN4U6KIo/2j1Ku1S3a6DEw65WtK5oAWhOr+NT</p>
 
-            <img src="/travel_pictures/hamaroytinden_from_sea_18_08_26.webp" alt="hamaroytinden from sea">
+            <img data-src="/travel_pictures/hamaroytinden_from_sea_18_08_26.webp" alt="hamaroytinden from sea">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlBZiXp47bcRsNjxBvl1Q7pptYAvJ3Wz4OP8ryC4HUgiy2Iqb2d8P+U9n/Y1VtekRPoNgE02s+Qs7H2LTwf6BDpxxIaWzppDpnxKaqvkvXsObc0H0OBA7Nj2yap6P9prB29/jMsNG73DW08h1q8D22djLL7qVjAzT83XeQyV49g+wfApe7v9529RkIs98b6/pVdI=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZioWZtA/BqxdUou3jFE7+uT3bfR827QyE8L6pVjpIJ6NK9tzaPwzsZDQ0yFYu9W0DFnh+7XypOWQjqSz95p/hR/t8JB39CYAqvbcZATnWPD9umIjsria08xLa1iP+S7Y5r8AOqRNlyCLDDmbV3nrHQfX/HdVkuXUdzR/stkddmWTvtsGsJjk2DObh2spH0+uDcus=</p>
 
-            <img src="/travel_pictures/hamaroytinden_track_18_08_26.webp" alt="hamaroytinden trail">
+            <img data-src="/travel_pictures/hamaroytinden_track_18_08_26.webp" alt="hamaroytinden trail">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlHR/tTw16frniFD2puXx0Ecg/XdvXwZ1NFkoSx6hIQdHFQhW1AGxCDLlVHDujzIszIFTr+6cY0XM8EgpOKmJHa0r2IubundFUH1faemfe60RUeOM19E+PSXe5qvU/OGKAds0pjiBIbU9lN8=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZil4jEksuD7AEcEGMWLGoO29OiosalA544KAtFPiq5l70zATPSa+mh34HKzwL19wLvEoaK/w8YS12+xec17vMiq9Q8ysopRtAogaiUEWFhODCZ/S3twmkudNhQohk+0EdrwHb0aAnTmmYKNA=</p>
 
-            <img src="/travel_pictures/hamaroytinden_summit_18_08_26.jpeg" alt="hamaroytinden summit">
+            <img data-src="/travel_pictures/hamaroytinden_summit_18_08_26.jpeg" alt="hamaroytinden summit">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlNhfJTfdh0L+pRg5Yw35px45/ABh9Moru+J4aQf++zOoGas9JKQvJeve0w/71iBJjRVtX7oVqWubFeySuMdt7tRTLDDyWOWbPhEthfG8GInnSro6EQYITM9jYzOt4WUk1BIQWcuWIj1bSe9QKA+Ot4U=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZitp02i8/cZhz7cvEJz63o6oyLygzWDnkwJS5tFiLiI8Cpyk7hRCbESLBXYsv922hrrCXwiF6dnOlBmlv2NuDvuH9Z0bLagxHVpdNQSubf+sC128EEAH/o0yuj95cHcNF1fwNz1f7AVTA7wN1zxzYP6w=</p>
 
-            <img src="/travel_pictures/hamaroytinden_view_18_08_26.webp" alt="hamaroytinden view">
+            <img data-src="/travel_pictures/hamaroytinden_view_18_08_26.webp" alt="hamaroytinden view">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlM9fc9L897Txyy+Djh4xTGgURYVw0B49+gzIG36lmFsa6kvK/zdeIjLqY3KYIiUAk3XhP4wUa2s8WgJir3qSQtIYt9lWp0LkdSGjpIMxi3lltQMW/EKZcrhM5v6LdTZgWufkdU+rCWU+qWf6V5pgFw2PfLtK3rZMKJWM6tTcstQt+EMGAfn9yUFzLnv3ivFEpQIEVBF/868rAfWIoeTYJgQyV4WEls0Ow7Jy+YfWGZawLWU8opxK4j8gH53gDND/WHjJguhY1npgDVCh/imxc0KwtF51pRaVlAT4j/sM7ZJzVx/2ZY5yHIKgv8H3APjyBODiPhp88TwKb4Mnuahk2O5MJmIg3+SBpVTTEaUvDTC2R7iJ3oYTnDHR4+z6GCt/NK0=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiulte8Qb2MT25DgXDn/mO5nuh3qE6uA81/h+nCLaFiSZsaeU/QhRAFTKwmHqBPdwjkV0fID5izD6VpfN0CiUjmpCZEPlNyNZEIUqb53jFy1SRs2VJjWNR0+AnQLJzwLUcigt2uH4+lZGjdrKHmzYJJcGckwSIhkMOQb8NbeEhgrlzm87//d5S9OCVHgIl1LWt6DqrIGU3/rlbT9k4JRHEygNFq1W1bfekpcqmlk8OTxhY8/B9MAvtlghS/VhqIZY+nOv5laOyw67+tS2L2O2uKjZCoUCk3GEfgFwJnRrEiJI7m213LXGdRMY+UOFVbnS5mqawQAL7qQAqBV+5CzI/1ERERKMKnxwDao6+JhIiz5KbumT9oh3HTvnHhmPdrYiURs=</p>
         </section>
 
         <section id="20_08_26">
             <h3>20.08.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlCGDJ/f51Bx3KPrI6QLrwQt4ag9KtRYAk/YVBOm+gka3M+0CPhj0mIpchW2By4+v4NLU2esQPy2fnQszqX2jQgZy5oDQwAC8h3ZdhQHBjxj3lbB1M/R6JdChFRmZjPIS5uPhr0FSSV9MB7Igs5G095UCgKgGsHoNXBqstr8ajixq6yfrvH1G3yuXynosr8LuHBm2xLpxKjEnhud5FyarsKjWg3lr/uD/CWDyXRnAqsuyeAGDYVKvl2GcBk6P2s00vazHXKmDycgA6PR2Lx2N0QD0OmxdNcVypS2URV/l7yHleZSgdrA10XnewGmEQGbOpYF2ZsSXlvF42wX1HEa+NKawwQLyfkzHPLXZrXa/aARh4PGiPbY3bI196mCJEoX1soipEtWM0yakO6gI1e0Pfrdrugn6/9zfmaSY7Rwyj6meFWXFx34bNB5RQMjwmUKjzvFauxL/Gsvz8ue4wEukhbCfPtW+lGsuDlMYvv0dkYqhYTu7iUEe3itRU2eN4IjWEor/bLcUgnk6JWfpAzBSYSxvMpCET6oNk3VrkccGEAkwc0unO1p8Cil7L+DTNICZmNTPdYpLfXumrugNJoWlAouSiBI00GrIzKfjbS6iLUpEqaMOZ7rLM5d4V616l9BJ3bQeUH6zAnEvsNgeOUaxyjfeWUXbfPoj/qZg4YNYPhSqw9v1+Zkzxj2pgnRMimmJ+IgyZrmi8u9k+VRkmB0moF6wEBuz5PKh81L/WmhXwJH7s9JBamTuGbQFE+eYPqmRJbi4w1KGtCE8W3Jt5ItIaFvirsDFGVcO7ruVAy/0nxbLzOO3whKOzFvb7Lrxw0bqa2seUYa44Mp+Gqw2eLj5TSHC0y1+fir8g+dSglDLamFt</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZilX+elbGmwzZUP5MWvfrszpoA4its24MDAXupCnb7Re6R7eTYmV26JT5h2lN7tdFfbY2lP0cpx7V7FPNCEXXk3WecL/Q0DSUcX2sSnar3J07PutsEKcIiX9a6apG9yuTcxIXMX4RppjRw4vFBPFmofcGty94Z//6wKT0XNuubSvwtHVc3LqQmXHSeFmPbvAE6KW9WAasKPRAEml4c4qBeqRag3qmd7zLUarcpC+iBr4IUVrTZWdzpuxPmNI9teVOiwYqAN7C+68ZEvVnWRIESS3I88e8dbZ4W4J/PxIthgvJEksly5U0ggSIayNnuUhjRytPhLjqmwVYmhoQIFU1l0lW1iBB85VtpW8PEa1DYThHOAu4FWhQ0oBWk/EEFIqR7BISQmtcXEvsU2e5gH8HdjKcK9mIdl05uy9WzE4vyKUn/tGBsxGACcXRC6fHVdB3XhaWc3C7XIT3rhedO5zzzdfWoSby5iVvBuHusGjybLHf+Hl43vvEtIQbHQ8tgruIjl7zsYnKruZyaP9rRPwR1vYWS7utUPfJdw0MU4KIFFddWLnlS2sg+4wDh0LHEGDBKBuPSyYthovF2GgqmZxw+ax8hrmvJnbG4O2vy2U4sIc10iDNmEpSIWg+UEh+QCt2O+bK/fK9rezCCpLfHe5yjbMsibyZEZovp9wAM56d1HCFzpFBwkB2h1nlgNhUFSb5Z2jwTQ6llWx4R59XBLD1yKsZB13iocJSEsDwtAOcGQYBulBtQaJnIkDAyYr8/hnznnOvXb/pfSZasOS4c06evMdqFbHR5YlRO5iET6Nw9xX2GniNDDApoDs2gLG1dDl8pHq0IGRheXAyLIaDrCaJdfAf+Om4I8w8e33e+85RQj/7</p>
 
-            <img src="/travel_pictures/loppis_coffee_20_08_26.jpeg" alt="loppis coffee">
+            <img data-src="/travel_pictures/loppis_coffee_20_08_26.jpeg" alt="loppis coffee">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlMIcROuEtYcfvUb+dOpQFcQwX2CCONZwMncz1EdVXF8Kn79osnLyO/JIfwcnmpr2DkCvlVSqo2qognD8cb5wHz25ZUxzJ88UmZr8+g4Bp1OXRQJF3N8g8HyO4fN9wjoGip9HMln7SWmZsSf5CbWMwiEadwWpQHe09vf8B25wdscpRBZCsdcuMrU6H3VmG+WcoY8=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZii8aHVnrWq6vko8GDkb6yLN1+VlFakXjHSfViA9Vf75K2X+aVueESzL83V2GHL0CKaP78iSlGCkPR8K48OktKtEgBrvxm766yqqqZ9tpGytGvpaarBRBrYCJCph4+OdaVHAH02Grgf/+fCNX+wVeja2BqUuYlb4TX6XvghbnAkpwBNLT4YYrhLqtRcsbYCZC7Ww=</p>
 
-            <img src="/travel_pictures/cake_20_08_26.jpeg" alt="big piece of cake">
+            <img data-src="/travel_pictures/cake_20_08_26.jpeg" alt="big piece of cake">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlMB0aF8zg7+sQrnmqyo3XVackOgaoTZE2edr0wBDfByH8N7geUIQx3CKq2/Dp8RPhuxzGbOKR8QKvf29rq22C9Dp5rS4G8no8OQjuaOkiudkmsB7CWvhE2k6gWZ/QGrV14iww/esCwXZJnDImmwzF07P5D0lP1J0hSpCeet3D8uaU9qaKJbV4esitTaPv4kaX5AE0lLxrarseNQVhpurE+Qd8w/Xc6Sm5mXkHwzuFBqNFAN26zcAc33VHObE6HB7EjhudfZ5D3LrKKOacjE89emCZZdlzc1fZQS59HBaFPcaFCI2kNjOcG3YYdl7oZz0A0meitDvhqAQiHZJAcc6UjLiyfX2RR9YnLZk37OCOJkv6lSA2RcRiGXwwkfrmy/3ljsUTR4JDnl3ZDKMu4MZwaH4FaPNxU8+b0mGRHiZAw7ggfhbzsnBO8AYqHptlIHZOYD01PIyCKmqB2nYUoPOjU+nyt4AFGxkrmkWkONMQCNVSojzxiRuIGDgaTYqqfpjo95kuKBA3v91P91vTXXa1er00y1LJJgprsWJAmOhCEIqE8FP2P6FUw==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZikBzF8tuzp/iR0RONin2XyBVxglBJxpzPzjlEQhuAimfvMHaZpWrD2Q2KYxSbwpEwRpK/+T9iUWHcF1o0bgG69u8cN1KJi9vG/NpNvTtsY/GShHFWQEnyLSZ/sAx37OcE97uvixbOs2eI7xu/OYL0il3HLwuaKUfbhU5dXSTwwnRue0Vu1zOJmsZYqhaiiwvT0JtD6v5KSkiqC+SerT7tWtyVZyzuVRu4virutDmrIneS67vLsuews50+9lN7CMAG1POT3pN210UsCujGnPrGSVpsA5lEyivLmRQP+EtKs61zS/uxTUJsjsUM/9s7Zxee593mHVJWqkYC/5l7tIVYezoFauQNWzWgs+MgbOVSe9cUA37JDT2NXZfGzC8yg01cedblmBkLPSM198jEX3HM+xtkBZDGfCX/+iWsSwkY7Sg3UBLr5fTuJm7NQ0kx2Vt/vDCb3vzgj/Nw3UvXBxfEn4biMvFgYm+RWyKgst/grB8iAusgHNDNZI76xUkLHTEVjnPDbTBX0VzKk7lFdj3t1z8aQyl4c5Ivyrt+ganpMfaLMgYLseH6g==</p>
         </section>
 
         <section id="23_08_26">
             <h3>23.08.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlMqhcUqisJdpbAaQjCsI/A4nVf2BuRtNXZ5UjLAIXYgBST+1mk1bS4OoVgCWvdvRn2Ug9s8XazQ26Pr9c+Hu1h4B5icWt3RQ1hPpjVFymOU17+UX6lV6s//gjFwSvwSECfYQPSJGplqcKUGPL9D/6jmJPhn+iLhxtHBe1PrOCNToqn7JoYaZpU4HiAA/J+dzqIFTv9ZUnp7m6IJR1fOjcdjaQ+k06f4z2p889cf9rN31dHMFrE/w0Ye3Dko7wB56dIOFr0sGsLUh1qQOoxlIInqcD7MfVJqMDNT6KzdzXxt1MPnBPpxdt9JmpL0qn+ra1xPn6fUTq1cIt3uJIRcE2bnLEI14FwDlvyg6QYZ+7ZnVkBIupTb2+xfCRyXfRj82jHWh5w61Q8H24UwN6c1x3Namw/Q6Smydmyo4ThLB13edDIPnYxRdZgGe1NDY1FuYdq4sDUrB8O8n8nzIiIzMn3u0OzA+3KgmrYHD</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZijffeyge0xfyY9ej1rRbmcmMCwMcBlHKPTY/tWCcPxQd8+A9vUGYE6LUi+DnovC9TFMias29A2QGdZUPpfA6a73VLqgtF37eslys4cjFLo8ADcNuswJ5eLxXtJb3iaetnQz96PEs09Ja8MpDwItpUxoZVWFTBRFv2PwTzvDmohAdSlG5m1KbLqUnd5ULvUHLFnNb9Tjv936MVbxIZ53oTJ9/nBYkHxlxOljMjoMOyPvCtukduNvWegTD2kgxNUaqPay8twPlmWfadsjcJ8j+n93LiSWMZ2a8hNay4FGPvgj2rTz8Q9zi5ATFj5X+HLe7ANxrIly0m5mIfvUtetPguU3OsyqW1K/y/fSrjNXr2UNiWGXr1Te8GeinDrrOLnTrS0aOTICQOcWTmF6ZAnXCjuTqSAvCNTqXs7OZTMDN5Fs4cPpNnBUfpF2Ena8tNI9BUOCB0gF25leJn9b26OJfjtepaJiYFjxJz/KP</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlHtZrsgbHGoXKdXS6KGO5V+AaBQR3PYbH7TfAZQf9pBTfK3WDUv2rysr6KXgTdzzdmxukt+rUFPaj10Rz8dP+PgVCjjHNmkV4+/4D/cXj8snOAQ9j3rCHosTGzKoyPzbyN1ScvKNCBMTmmzAwnYF2pVhEGw7pMZZvk/j0cXQ/fpHdcvqPpqHS4DyrDcdumaS0vEDoC6S4MgkIXi9pdFoVnRilKe/lrjY2Ujw2wRjkXmsj/yehEPU1E2UTTvdh6LzsWNpqK/kjVIpxrmJWMe0JVk3LfZ7AUVbgzxFk+C2/naFnbd/XP9Yq+xex/F+A0BumCTXE+cHkui7D06pM+rNUVrggunWrMYaDZTEPV77jC5ywKX66XhIAdXIHkTc79RZLYNDK6vYSRDZOR1EyeNJJC3wiED17qj+iOzFqoEsch9qZQk4Gfr9HWzOK7XZgddfapbJd9XltivJuwSn2QNbtQSC/9hcEd7TpA8/QWINHVU5jZgqmHs62dFVCNlQPmpaSLCXeOlFUwvok0+sqcgwwo2wA71vcN0o1QjVCNAWhLmHEu1g/YQDxTQmo0mloJDEB/FB9aJd4RJ5Eh2O2yMQ01Zbte5KMXEFJACKkenRLHDJmLfF53R/+1tHXi4Uk/Qbyzx3RSVb6kO1Rl24cq4ii9PkoUM//Gj5UDVVYoNXC03YiBviZ3CXDZvkRMN62FrpM81df9BY/dcspN4bZU7E9Zo9nnuUzYd3MrTxO3wy</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiqKXrKLzOkZtNoHdpz+7F2H9RiYZ1W26TRlcadRbkWO+W7UWvhx4f2Q3Rv162OUNeZE/oP+qsEqMsXBmei7owL+HsF+Q7mYpmwZFu7S3DqJsUB89sxKZd3EiIia/q64SkF7U4MaN5VTGFHohrinEmH+GgPr0LDK7GFf/Ll4UhuisPDqsd9ouUiXKrSJ6nQ14IfnTELvPGGyZMQKsTlKUyiXqiFaLUbXsucgYg1n91rEXLKrFFrH9XR8GAg+ElNf0XmTwl+AEscFOfie1GjxmirOqLipyUcSt3y6REnqCDXdoLdbua+a03r9qtFqC4C3a5elPUIrU+CIJYtnE1w3hbBMXxjcsdzkjjOyO42kVxmq0CzhYF3NzcPufw7Jb0xyzQQLLEhugxiqEN4hBlOS1andLw8ju82D70H2tzmW7lhDl1q1yDkgqZI4CzNcOBCrO1dQFb6GfTmwfii9TLBnwXyc8d4cHEOeTrKkCZXX/eNIyZNLDsgV+/gdDY5RNLdZPle0dORQU3hGBd7J+wiMsxdt0NhT8JrCx81o/vPvKxgh3GIMMXr09aHi/AQkCa+3qzJ2rR8iHVZ2BMbL3e1TUwGVFlMLNlmPWo+emg2kyErtIXLWFfq0LGp6tqOEBbjrmSQp8y4xNtCXLg/5u81EBdh1wt2lKm56ogCijTOKuDTjIH8Wezw50tKPD1u8QlRT/ccb/Bk3bbMTK3qwuIdYlwbaz6nRadG3G0QdDlXvZ</p>
 
-            <img src="/travel_pictures/moose_map_22_08_23.jpg" alt="moose map">
+            <img data-src="/travel_pictures/moose_map_22_08_23.jpg" alt="moose map">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlP5kIRw0ouR/LBeJNitm2Yv6/tkbATNI92SAwlicdXwDbovHQCRXluSWC7VvNEUduw2YpMJxVTTFY1AltCSZHh06pe6MM5gy+4IuI2I1gnQg9w8PF6Tl0qBdxtBHpffIJetNCtPBv+3cjHzPTprdRi5E1VMIQB3kmXJoyXhT3M5RGVc/EGmgTcLRlmoOOkxWL12LuEeKd/u5uBw6y9/mnE1HuOP+cGBmh+aMG3EqoDSmDeWeyDu69D3zQAls8+E7kV1VHDxQ45Ik+/Ap1I0rnOcHpObeG8LMtjrpgowUAT8/0tNmG+b+4HLBPVCQPyrzIZGiU4w0P+AtBg+iIDA3MTUoao+hMLGLglbz7Y+GIfXwUpxYDDRpy9m8I+QmywoB7R+wKWtEGyBAZgrGtem9dWDkH7JowHV6i5lDRIS7ZfuS1b6r/QDKwXwSqmzGPZkmeSdh1BBy3AG9mwUhwIdgNwci4FLb40/hBtNJm5bFuIKwUxW6Xw==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZil/0iMNjDt3eV3ZXPifv9tky99Gbpb58t/v5w/AY7ggpujmul8LNb6LU9hHkzQpWFLNBrHd8y9ogvWAYSONsID23UyJidQ/pRaNv+YnwKv+Ao7X5t3TLNKlPNN5tqpfd53NwaRfM16Gg5yzVqe1wjCOZRSGf/7C61bFgCSF6H5eSPBdkRqY7lL5DQUMUPuPRMpV2MJpQ5Fq1VrqR0WgBBlI+ZCwnWSXcvXxgE7tel6XIKjoHHgrkIUL8WzdQTZAtvaW18PxDWtwuUdYwt80suOsrh+VGZPqBI2YrFeH5SimCal5ICfQZXCICxsw/qETdBv6YxGuEpTDB1t2X7/4slDpyw8Cy1CX1azfrtJIMCXe+rp+GqCgvqY2WKQYhM9GjEVIwscvE/32OXKe3xkCDyR7ygvVNBvQs0EScszxroPruJpGBStCGz7oDtq2QbB0HJb96XVt/Eu7+f1taIHjhu42KnTn0F35W9aMYnO35DHpE0fPI3Q==</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlK0gvkWUXD0mtQkMGajvIMss3rirbb/1vt3pNzwYvqC5tIuTGEkmiZKfzLKcAezxUQqbuIY+WBFbDyfovqpKo8SaYSwODuyDP66Z8iBz4D+dm754sjKhDY9ptbvgcaR0O0e+hw5GOtVyEtpfD9U6DidSuuSg8VYpKAjXbU5X91u2jhMWu6KgJBHwVmP6PYxw7bVKzdBCK62RgXzScx6UMhFTXT5Axf4sU65jVid73qosrgCvLDDIXemzMItRuUODE30=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZigj5sBZmrLqVR9ShWz+aczWeKXNLp/rOFxQMwsECVSzfbUjH18rDYZDqwN4gNrJjf83DgW9i/1V0pG+ECiy8faWlQUwnvsJHyKfYypxAMo20lTTNpVZkvOqt5z4yRgz90EZmo2EeMqE8P+naCbpHZOZMH9gHNuVe570BwjiAUeUw0+dHvdwo1aULO9cKkoWFOlgyhLsnrOCx9whCt6jNxw7pWjAFdWvmPdZigEvVgwgWcQrEujrWmY3u5x9U2HGnv9I=</p>
 
-            <img src="/travel_pictures/moose2_22_08_26.webp" alt="Moose">
+            <img data-src="/travel_pictures/moose2_22_08_26.webp" alt="Moose">
             
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlOmt9tgWfXAoIwIsGqSWRH1rSVg3PIKbT1C7n5hzlDnM1y1fBS5H27CLNSIOqiS2hVuQPXRhgd0IdIDy/25E7t+Kpu141k0e9Ay8VlSGyr/wJSxCoB62AdVPr/hCJCxEkvatVFgq/8cOvRthaxfeLIQf3KCxiHEZh9/+zH+t+VOn0wkSQ7VOkSK3cCN9OtUD6aN8VbPnnBmf63eMRHK2oNDlwkd/dqId3QK1SaIdO990reIbr5Vvd+P5uPFl8EVLy+k/BaBomiaM4Ulg1+ow4bWL6R5Fgmfeb5nZMkJjq2irUnuSKA==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZit4t4C9RgBejA+T+qJ6CvB5ldISbm3xPhNCJe5Mh77vk6tl3mohB0Dlg440xnCB+W/elCyOL46qICB5hv0bs9PLTDsYFunn2P7mENfyo7Fa+4o+Dh6wMskvDK24BnyJnV7UXDgkmeswkzfmukMrppXTibsDjZcEo2iPyZtag61LxG2JcRDzOsce24AAmNy8lThzLSCa3MAx6ahxs4UkTQkceXco/hbCjzKvHLD116jc0JEnqNw2b9gmHMKBAp3z3ohdlBpaYv0ehOE7j2LUos9lr22ARCEjsggZBe0WQDg5JFFZKcw==</p>
 
-            <img src="/travel_pictures/single_moose_22_08_26.webp" alt="another moose">
+            <img data-src="/travel_pictures/single_moose_22_08_26.webp" alt="another moose">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlJE/DXGWk4wyxwc3ARDXNo1tOGClACo/wfmhZIBuJKSaYTPxqJwBFl9Bjn+3go9Wqh6yBkeIGVBHoZxE2H4mQQYrWtps658ALc8vFRqOPfqCB0I32MUpTXzfrBw2ifyJrvZ9Qb47rIs/6DHkrwQiTIOQOgiut+aonHrROOzZxhmpoKxG9K0gvEH9yBB3CFIjvFZjuLCkw0uP</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiu07+yYm/ANQSU7OCIBf8HUVwTJ3zycmNO+CBejhDcVCcvXQWffFlfblzIR/vCWv9hzqvvY8qxEad5IC5pcbrUycpStPks1C5noeXpnd3cRH1rwlvg/FZwtFjwhrP94V10jc02nsi6NWwMDqC1Y1zIpvrcOozccvv+Q0V2vehRjdBdJF9QtBEiqCjxxx/VML7gpzPbCXEbJg</p>
                 
-            <img src="/travel_pictures/journey_to_mo_23_08_26.jpeg" alt="route to mo">
+            <img data-src="/travel_pictures/journey_to_mo_23_08_26.jpeg" alt="route to mo">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlMPV/7i0GU34lcNn7vslzjdXaBMozgrPfKkKRYDW/HDdl8RH+XXsTq8DQml12EL5t/vg+g372WHCfHRGOBI6xUZD9TMAgHIuYREaRmftahwHlrm6mc9MR4ds9kF9cjB9Y5wvXA2tKBMNB/XrQJmnlI+WGc4k1ueT8NkAk4gHYfGKDFNMNzb10qtpIu5Ja2NTu0lR1Ux8eqV+kHSVVXxA+GABL3ExutajHmoUCCCgU0BVnq3TBqMnLoWqUJqnoodGI2Vjqr5dIgyN7TAQ/+D5cutGQy6OEDvGCi/qxSaDxI2IhQxcdcGEwFu12w9V8pEhaoYC8ToneJcjA9S9Tqr7LZEIUtpA7ViZKjXr2dYk3NDEO8xdNHt2OCCkSdAIX5nciKNioWzdire0RQ==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZigPIdha7/SeCRreaqZq+1J8OMuBEVWrlfPx513xwJpYBNJlMgv/p7ONk8ablIZl3JkG3EjvNQqTPbrt5vvQv/wi88HVwm2hsax0KgQettn6t7IjPHoC4TwDvdXIC3HOK6KacFGwGt5IZkx+dhFHkPaOalbrQEE+OgTnyiA7FXjwLEOrDnzhIybJef4vO+VJOYwW8niRolF6RtBzcELZLO7STvg9x0EPWN2zzkv8xaDYvKzGu1ifH65T9o+RYZfws0pbWlDNTzPXffxVM5vFYql/slGgFDZf6ayY7tIy8S8oxC+ckWHgIbuGDmUmco+F1kmCrWP4SVBDUb8SE3Ve7XMOa7dkkpVruQ+HI3xRZ8UxrKs7h/UfbzYnHJKZLSpvPuXfAruH2d/bnPw==</p>
 
-            <img src="/travel_pictures/rossvoll_camping_23_08_26.jpeg" alt="rossvoll camping">
+            <img data-src="/travel_pictures/rossvoll_camping_23_08_26.jpeg" alt="rossvoll camping">
         </section>
 
         <section id="24_08_26">
             <h3>24.08.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlFe9FcwEw5q911Lb0ypsTFdjwPs5VNZiIBYKpp4A9OC8O4j69r8MlSRoU5XCKSzJ/5/W+1gMYfgd0/jRH66oYma/V7GBXwS/lsXtcPLvqQ0dvjUGGIbNf7pDzRBXYUCxUkJSx3S7+UGW6yr3/AJVk0BlZ9LH8VrQe/sb6sfBtYbJOgrdzFXp6d0ZcCp82hGvJt1cmEhprMdjvk/fyoCOhoL9rOHNTVbZ423f8v5MO6fWTvgytHkk7GhDZDicgmUfZkFdz3Pqq4971ng+d5nQELkgOQyLZbhZpR0xvCVvScq0twHEEi8s6djMdRzyiF2WvZSwcdMugMctnpV1PyI9vbVmSvvZuIknqQnfdOd1z+t7eS0nf2Wn9LGvnB0dqm/VWaTwASkC5uVRo9HLDvVAkUCrGQXzge9ubgS7BbsNs7uLk4HjO8mwDoRAfFZQzbSKrkwpK43LldXjoZ9Lc7fKBoDad91BqBVnIV/TrQLb+5WOi8EkIgHWegik7MmIaOkxNHaNNZ+r8hobvvOSEjKjfyC6Iln8exV0ZMNm2r7A6QyZ0RqlLaojESJlJt4fhyLK+QiS3xxRsElR8Rke35QQ8KKvcWFE/MsCFQg6F2W/i1WXo0RHmnFAtmp5RPJ9Cwz5V6Q19xsps1HShwU=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZip1fobpJ9JxzO+O4zVocj8nUPx+7bPU1cyz9DMkj8bbQ+xo97M887l9HV6OKMr+PX6mXNZnMNs2HF5NN58rYB1opUR5LLvYEIuibJ82wqV4jWtpb+PkX9kRDawybhPS3IqnlBHscrJ9FbxYz0MJLb9RWiqg+M/H2+YJLM541iaRWu461WWWWagP0tzdRedK0/W8LhjC+J17dQax35mQ0qGqr646Ohty2ReRpQ+RT9dr62IYP34MgK+a0qsJoGKwHIVIzGGGyHhxABdyV3Ma2cRmFY0VBMSlEk9S2HkAMgu1M3eVIsmnojyVj7+iGvu9dHoviEA3UV7vZi/K0zz6IO4kEJMjPV+uV3LFkNGnPJJPMJhmt1gxkASZ+Sv0LL+jv40b57bXxq6GF4Kw+szWQS2So39tQtjfXmhE3x2xO6S3kNxsNoijLxVDPQ2JZ9Q5vkLYag8Hmxip0bZJDKeh2A2on5LOUxvZIOrI2ukpSIGT7YGyMfNswT8DgixPAWNbdRkutAu/9itZBKDNxcAv0H94Unedebb4DL9C6zx0UAUQYKm5igbEor4ZAeBq/BNt5ajX6CgMpC7aCsrRK4+GdaZY3UluHH5l31shzO+UN4ayubhfzWzpKieAJJLYd303tgil1e4sgBy4TG7g=</p>
 
-            <img src="/travel_pictures/second_hand_cafe_24_08_26.jpeg" alt="second hand cafe">
+            <img data-src="/travel_pictures/second_hand_cafe_24_08_26.jpeg" alt="second hand cafe">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlKwYQQ7zYdCZ7nJiyMMEUjf0LfUlssx/uXqhMhEMUuThp6TmLGL4tHmSbIiu8Htr994VZVWyEOMLR38zmEGlCOFg8rwF3rOt5n9Q7nhQxuVF4ADZToyO3LUe16qsrSmHN0xdzvfvJRl2</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZipIrHmOuX9ZpcE2RHt0gD9od6EG+6uI3qsa3FpPRVn/a290KRAtBmAOtcKD0ODAyQcYRRHTsXosyUWeGQtPxjfcjtMtc6CvJ54Ztr+pfK2tVAXza1UYQrbSJtGoY9QA3e1MhPj0bESU9</p>
 
-            <img src="/travel_pictures/burger_24_08_26.jpeg" alt="burger">
+            <img data-src="/travel_pictures/burger_24_08_26.jpeg" alt="burger">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlKQIKhlwzEiSRgV1yBjH81UimqQNAoOWPFG4767/y9NkdZzvfS9oLzdW2kmg4UyJf8MPu1rW19CITkEEVB2l10M5pjw8bHoJ07dEd7rT1OnvP6dKJHvEvj3BOKWP+dPiB5v0hinFw3R3y4ybPlB1R+MLWv5ZJ6h/PlEZoa9XP1V9xaN7LqUDgajKYx92ZzbP9s+wLhkUw9S6DHocg/KzbqWLrf/N6c82z5uUZAbx6wX3MpJe2ekXmz56qcY=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZipDqmXK4NI5Fuh1d46K4ChmGYkINo6wOJamPS91MIYYOK0TvaIw9IEu4bT9qBSdAxAAvhmcREIsYy9H/Tqgw8KHN4kjvF7pRFqbgo+M3NIgigS0Er3olzPWq/5D7BGCtX+rwxxgKL9r+hyssyK4VD1f7/EmhNYiiMVj1aAPK+2qCqqxQi2afwxlcGsRp6sRWZBOkW5KIWFY8ixn6jAo/g/Zve1wlSW2VTCdmk3mkq8c127B8MhyfCnOwcV4=</p>
 
-            <img src="/travel_pictures/hike_preperation_24_08_26.jpeg" alt="hiking stuff">
+            <img data-src="/travel_pictures/hike_preperation_24_08_26.jpeg" alt="hiking stuff">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlD7tXyft3eEr3qEalGP31hAvMfegAjuUwd3j0mUR7jbKLBjpjUYCl0A6iqSkSKHgSrp5v11bA7+SwOLrfLHmkFqtY2o6UD4O66RUmCYeJaL3tZigQ18u6Iis7QaYmqxBOIOLx9YiYN4IosVukRQRsL/Pitp3orpgOE8EDFez</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZincADdtZtbCVlY5rbgjQlQwT5wSoh2aSO+il4KfKENtWC9ExbZVg4mIOjE4fzgEuexp0jOPf0vWp8YB2qWvK3CjFAdZNDw0xNNXa499zqAkA3s2t8tlk4UKhbteSJmXp5sQdQn8gsSMeudwjS5wMFuNF7khsUiFIh0NlqMm7</p>
         </section>
 
         <section id="31_08_26">
@@ -325,358 +323,311 @@
 
             So ist es die letzten Tage gelaufen:
 
-            <h4>Dienstag 25.08. Fykan -> Glomfjordløva</h4>
+            <h4 data-encrypted>wWNx/++tPWOJSgKIBVBZitNnI+D2x5CHbbHyAfosbSnELO5Wjg1KqNTUDSXhrNH5ZcANU1mv2WVcLGcbowYIctpTTH34OrT6BTil6VHf8vDRy8s=</h4>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlPckXTB95eF4VzYyJUDcKAmew5yNWDbhb26cHpBX02dd1Ur3Za1HznFe+2YjA5f1dIecphdW2ErbZAUnk2Oq4sGCQb4XXBPf+zFm/tOA6CtaJz06l6pc/ALlgt4n0dekrxl7MYs2LdcOYiiXnCh/cE4hWTZkDPz2NmrDCj7KFikzp3r44pT7YrNOzfX78TRkUyCsg0x9qzQBQvXVuYcXB7ZckpfkUXq4dH690Pu5HNCM5e5Q2/Pf65QvjEmpjBf2vl8oyIkzeBuqzTouEYiErZ8wJArjtddGjycPXXmJIeV7hQylzlxL3aG/Ni1RGYQwqQ200woxnnPKPi7dP9J40aOS8Uv6iDNF9JlCUbUjIikXHIKc5UsbZ/y2IEKdKHS0SYdr1swsHgNYsl5g7HgEt9JTzI0rZBemmF5tVOQzY0AwMicJctsgJphCvRXYA2/Pkd4gjf5p9pcUwOJ+mUxkrCyksjKNHdzF6AxaEXUFVFfF+MVrx7qFjmvQmgFNen4/oPT2HFlosAqdpqiZwMzHep27j69hu7hnIbPE502I8/lUPpjuJ3BxQ8v0gTEB7dGcsMKhxgx2wa7nhXfasww0qtM55l4mzm29Ewx9/Utb7Wci3iztA6syvjLV+RuKmfDCLCQIMw5FDpiabgWymhU/GtYy5vnrNf7SgKGzFYeky7EZbLy6qkrvwg0i8MtrH2sgCowiSQZyaehgu9M0jAiZeKH4gie4I0o2v0o6cDv2gZrpbJfF67sXsv+CpIsM5OzrR1WdyQhOsOI=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZioCMeGK6EM+qfrOOQc1fF05loBtDhxp1c/oikjTV/+MSlonBEpQiSQMwoICj13CN/4ju3ESMPxamVcyUrblWlG3etOEaVq+ox0QF7Dm7Fx+5AKErcUOHog+DPwRQYri1Kd0PUqwISozelyLG0LkiAEEKEEvWnXj345u6muCjN8GYebgulB+A0FB/tmVX3CnJNZGuY1j/hCWsnmfMNbbgdDERbv8IC42uxAEU3GnWk8HDB3adbj1KbdL7W5yfc1AInIlpZcwkTjgHlYdgyDashPRGxHR/llg8DktYMVJXcO0PK0H+Fql114ElU7PP52OBVXG8XiyrzI8qY3SVsC/90dOdPO+khWhAcVfCSxqLkxTmXeAuvGmOGFZh+Y1czCzDmzYthz4VQa8ngvPMhhr531OF//TCKMH5LxSEoA691sLW5Pe8il7JH146wjBroWw7jiBuW1zjiFTNW7zo5btPf+MMDX5quzD4zfqRYL2o9LWWe9mjlQXzFVss3AuJY6w/2bxxJWtrUTDfO+1Q5wd84GOAKxu7pf+6cxnywyvoQMn4N982GjErU66wMUFeKBrZc10XWlihTEVI62T8fMVm7U4zBbkpl2/WQziI2ydxyqeJj2alno5U6ZwW0GSE8aQidp7M0Wa5jrlCJ0q9mOgJpB3wVs3B3KBMoQM0vdAnO0YkJkOLx7JFewZgx+ldtuHblaJUrTUr8TWyn0AxK/j/yqLn59WesPDHVR3jXVaUVXXb5ibeRtRGU1i8kUvSx/HTCYpCTtxLhNI=</p>
 
-            <img src="/travel_pictures/foggy_trail_25_08_26.webp" alt="foggy and steep trail">
+            <img data-src="/travel_pictures/foggy_trail_25_08_26.webp" alt="foggy and steep trail">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlHfR3u7rg6zRh/VboAS2YbHsuJWNzCbE8Tsgzhsi//jzIPUBd62gFpQY+oIsFizl9UQzVigLpmHPgLzOFiUHBEnYGomoxAAzDFOQ9rz8XHATZVhzKcH0I0W9Se1pDmVkikQSgf/qbaiMv5fCfabuYpmbgsqQM1m7Vjr1R6/k3Bt+Qx7Oc1Wa6TZBWmUUSxOPEprwfix/t3dJbEp/qsYm1p4On/EuAkxddoUV2xUNQIMuEJ6PrpsL4fz/RQJK9DeLi/yWsfsbMC1tJRiIUpQ4NG7ZWxQm72IolBGC8mEV1djjnL/MTAjuLvvL30i5r21ilnzgxLshsqiLiObFob60fJi8EVaZRwXSU8gTBDlG6wBmtY5bVuvN2+u8Vd3ya6+r898mWMTti9Aa7dgZ86matOzFvrCfvV/t/JGz1uVbd1dF/gxttBW5EgcFfVWQINgrGCOVa2K34uyLL9Lb/hUlkCqjwqexYHHnFQBuPvYpFwgntJEqL07iknRwXiWY3CzF2i2cHW051i5Jkfk6WIeC40pE5KsQiZI20VRdB7NSIZgYamdpMtfhPkuQr2an7tQr7tbr/xMY//DiIvmqVyUvcfFmwqBwrKVrtAPeoLUv2sGqG+oL2Z67G+RkBnmbSas7j5H3hia1NU0yqHxbHtYFklV1iJULKFV69HSxeHo0jIYioji5FApB61Yb9Utoy3pHWY/mwSxMWBvjMBrdWfTdwwIxuhsNr/A4HsVtyuDBbFAs0Q3Do0VpFpF22cWhr7bw9loNU0D6RZwpS6k4330/i3K9I2WP2/PAhTYKEOiY8m5U8wkwlyMffvsAzDXa0t/Tix63oztAsBkdYAVOjw5PBmtyjd77AGuO/z35OVP1FRoj8aE9seO8W5/UhJMaMl23RVxiP/QBn8XnnOdr</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZimn3tksBfu5docXj7OxlXJvR5nCS2nucNT8PdMIEuj7w3cb8h5r4XqmSuVl14n7qVmaJvvZvzRfwU9R1XiZF9LWPKc0Ujxm/6fx5UZX/eLIxrKOB8I8gYy1lpRWiLZ20O0zjhWB/iVE9H/3wR2ZE+Rjw6JzWWWbeFzMnmrWTN+UXPHX2JyyMrgUV9AAeWUoO7cZujWj36oBPwEU1nnGO+5z6W1bsD1c9AhORZia9ZTQnJdA7R8rsPg0C724qaJmVzv42XAx/IDRcENk4bCZKoalBInGIxz/WHee7sy6rnJZ52CA1XMTyo7xJE+JS3I8TqitL6LAHpoBxG8appgcUQ3ccP5nFL0SjVTMsiO+ggAJ/PHjaJA9+MZJRngCff/YlbjYmsjyfOu2hux6QjbIbXlObMbCcbw/OxLfQ6bE2Ob7dw/i5U4QdRgSy0O7PnZ3/1Uo1R/Vu+kaXr2Sr0qEARAgEJ3kJbS5/eOLywpELbOt9G0akN6LXNI5q1zjsYYAjTphuHqlWeqFzCMy6hduFWnQqH1+OquNaJ9SNmMqZQ3ReZmBSRNr//Y3Z0EZ138xbQMJ7TxeCp7oWz/m99w4ln+nGBkuJSA37zRhnICRVxsJSfQLIzrTaSuSa4DgqBfvAbL3X1Ml//kfMCyWbrI+hHy/2YsQ2QY90Oa7f48EO0aunWBzLX7UHCz5cuz12QyWGUtellODbzEvHYtxqbkaxCjzllR8PR1K8KZsA3n1Lq52+6ULNc67M70OwjkMuqxdjXkowqh8l0dU32oYONvvJ6SqSBll83NConcQYtn1txryiiwUhy6NL3H0tyvrL0EwVsO+DerCIVRTijG8zUZnyW/Msv2hqV9W5AJ6VJXSiUF06xyGrr5FZXedf7UctWMTDXVwjiWtq7fTiu17x</p>
 
-            <img src="/travel_pictures/building_25_08_26.webp" alt="foggy building">
+            <img data-src="/travel_pictures/building_25_08_26.webp" alt="foggy building">
             
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlLL9kqCZ39XUqeRgmfdIkq+FrS9KXpijQM44ZbTYzlAaaLVH4Er+Swp3kLBCLB3ZLPHkDYIKnuD5pJZ+8MfORcu928OsEC02jpQ21AK3weEXlBw0BHyhwMeMq43hT6iBP/GsPG/x+s7X+NYBhDCqo/Amks51IIiC5sfif5nHgocm3jmWHdtfEMtiULYj+2kAYa0pEnqagBOtrw9YAm8eVSgP134fZNjV3WBzdu2EdXHZDc5JlgBx/x/B9Cl/Hh4o/g9FEE5W76hbmA2v9H8Lo140evYGCAT7D5/MhGrfy61f4X9VeUM1VhHL8QWC4UUFJ8PBlJeawDPnxcdnlWi8eZ2OOUm6vHcGHJDkmVow0GCbkwiFpyu9lDHitYYvnM40P/ZhGk0tbJXEkyulh+dOMS+Oi42D07XNFOWuEHR88/slHoQOeDXyMywzmGxZOZtobFQBrj/38Xlk42L3u3xnDrMiDrCJ34UPJHT9Y5KebjlJiGk7KmOkP2kIPLvVw1ChCZco58bjDtgrTTeff1IBYtwPhFV9KpKviDzDjzlKItYS1NNRyRNqgfk=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiozTvzCHfzPi5/O9FUb6mvZFH5YifntfoN5fcxAw4FW8lSa6MvUcIlgXXZHOoLoiMp+kQQTmJeLQvZ3ebQcRnE4O+9PNzHLWZxnuc2A3EV/xxDvDZrl7OoyhbObuwTGqBTCrZnMN3d0u9W2eCUgDPE9kfXmZyyFdUHQCtyW+hJJDIOwh3y/NjqN5wZUd8vFGah5x333Gqaual6ukIZ1bWYmQlbFhawId5yGdvtKU7ZD9hSCnSQb0NQjb4bVOGZNdDVjxio/e+MbZZbnqS9Mif/zUFEKNPsa3nEYfAG3jT1SKy30Qt0MvgEvfEOlDXL/at1VFenW8uOF4ss7ZGyToMzzsX0+VKPToUk7X60+koZArMLTUxI/mJtZdydMvvaHZ745/Yi/wcOperQztAr0NsLzC8wuOl5R3JrD9r3gPvhIAIFHWAEzYHSKuTTNtdf8EARTdbBuHaJaa3duacYpccCGcSmwmvZg7HccqxkI9Mrvbdy8OuxHaG0/JXn5VUY7wGKPk2ktuZVlMF9YFUh6P9FQojc5M94EvNbuWk9F+CvWhzPIeUzCMJ4E=</p>
 
-            <h4>Mittwoch 26.08. Glomfjordløva -> Gråtådalstua</h4>
+            <h4 data-encrypted>wWNx/++tPWOJSgKIBVBZijLvneB9u3MnoCMGiU7ZjOq2FGJxO87i/yce2Bh3N9JMIqUli2uuyfsW3PNhGyN6b6zeGI/KgZqcuncXtY8sL01KNuDe0UlVLK45GZI=</h4>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlGv8nNdU2D6B4MAnbOoI71MP0rirTbpU2JeFhLan5Rq7Rlb/NzmcKmosOFfseoV/SCjept1AShhkav3Oj37cxG0EgWUIDPF+D0XQYlby/EzSDB5FNkfktYBfZAd++LSIXaV8ObBTdUp0tvlUfyd20TNQz2S1wJT9NK8/eQQQPRCMfCN+wnNQtWRHRmZrbvHmvF3XMgGnt21+Q8qknjxteJPRB10ZpgsK8bvZOmJTTotTNyBD8irWB6oL/ZmjGKAPwdrJDHzvDZNBPiEkj0xKy47dgLSepfdOlFBZDltfTNBZeNL33AyLEy0WXBwl1gWcVxRMr0mdcyCeBXmjDebQsDRoePagXMX8v4Tpngkv7AdbSEMIffvxdlARZE1B5BhLhQaC1IWxrR5palVyon4i4Bbj65sIFiKYLXLmwHWPDUY4YxWQG8fTJJAi7CPK+aHobk8GhZP6BvxmhkUSTHfaaX812yKwhlenlXsSQHEPH4C31qShrGXJ78SKoiD/Tcr3DvShtktdKwidd8bC1yfIJA49vBePDWkXfhf+J3nbczNp52sVHQuhd47coUXZmtwVTC79UHjxLq+5bQrruVTZuohKxzE1NzjX2ug9lCLFkka9Tv7UzPdlcN0ehB+u+sSK+vO+zrhm0gN+</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiq4/j3k4Jk4CzFR/sD+Uvl0QwTqY82HFlsSkd2e3hJCGQHD3YMZXD84fyHkUnaalOXxhMNIIkJSvcLjh4CdXpSHmCY/LXp0kQeL23dxLzCSPpSAWKvwMoaE3yNHqSUdSBghp3zJSaEvDbyK+KRPHExVfs3Ir/cGrFzkoJkMRMEE5gb3hvYtSYr0WL2KsjyhxMMIrgp5+ntYOvXscKv3C1nODeYMBCwHwpihxEGTugggBiW7Kkc95WlLk9wFuTC8Dl0vQo6V4B5pogU9IZcrXIxN4kTJZVw6YdePkZ3/Uohe34r53quEkRudngPWD/m4VY0fL8a6ZahMr2+TpJtpA8ZI1oqhUpdFAa58LaDDGDLv1KcIqGPCeii8WdY3l7OsH3hcDZh3GbFx9lyx7GPaiOtPA2Ev1xqJ4l6Dgx2oeI5RtB1b7jchlTPJjo1Mboe06Clkpev++Q4xUYVXo+HLtq7muZEInDg7qV9eRNZX95/OgQ/BM2J6bbZgfeFcCwnMnbqK7IpkLL9QLdRrWYQXFLDWJtz4t4IRKpxcV6JzbhqbqQoGc4P7et9sEUb6vlr2YcqeLlTgTM/5BxM7DeA3BnLiEKkNXnxIX8o6UV07je9oVoNrz+5zPJZBEtcw4vm3rLTyDjsnnWT4V</p>
 
-            <img src="/travel_pictures/view_26_08_26.webp" alt="view from camping spot">
+            <img data-src="/travel_pictures/view_26_08_26.webp" alt="view from camping spot">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlJa4Ufi6z8iyzUC6yfqjwcszPY8YnyAss5FVEd8VNmC3MbfejwyvKVz7Mfquiz7CG549UmLxIzBkE9yT9uXo56yhYD/DPKnkQw/0AaEdfWyl45CFRJQIc+n6uFWNUuvS6SmhGvtGbgpE17VswD+3</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZim7rp/SgSVlFOKgFhuYgBS6ySz2cIrZwEmXzHban3XN8O7f/tS2IBYV8H8gnT2/3wn2Z8HzrbXAd7xCGXySM8ZP3Bx3rWg7GUrSpomg8/Dav8RiJmHjCkTmGQXj61QWV/cRp5PyA7uf6t2PSuk02</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlK5l9wmsKZjS1ZZg9as1tf9t68Sl5y1AqNbOPW+2TSUerRJKGmnifeVaT2ZEykRZ9GWk+/xOnZlqlQ3u+Fta+Iwcy8N4pHe5ISdXQsPGC93BbAXMh+H53gYwl86ibMfRwkn3B1Kofqyl5upuPlaGgLE68gv2tY3GQjVU0lj/LFBbfkJORN9H3j0qFIkVliouVMoM0TX4cfGpDtmmLA+UD1fDfMGyYoXbFX2fbH4YSa/glPo/jirt2sZJH+qu4PRpSczN8Zx9ROZptRBkS6bpO25QRewKzM3sJyL831GJbL9hUg4KdHsd19wTbsmWaJy9SXpqJcDIB+KgUGxILeWJN3eHs6vFj6c5rj83pkJ68LPwRRbPf7FH8OrYRVdSgMkDL+eQCFPT</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZij5eOx6c21nsMEEUMNNW6KbHmJ+cqhWGA6E6gr4wonvQT4OgttqEWa7dKKdicWDJ6WCauJOeMxnd2e3hy21gXTjTpREmzCsqhcM90yKPIcPtQsBX0AFxDZHKXEllOXlHisHrkYzr90gOrBEdt6ysln4I6z4kDdadniV/4dtJUlMuSUO6NGCeKASbQwNLN6COTBmlH6EpOvICQ8ahEPt+cGGB+gHm4tEt7dOHI1PD7QQ6KXc5688IDsbrfmTVvpw66Zug3H4Rj6PkP5kcTYZUPCFWb4EA9Mxf/40Kqz2yk9ACu5Bp3hvnQS57RdFTv2gOKUZOkFFJ+2dPtfDESJJKHeL+FXJo0q3wOE0iIdULbW+/rFUBCOmDK8Ad9Tl1v+foukACVGwj</p>
 
-            <img src="/travel_pictures/glomfjordlova_26_08_26.webp" alt="glomfjordlova">
+            <img data-src="/travel_pictures/glomfjordlova_26_08_26.webp" alt="glomfjordlova">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlLmk4mHv7eBkjpJlnvjlOKzF4YP5oI88p5Lrv9n+WYFWlMk0L4XRJDmjU4xHb3mjzYiNdvi9uy2ty5NvUGyA49QEDn7uOec0Y1BRHasfE6g9gbFNLDkapXvWGUvt1OOVi1kHveSUerrtVpQiMGNozz6FTjAK1vwuKcv5/PGr4RRclGUmV6J+FN47WeJHwfdj9QA4FUWL+QyxWyiVzK9s/EUsFbdlwC+/GUDUuNU1Bbd0EQB5lwE+E9g=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZin5DAglwFqYLTVVLlJrH5vJjhYQhCHudOQnYqinuspUsXTQ0wu37bLOM89WH5aLIVnUrx7O4+hBnPBV5cGuwpPt52djFV9MXZcyODmpW8m7E2x/tUsxEqNwjD1h+3tAwBAZANYX8nWmH71f8BOFhrDskZl59CRhDKW/1p0UN5ni6VfdA4j6UK7Fl8ERLbr8lE/zt4dG8ONwigpqvIcafZ72hWZaRnxF8XV8/wxaSUzvE274N57KSoNk=</p>
 
-            <img src="/travel_pictures/svartisen_26_08_26.webp" alt="svartisen">
+            <img data-src="/travel_pictures/svartisen_26_08_26.webp" alt="svartisen">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlG278z2VvhayXznSYqLaz4EDQSJCw48APs9pH80U62+afYeZOcMbUNopsBLlquoo9FyOYusFE6yMPgIkrhp017wEmf7u99N6IYKVyAF7jC67lC/yCFWSRCEWe9zg7yetMqOZZ5QL2E4XhuLuCX/XMP+Ser9Cj2JgIaGWbIvBKU+m3/rGHv8Iaac8UwjAPA==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZitavVV2UuY3EYJAXNbiR0i7wHeCapk9a7zKgrfemBVU6uk2xs+qA1Bda+wzHDHZf7vfRtV2Ps8ILysulJvBm+WFEDivaqjirMdTSaFcE6UUCPYShlYCSJgI+oJ8jtgxquweYvjUjs7+e9AZ5ga0H1i/FAluqOqu/xipEMIC1Ua+EESURS49bLgkWeerk+w==</p>
 
-            <img src="/travel_pictures/kvitsteindalsgammen_26_08_26.webp" alt="kvitsteindalsgammen">
+            <img data-src="/travel_pictures/kvitsteindalsgammen_26_08_26.webp" alt="kvitsteindalsgammen">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlP4TyIDHkvt13M6uS1AoiQ+tghFPlo2fleDa+MnVQ/jxKuai32qTozgCueH+B0j8bACWwYokMDtKISQN3E+j4Z0XiIeBnBOAolGzt5Ayt02fWQtiFx5uQsJ1DybCZgT72Orsd+q+rS7qYM1ohcdUI6Ub1Vigfmp6cxkvkB5XFXNTylmwpNfnHJqeUjLYnU2nxMXZvTMmjdEAh9rKru1ZvWQ4J6FKNgpTW/5tGgjTQ86e+tiUzf3uMVG1Sh10Ag1NmGGaInjy</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiu1mn18mejTLy96wcz1+RdvUdopa4DmQAsZE4fGyfFS+XOl6couveCbsoVCXSn7fEl5g/0vbWxzQGPnNgiDNaEEg+HsOzop3ok6ILE6QTAxJKcMgoIg75aZFbLVPMWLxLgtPKHvDowT0QpxLwWFn6jbN6rgYYYKTJyM3uMPMX74YPculu/a/tRfbsBwbrQBDV2eOVhl8BgLEXBR4846+ZYsQpq2u/rrZt6ad38jkxmSPZ/oVpS/M+6j5JIERpEesEK/qNmzs</p>
 
-            <img src="/travel_pictures/gratadal_26_08_26.webp" alt="gratadal">
+            <img data-src="/travel_pictures/gratadal_26_08_26.webp" alt="gratadal">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlMbvrRSSfNznxYRQ568Gu7/VY8l8qVkdf9bKtUiqCKFBXGcCdwd4wHzOyTXNZ3o7h3R0a6NsXPtVwTy3fVU3eJp7aXIx/YjFs4Z1ifROT6Z1YDZXlDNqTzVk0EryKjeNpSllO1iI5a5pHxGE6wl5rFchbh5S77ObJ9PEDFAJW5VKCD9F0TZ49IJoVVNpsagqsOlquQT6+TAnzFpU0q/d8C4AsSDkpJmtlaasQ98JJQlVFSstGCDakJ5WLPEsOgaCaROO2T3USdLESBL3MoCS+cLUcpWqFprsAwLVchw=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZisfNn8FWcFKTLkrXLorY9OSCpXYn4qCGBuA2aGSVx92RO3t6FFplkmSUlNyjj6JPyGbiSWRN2uBmdDKMoiodi1zFS1sQw92EnAw8Nm+qd4Dtna6v6jkIK4r08785GAiF9r8g0MRPqKIT1Zw11U/fWcZPr9/fW2atpg3f3nWRnuzLUBj8GjeIQsLa0JSpPD8T0S7qYbYNrPgKIjpYwJrShYMXsJSkjiB3dSbXRHjttFuyS3Ls5nX8Egm+09KSbU+/LX7EP0Y97EURPdSyBGuCH2PfUEeZVVxoXw86u+I=</p>
 
-            <h4>Donnerstag 27.08. Gråtådalstua -> Beiarstua</h4>
+            <h4 data-encrypted>wWNx/++tPWOJSgKIBVBZijqGbp6tJYSSIRudWYtCHJqGhf76YXEDSxqk2JuPnB7LT6XEwxOJCpdeg0Viwxx2vO4uqc7HswRgzkZASapyVlT8n4SUfnzWFKk=</h4>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlBDh6N1vGkpID83eEJj7qWm4j8co+ssGLeLE/ImghBzRjhhCqgylfrwqQ8eM/tuBePrvj2YvU02OVf+w+ZMC8smD1UrCQkaqxMx7VV2/egvocOuNrMSAsKVrxyOx+QYzSP8xatMpAnKCfkk9SLG8</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZivuSfCL2IvHAjA2UcQoF2Bv9hBK+srFVDYBO3EijXAVVIPHtPLyobmQV/43ITdVEChQD3w7JX3USrPdKsZ1ahpwTAQ9TC70ZGqSEjvppPOKqo39X+Xs6BL6WdSpVRkl4YuMihWJW5JoCPhA4N4K6</p>
 
-            <img src="/travel_pictures/backpack_and_glacier_27_08_26.webp" alt="backpack and glacier">
+            <img data-src="/travel_pictures/backpack_and_glacier_27_08_26.webp" alt="backpack and glacier">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlP2tjaZuxzTL6sZIcM0WuefBbzyTwEbDQshGqeTiZtFHhVOdEpNDTXLbCIhO9xjZZZ5Ojpoly/anl3vf4dtT6ibVPd3XTur3ylSDBrvH8lYWJt8/p9xF7kJUlScHel7XHDrUvsHpCOhe0xe8rDJt9Dhs56og35r6pCe2FkUA/oagf7Sx9Su6buLslGQV6cNhnuT+YC7n0h/wZzZojM91GHHG8R4Va7fOg3hLUenTSwyxrpw7pbEM5JPrEqo6EwUSGBUMWO8TsncEsMyPcg/Q06ORZL8LIei/qNjOkFeVVl0Iw7NpeeYfAC1kF4u0nJIw8eC4XCLhK+7GEUx/Payk58V5Qa1np0c2Ig==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiiWvedJ4hLwQ9gJ+LJnDmo99TKvw60mXUcqbNCkKWfXkqN5ln9+oWPOj4IFd0KFVKJbDlVG4BOwASKQ0nmCWdS+ug2M4aDmCvbizPP7XFSOTvg/DkDLM1ZZi5u5lyS1cjHGYKdwAsg5NUEvTwfFci3So9C8nKfmV+IxrpdKUR4ODvdoZXWGhCaUZRFk9MPyhWUfnM6NgsfSZldfBjyHu0APM9As5+ac3vz61rYAjHipR/CEVXM3tUN4IRmX38XsXu44grBMAqHhSkKamnjH2+Iftc38U1FcDpAOkq2ew2D1vM9KuKWxfK7jIEJamLNgx/Zu+nWfldxtanW1R4TUiW9YNRX/k+QVooA==</p>
 
-            <img src="/travel_pictures/beiardal_27_08_26.webp" alt="beiardal">
+            <img data-src="/travel_pictures/beiardal_27_08_26.webp" alt="beiardal">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlPx1AGr4UsrjV/dxCZUhWR44v1LAsJjKft+5/y8fF963L0z/QPEUJpuOWUCHQCBsDQz5+iusHP4FfnhtiEQm09Iirf5uUR7QvgrP44ZmO+03PvSrnbWyhaWs3b7+quHVXX1nLSylcGTFSgoDXbNBpG/YW8tCvGFaU3zC4W1HYQRMKSB5g+KjaRsHds3r1Zq0kaluB5Vt6mtCDF8CaQduVfDNbBNZKrc/bnFSf8d9bHaCEBYUTs9x3XIA7j1/D899RAaSW4Htehy5AQEbEqbj/Qwh/nMzKSFosmV+wPcXrAp+SKOiWcVLnkWDtFmcrgrzyOv5WrY7Xxy5yMDJdzRPRmVASA8aUKWSDTS0c4ugzXyZPksZRDr+jOVehF0OcaR1vH8DJEKgHDvBHbL/vAwRJ8/a+XmYPX08G6AEW1rEfOlkJpsC/gqBdhUrSt04xiR2qjmBDxSYH8zcU/plbJu9khCef6z5kjQ69dCpK27RxHA7TciCIXjhdauuI1pbYieH88LViabt3IHu1hTW3ufcz0GXw4ShBL73s3Bmh03IuxjWuT/cs8UUOn/WKj5bceoK9VOQx9O1FJfTxfpB4LZwe8x89EuB8DmAhhV9E4kqkEJBHxlzemLgfr4fOJ6PVgEPaUBlMdngYzmh+2AIG+/E2SCE</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZivK9Yv2T6IVs3q5demIa7UtFE2IsfyE/gNfsT+GCthLuVOHYsQJGM5YbUpa117SFkf2mNvZN3AK2aykKAuKSHrV0ox8grHw94q18UVp9QWg73wjbGko1ZKDj6dx+CKh+0Px9LrpRpzc6mg7p/n5O8qCmFXywcWONzZs0qYrEfaG9gB6xXMKUG7NE70dZDsqkFgNo+4r+WbUIQthJeHECB2/KQr5CSIMnxumHAmdyDbhiihWuDph8HdV50Fw9EbdrzumucSCbfvrwTu74YutRhke/Sk+HTv1o8r5KMVg8flzdaCGtXCZIJu9l0aCy2RwqnBiLLj4xmOv3S4s0clM0cIrFKgeMmV8ooG5aCMShUwpDR1vu7l1Pc7lZnxnBRedR59NoIfMJi6tj5vzwr/41YQGuEFZnbhCGdcGgS7jRo++Bx0oCuikMEyKMeMy9lhgUUsrECNfYF9F0B/KwsNrhZfoKLqF/6oxNbGQcw1SgZk+xlTpnECXwW0rRilsPdu4CTAtgLZODGBCz6YDOyfs5WWDDCif/u6STq/CRtGF4TqGngLNr0SgWtL6v/+G1G+c5WY3HWi+YtNFbtnsgLmkCjqTB7qjm391Zk6Ask7S7OywdfwlmyJ2jet14fmS5NaMHkmb6+/4KxXp2X0xw/3Z8ton1</p>
 
-            <img src="/travel_pictures/beiarstua_28_08_26.webp" alt="beiarstua with sauna">
+            <img data-src="/travel_pictures/beiarstua_28_08_26.webp" alt="beiarstua with sauna">
 
-            <h4>Freitag 28.08. Beiarstua -> Bjellåvasstua</h4>
+            <h4 data-encrypted>wWNx/++tPWOJSgKIBVBZinQuUzNKZMLoJ6PJf4swMgnpPbe1F44jCxJek+HlN+d38bwu3ZswpV6+avz11LDeq5BMksKG7McxX4mdeJ7grk/ZIqN+85s=</h4>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlBC41F3CddH9ac6hn6Xjsjp1TwDy1Wz5qpb5CbBxQfA6lLMkKjM4E+1nNkIE8puNr7jTeVG31LZ5uRX21+yI5/tgszjzCyqcUDR2PXV1LpnrLHjKBIGsJEnBwwZYEGygttvESIq9m63XeCQsfyWfDRcTflBtM5ir24iag01RgaGA6FZryaJDISJksCd56qyXHPZWfPALOvyTadXWSR01ZGgwH8+y4Ot6U4G5cyGfNDyezWazzUH6D+erzGN0sRk14CcEnvCxMxxWcWl9UElL5KKb4Fx047EGtMdx7p55IF/nDYk8NWQ1wguWdGBsee31IJtjlW/k4ACk7CEZ4McB4p566Q==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZijZxaBC1WNcAvis/poYJrBc98CC/fp4ulg8EoSYdK+ejvwD3rwHGRJZ2ox2yugvv9d6dLW0Iu+QCnk9TJI7qBhzV1ttKykKCNsgvsDnqP7nGCzPEhghwoq09NrltNPNuZEF7Zt0H4x6hInQQlnJP6aABN/b4mgU7y6ILHoclUNmMUS0Ejmip1JwVEWz/4U0+cW56KE6r7XzWtlTbDrql7wOgp+InMEYazCxA6H6ImnFlFAD6xgwT872ohxOrYwRK6yDcNg9BVJhQw7KzmvFSDPZhQaXHHYwtgT3nXNEedtJwWeVYyfyBrL9uOWGIL435bmrWzabNuteZAjIz5clUouRLIg==</p>
 
-            <img src="/travel_pictures/reindeer_28_08_26.webp" alt="reindeer">
+            <img data-src="/travel_pictures/reindeer_28_08_26.webp" alt="reindeer">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlCwztJqq3JsxpdIJeIV+iIEv8W5pc2mDTNT3Xpc21KAznFdywFc/X+ktHMbGnWWB5YXjMw3P98fY/w4=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZipPYfcqgdH9K175l+p8tF1pH4RmxQnHDHvQ98K5Ju8eK+zOD+DG4vi0sWyeW1SwTTnpcGxHw3Yfbpig=</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlFTsRxf4niFJPy6kFlj+2QvB3kXMEaBTy/aPW3EEepQP+akRyC2pPUx4EDR1yl+A/ovSG4QNhR48jheEoxW5fhnGldJ2scA2N+WN4hIDRwqyfrbnxUpHQsExC8G5tKleqA9qqDzcOwYyj91VhzUejD8483NRQ0va</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZipmdSlImct5oIUgkHUNdjK6OvaTI+P17Gnpv4Folw409czHskx6vlwRea3Ce0aPLo2nCVmEJZsNs+dpOGieTzPuXydud/4IGB0KSFHVUn3fG2CbaaSbtCW55ecltHmu64DBBanu9t/TBtbUbZEm8XeqH1XBcYjvu</p>
 
-            <img src="/travel_pictures/path_to_bjellavastua_28_08_26.webp" alt="path to bjellavastua">
+            <img data-src="/travel_pictures/path_to_bjellavastua_28_08_26.webp" alt="path to bjellavastua">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlIzZ/F0HURjPEe1VhkhLNsempKEydeMAAiCkBCQCCwTzrQYyULNre2cKiK8CqcSwj6JkV6j9UCyTw494nEpGvirKgPloEYt7onpr3Tffe2gQzUcBwF+KN8tZmhxiO1wFAPeXGnJ0yD1ckLI6llpYh3LMmChQg1p2aPHqrNVFt0os3EnnR+daSuErBMP2gcsg6S1PyAp/Xyl/zZodYpsjFHIuCLDWGTgJTkPpayr+X9WKXpe9XuXlVHqvYVbE1YpvR3NKEGNu5mwgk4/xZ0fyoud+9tavsRnRsd/7xdp58gjS59pwvaOIMO72Dub1ozcZQIcDNhMYrtVkO7D8bWaDRuECbC5V6q5LM4bvz6LJSCjJ7SHdCpE0aNpVRlGpQfZ+uTPRO6LLHqiilu900hv9BDmTXKjJAyXQF0RNOHq7Ekn6+4rgyUOdn38LqsmI5slvZeLr9ZpiqH4=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZimyDB/wXmNwkTNFoa7taVZjtQRwb5/h9QDZqmfYB6UtG9HOxT9hxSJNV83AS+9ijyB4urUIjHcoSRp3OLGKkM7iCPb++AxA5vTm3J1yVyAltQUzASGxH4eGPF67ukNsvDmoVeNmxm/lMisBGcKUkJbvUvXn9maQ9ankoBqDBYF2QR4wHhaycAHaXVX/uu2FDtrikJc1zDeTpNQzxIKRGknyVhgCbxFPzhi+sx1rDzCaDCNTMWHJ07Wy3dXep6okmXA89VZYiwtAbit1b3cmQSvCb0oOWZteU2bxtwi1i1N/adhZgMwgY+HzyhTX7fo4pan3l6gLakkVhAHuDlCNM5iLy0YiuSl9Q8wor2Nsk0RWIPzViUo3Y8wDPOVz5XdN77rPLbhKigITvb2IzJaZ9K1SIF8cazISY46fWbteZvGMfhF4qCgxt8qEAvLwEEFKBqHjmx7zbWm0=</p>
 
-            <img src="/travel_pictures/tent_above_lake_28_08_26.webp" alt="tent above the lake">
+            <img data-src="/travel_pictures/tent_above_lake_28_08_26.webp" alt="tent above the lake">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlIEPO+C9hhPIZkj4Scv4eIRzl0dvC01hXeDwzTHUHMSdH98mvVO7I83d0YWdta2oV9bG5cigE6F/PhKB+Dj8OLYsv0uO6v4ARXfZxftxPOWfdCZc6MGC512Qm2Yr28ch38xnuJnAaT3Z0JR+j+vSc8o1jEBXeVRtNnbfj/PxFDxh/OH2rI7n/j08sCd3AK8DLBuYcqn2FZpJJhypTCmdhZyjIajbqk9tX39DJ1Wp5xQIwCaB/Vjtuml+kxe81EMCHu2iI9FPKLqoB9wi/D7jRa9yCIPQMczcdvM8oItqEEA2V/Fa8PC2tXrmZpVspWMa0pT/UW5qezBOc/TJ1v8tWCQ123rAwuoJCUFIHMjHQHP2SSvc0GmvBVPgKfcsbmp4eOwND1Ubhw1Ug28n/uK7mvpOKRAJLbGsogMpdtt2kds8OjBdbZk12dUQdEBtoZ8SedSOh/D6b4uIRc0yVIl3IFktapFn5ycvoMtIjDyZRdpxrsgHxCeD8nwN61ZUtWUwWrpHhyRQwMfDLAyhTMx4yoxfIabpDHc5PSuE45PQAxvE9JKnG8XLVX3p6XZ1DiswLOykJiD1pysUs17LD5hrEikuMl7tqQ9SacXJK0B+DbIxm9sAbi3k8+fmWxSoYUB/RPUayj8howFTAnqdQJqbaVTIRj6HwwqZvL/FJTJqJzCNZQ==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZihQMPuv5t68VyLmiGOH7G8tWaES0QduD/WKlr1/bOVd5eQcWSpSRLIBXFCIJyybfnpaYOIdYmFN65hP1l7SIpEZqCAOG/7oikwS5DDj0/OnQC0QBtIcyihhudoHOV9qLEpp6n3fU5zgdbhGePM14SviMWSVl1HKtZXxFJGMXQKeiLvyspU1QW1XWApLU5OA0lzI1zazmeyqKdEULNfB5uRab1D62m1Nm70bV0IGpgAovcnC+4WshTRQQyuwXMpx3eZORLDFwQLtYxACnbZScVW3/tWbb9ftebJnB5n9Uq2e+nTHlEXNpwnyqCKrnxHfguD/tkrzVHFppVkrxd9/lyQgLHwLptiIq6c9jc7O/xwCxlULfifkqviAsGiFpQL9jp/7SIp9BCNHVnYrEgszEo0492ZTDkGWyEutrXVWNdEoKGg5BsIZZTs79Ur3sGWR9KPGgp8vMFWOE0BaiT8U8N8ERCG9G4r1CvyxltyXGsea8gedAuvF5KSVzEzliB0VLkJlLqxfSjr+VcZGhesYZBbTr3PQPx63N4HQuPOxDXWVKu+zsfsL+I0DsILQ3Cni7PgwBYw2qe6hAUIAd6jrWkEj+ERfjlfemkG4SUzLu7RVGHJ6XjWM/Zvyc11Oq7Ye4Y+Sgy7m/rJjI29QojbO5D78L6hLYTT5qwr9+3pJ8FfAcxQ==</p>
 
-            <h4>Samstag 29.08. Bjellåvasstua -> Russånes</h4>
+            <h4 data-encrypted>wWNx/++tPWOJSgKIBVBZiv7HSlVOhznvLkqBv6tYBBcYVkfoQKxWyg91z9VsrpJgcQKxXIEtwYKB91FbDZwBoKDqIwaikLV060wueUOwBgdH090g3WU=</h4>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlKbWfqrtTgMNppFj00vB3xOaKaXT3JBgmRvsUDVciKJ1Xjw+T1ydgtiMZE8Z/NMbFTM2YCzo2X9JxgDGctV2U76AMHGgu43SA6oU9k47Gd5ksVsVWxMHiqeCgxuGlplaiPjs+J6SR/hoB9QI/9o+uPIz</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZihxHu+7yOK5UJa9zUqpUF8Zc+e6GTbbVT7A4XDuYqTFtx4Ajs4qGMGUhrFxCDkwJGUQCZ0sPb81W3sgY79NnMLgLrfK7Xy6KSmQWme1ImFCmvCAfCFCazTG6KYWDxqXZOgXJDKyUXmYoZra0xIalNmC1</p>
 
-            <img src="/travel_pictures/aurora_29_08_26.webp" alt="aurora">
+            <img data-src="/travel_pictures/aurora_29_08_26.webp" alt="aurora">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlBC92Xij9zl4OYB1Ih6GclBLaYclNxYQDMFmEeVn5+82vQ+syy4jiJDYMWXkCgBcZerrdAIjVaOzY9PeJ+TFRkN99/FubzMwA7zXyWdK2lcxfTGj95I7VEUz14fj6oGY4ujN40G0ncQ2P8zS5bo3vc7fH8tiv+nqey+T3LYIzX+n0q/iNhYpXXwDcC2agXPA8jscKR8EDk1Re3dCr7RsVOdgspIpi/XTJOfO3UV5rL0xS6QzElVVuBELjLFyMMxu7bF5j0DLk02IBq1fvlIkmxbMKGIr8V4DvVVtXCR9u6P1QsW1V5MLC1i54vuOJl0CJ3iRUML4SSc01U2pU+WDFrDm6uOe+xE1eAGVQvi4TF902ZjDTsqoMR0zz9v/bJsH4dlVFV2EqlEjrI/Kw6hOToy+bRRxCpQgqaNY7mL44wxiCAd/Vi5+</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiuYlDhXVcKLh2VYcYminxS9tA6L+oCccexCT6k8pAfzzPm1/YnBLJhH4SReRnMQrOilkD4cofcO7a0Qbku2OYOlZIVitprA9Hj0EDKQ4w8BOXc8LNMwr9zZRnp9cyC2Wqt9+EBySOYdUEdEzM3m5iHz9lEkzpLiO5lsKdufqoCisCQFxIYeu/l56WCzM38ZjSARi31VoYfE5d66WWTsE1jQ9kqcd8thgX0d6pT9M+mlJ5vi7XdJDejW2mhYmVoJpaGb7D/DlUCTFO0olW1xeMQm6/1cMTjEQNmgosrEwnKV6sQCRBGANk1sqiawyhniL7iZKSBm9sih5oe57EAtsJTnkJjaN1fcsSCzWp4vS9g9xuyMMVrDJWCBuq67nr1uu6ssUDGu2Qf92sJCPYTUmA7dyPE2Sc1JpHbwBsIKUzQabv9KIKpr1</p>
 
-            <img src="/travel_pictures/telegraph-path_to_saltdal_29_08_26.webp" alt="telegraph foundation in the fjell">
+            <img data-src="/travel_pictures/telegraph-path_to_saltdal_29_08_26.webp" alt="telegraph foundation in the fjell">
             
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlLvTkk75tk4++vhWSHoKpoE4+w/F+J7H8H7T6Y+t/8F1NJ4C+ntcsbXivMs3w0OCSeFOvgJT+i0E89Bebadf+uLMhcKap2YMMqjIvRl5yC/ZqxwlOOYIW5ogyud0QaLi0p3aNFemlVb4uMfFmnz4LKcW/n5wtPjXBG5YPepPE8G9a8zbzBOC4ejMl8L3hyMod6eLpymRiJpTkpaEbobKtR9GNEDCb7kAQVNyHhWmCeAGDb+ccqTGTvj+KEMf6DteSfdtIMsYRyL3Eo5fQ5rlLxU8ikDV9U8GcL0KgDl61bXQv8WbnCZ+QYlrP4rf7GVbCDeIGqBo7wOybzs99N8R0cRy7k61BNRD72EcRrz2K8FPCGTWcaA0I+EYgz8HGTiM4OHOzIuEVXT9ybxLE13+ExbeyBrs3KC9htTjWtVrtqBhQkRTN6ID29GKMB0cznIblREkM+DOA31iybk221zhiSfIpyEGj/8d9oUz25MyUkwfqQW4BxkHIPpVS6j/XTlIL3uM6EXXA7hQ7167SkfFHj5tV+WfAk5IH8LNf4mIHmxQ+Q+zr0VnLb8Nqrjf9cad5OwdbCxQCMdRmMHvYQ5laDP/SQMh6mUSdJsRsbub/UxNk9IEcQF+2sew21C9v3iBxHpmevAhDLB84Lt7p37edKkJ+bwiQ6VKFbkh4i3omlYmiNIdoKxKwci3M5eo100mdCJQGHEFCeYhpFo+Juvm8TWHBRYVspH/JJhnXfay1ynmxbRmP62jYor47IB2sj3XfueWlA4HAQYEER9c1yboq1se3SNIUjZdkSKPO8CDaYop6Swu1lw4P/4Vky/4Vy+J1oNlwNJp3o8Ki8VhVmhcRD+JDwDK3ijTUANjpO/BGhM1qy3qQ3Ra7sAX5Q==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiqUe7EX4dpXQbg6LNl67GI66drK50EKHPA4xFMtI+/1gFa6yXiY6on7QGyvQwWSlTuvdoZK9wWm3IMDicBvORHZl5xD1JUiAbxkeo19dcnMR8xtZAtr8pjhsKct1YU0zUtsuKfnwiN0x389sQqe26UtvOpZiVtlaWRo0s+Egla5YNpjZHuf7HZPeGvGSCtzIO5TqOk1Ns4hOPLHTLQMrv1tRwic5UvU2O9h30W4vC7Tkhgji7XXLN46FIXgVD0NIESQCHqs4NlaA5aKyKRsw9p7G014BFIqZZCrfMpDiyNqt4aw/80HTDx8xgICfFI7wY/0kqM2HzjYSYNAKbnsmJu4HAw0lBn3Qn7ixNiz8EyYRHy4CWb/S6ck79LbQ/sS2Vh8vl9pVd1wIvaR1+Mwdqkwru8kqAm+Twrw0eEAtliKoTGuvqmSFNdJCOJDLKvl/TmHur6zhhoSlIQW76YxtKTmzS6f2Kgv5SPWPeOXjiluIexB5SukC/X6WM75zhwsoeUBGH5fs+WZl+14/ciOS6I07KLmamFyARMMHzLqRN12rEvpadl12bGVCW5xYl0FvZo5cfwiWfUSms0aOxM308f5TzZw4jYFajSyxdQaxkudpCB1Ul5y6WvA4Zdv/wC1JkDqZJI4KFHYE/eVWQ3C+QW8hSkEqiPd/MRHq+EOsxIv237Wo3/u7Sax/R3OWhuhYksFc4WI6m2Qb7SsZfJAXCVIAHOj7zTo5zfF2OQSh5zM168/zcsiCaz4tM33Btnx/EGRRcATyCtA0vtuu+6dteKUA136V7HdfqR9WWnyUKVzFOLDXuS3QwZGo0zbnubRphvvOw4y1BHAQuGSp7Wiy890HLFbpobYSL5u/nVa1ljVOxLa7dM1eFtclrw==</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlGMcqI5QJ+tZv3lB5IiPGdBksHDd7tnxD6rKanPg7g0bpD/5Eoaxik2ZYvOV820qxKfuC8Fw2CwVgYJBjHV1DVKYFEkvherrCPU/</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZirBTO85ZMJgPt77qg00epsIQ3IAj3wolwDMt+8akVYVRLkDjPdqf9SlKgIzsFE9Xgom30ZdCOaXUS9bTArEIHbqVH2a3GWS2GkR1</p>
 
-            <img src="/travel_pictures/train_station_rokland_29_08_26.webp" alt="train station rokland">
+            <img data-src="/travel_pictures/train_station_rokland_29_08_26.webp" alt="train station rokland">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlMpw3EI84pS9uiOzRv0yDPO8xjrK31L3tLDt9QfxjhmhOuAv1vi+/M121PGyUvgwmuBoh/6yHAZqknPPk4Va5Ig/xDPYbnyN5zWH77A00MzSsvNC9WpEZ0nJsbTjPqpcWQWC9PhaFV2rV4K96DSwJorByOJXXmNcQLHT2VsHQAW1Fq2MBzAHKqzUNRrgF1kyV4rKsSKVtQ==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZilzgsdEs5EmQoaUKiPWbmEmW9gAOTWP2oIxOSMQZkjRFC0VbXckYGPq51JYSNC9H/BZCj5p34obz/LgUUJgRbNMCcEqelS5TuGGjnx8eBljtMPvoQCr1t8L8VszTEtU3GNKF4JNWJiBM0R2TGsC8e7B33HrcH8OaMqGEnzfDQJ9CgDw1G8USQLC75r4oZGfFDR3R0/JtaQ==</p>
 
-            <img src="/travel_pictures/hiking_route_31_08_26.png" alt="hiking route">
+            <img data-src="/travel_pictures/hiking_route_31_08_26.png" alt="hiking route">
 
-            <h4>Sonntag 30.08. Røssvoll -> Hemavan</h4>
+            <h4 data-encrypted>wWNx/++tPWOJSgKIBVBZiugoRVPxkQg3ma5Yec+SDW4XTdv+36g7CqnfpMSO/lYQQQcD1RdQOZUd44XUAegfBXWUzS6aIHsolkkM1ysPXg==</h4>
             
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlJaW7d3stbEHI4hnXcyeJzGZEPgWHpHLPW6y2HXj1Fi3K+zkT8R6pIoCvYujetH5nP/09cnvTjf77qoxRKZdPhk3uuQNunqs31AIIzItONYRQc8Y25uilRi1Zy6iN3aYHWZlsorLZ9i1/rf3Dg/k+BhcWI+RY4w7XPqefMKmPqxxpeFglgaVnb2RkjNSgoEUauA34s70t7GXPsFmp03sImjDO9MoxXpeV8ZFIqdwzVzHCxssr1Qa/pNgXvL4B5FxskYrtMQ+Y57gTf9kITrFCopfkZknXCrmmR1Lks9i51HW8MPgie9svxDh8OCH6+VjCDiU3WmxDHtuBQoctfXPJd/1ofvWhjqAi3quZTd0il7hGYICs7ympbXbdINxFFV+I+NGbGapvkHlAoWSYC3adKSVfhpJ9x3SjcF0EdJ5Zf0mYxI9//mmnmbZWbS7EFLpqEensPtrf+Sl8SGfne2ahweQOADGD7Nd5Vv3ELgOhSdh1l5G5GQYEzCNxqBuRNotDetGq4WgWcGWu7zjE5Oe5yYSphwKVjCKFXIdo+GMOUysabRLOmqpx7Dh1dsTwWEW42kdhqr+PdWPFwVfNTkqAFVIwRUmT85sb/BqQiKUBKy/EZI/gVxbIO/jSRnZuLEWfltOcSqh/J3Fa1DauPZfuhhWGQxG1mLjKtcfpTJQThAiSOKlvIf1lrNJ4Zh4p5SGBZudDpmM0xRgOblWdAdR1Zbbe9/5u2RschqiirjNBCka+l0=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZihy6CVN39bS1wwjY9uGXXYL4B0b6dBaHAswMV0OzMbsbji1EDsw9ug3h/pD2pY6FcTJOJjuMwlyNFgLkt8JW+ooCrx6O9DUprBetP4YHDx+1ehABS9x+I03Fix91X/uIl2YRB55KM6Cs05H6ETrmd+Jg8ElWPgtkZ1fZ809HsIlaM5TjKrp5GCWq4qUoyr2QnSpGJIH5mrPIM9TqkYl5/hThD766qrxw++36CaaFzG/B0ax4W66ZIrAPNIfWKwnj6Y0NBgu7gBkEc7wsw2YKE5p9JRP43Ro0L8Rq77C/6KG/YxkwTHdAE0TT4SDaozmKJAf6J675jf2SQpc7kiD9+Le2+qpOrz364POO2m3hmYf/ioOh7s1ZlzpiUeXva9d1uwmpoHYipsnmArxQO9v6lVX4rX+pZ4UbfzzDlOwC1xD6dI9BAJj31UfdvrLWTClcUk1Ct8TCW+hKXuR2EEVY4HibBuUOs5wjp3efbmU/p6dKZdPWrS1L7zUPourXv7b06lSFbsLh2MwYaUlE/YddOC4ykt+UhcOcLqq1CNvRouqpTv8NKxP4ouek44/Vxpp0Z5DQX7tGOP7KNkrHKk/oQ5DKmUuMY3b/rlR/VGR8oPwsfku3+LGbpdAue5UK7/tpy1EClXvjZw17SkuEqo11x/oVNncGm6iHdPR1fibDfEpkmhzQiJFK1g6yx/K+cJCx3j51WbJ016GkHH0qX5fp51V/fsh39TFpWLGnd3SaZT6jWj8=</p>
 
-            <table class="tg"><thead>
-            <tr>
-                <th class="tg-0pky">Spot</th>
-                <th class="tg-0pky">Wartezeit</th>
-                <th class="tg-0lax">Von</th>
-                <th class="tg-0lax">Bis</th>
-                <th class="tg-0lax">Distanz</th>
-                <th class="tg-0lax">Mitgenommen<br>von</th>
-                <th class="tg-0lax">Note</th>
-            </tr></thead>
-            <tbody>
-            <tr>
-                <td class="tg-0lax">1</td>
-                <td class="tg-0lax">30min</td>
-                <td class="tg-0lax">Kreuzung E6, Røvassdalveien</td>
-                <td class="tg-0lax">-</td>
-                <td class="tg-0lax">-</td>
-                <td class="tg-0lax">-</td>
-                <td class="tg-0lax">kein ride</td>
-            </tr>
-            <tr>
-                <td class="tg-0pky">2</td>
-                <td class="tg-0pky">5min</td>
-                <td class="tg-0lax">Bushaltestelle Fallhei E6</td>
-                <td class="tg-0lax">Esso E12 Mo i Rana</td>
-                <td class="tg-0lax">10km</td>
-                <td class="tg-0lax">Stahlarbeiter aus Mo i Rana</td>
-                <td class="tg-0lax">2 kleine selbstgebackene Karottenbaguettes geschenkt bekommen</td>
-            </tr>
-            <tr>
-                <td class="tg-0pky">3</td>
-                <td class="tg-0pky">30min</td>
-                <td class="tg-0lax">Bushaltestelle Damveien E12</td>
-                <td class="tg-0lax">Rastplats Kåtaviken</td>
-                <td class="tg-0lax">46km</td>
-                <td class="tg-0lax">Stahlarbeiter aus Mo i Rana</td>
-                <td class="tg-0lax"></td>
-            </tr>
-            <tr>
-                <td class="tg-0pky">4</td>
-                <td class="tg-0pky">4h</td>
-                <td class="tg-0lax">Rastplats Kåtaviken</td>
-                <td class="tg-0lax">Hemavan Fjällstation</td>
-                <td class="tg-0lax">46km</td>
-                <td class="tg-0lax">4 Frauen aus Hemavan &amp; Thailand</td>
-                <td class="tg-0lax">13 Autos in einer Stunde in meine Richtung</td>
-            </tr>
-            </tbody></table>
+            <div data-encrypted="outer">wWNx/++tPWOJSgKIBVBZivydAMrpBl8cUcEd0krH3n0nUIe7ByJhMfMr42rGYF3fFG2KoB2OivG3XUrizsJiv2H4q3P1uxiDcEyYbmSCszyoVA8y1XZgghDiYNWDwQCFlSCPliuzcaQIsydL5VsCs2Fe+JTSbev6X4tcj9Ugg8T2jyVVKhadbUYTNSYQpUBl0rwyBTe77IMQds2j5/D154/yfNHGHVykOslhMirixL8JGYwHDUmcoeg4d1DvByo2/gNclc/7m6H82rTv81fw9BWUhLsak7+vzLGC/g+Wn1dNHXhi58jXwlky1HhF0b2BHUo5+KTiQzHW9PNjXVD6DM3Cynn0YI4T1TbAWvuBaiWvmHgb8n//RWb3pUAFrXDMfo1tgSM8mCeafd1jhKWZfMN/yLSIKo65IvuiD+ktXCdShCC8gygBSGyrV5x9mbMBLQwJOipLcqyIVb/HX6Xoy2pnSuF7/PXx6yfbm/m0uUdgxAOCygclutOtxvT9URG2if0i3F/TpB+QIwdLNAa0MlfzI1G/9zCfyWFdDCZrWhZh8T4vU3POSGV1blPmDcD4xYqRjYIhmQI/MAwCH0n6O3cwjFKq69d/A27Gzk56wFiOWdKCVFoeKc+ELdrCak2tETbhWJyDn34O8ew/eXi7UZyjGUqKDRkqSoS35o/qBu+40P2rHhlqVCgWZjc7fAC/nJZmgg6JThD6P3rCOuG8ucasfu7nk+FLFYRfAOwBvx3KxDF+qXRHnINhzZDkAKBNNO+Alu5uednfrAxlHnVrJXeETpBNrnA+rdo6POVVOZTYzl27QNHSNkFuc1AZP8liEIQOED9EptV/Ama+z8sUEZGvRCl0QmrZZjqos4t1uF/+XR7sCIpuy31lbVNWFOQaDvfR0PfRzallILrEK7al9eUNPcKFbC2c4seJKkijPfKyXx52S+guhW70xBGzicbq8N9zWvuNQWQaOlWmHlXn9jOuScWUY7BHrIEYzw/PdxOrPEQ4JJs3dTQ3kz6jpxvABlOw4DQW1GzI1JJOiLnr45zVZg0WIK6/kX4otekjFv3blgQxfeb/uDjPiRHHRUg3UNX1JIIKdcIu0ZQ2en+gU4kc6TKfYmibsldtieKe7fyd6M4BLKCpHOco1Qt2BFYcy+Z/3trCgZ/A5FTdNCmKGUb9dsHKZ57uxWv9qD1VQsVGO71brD+BzpKSv1Tax8b6BL8rrD5f+oRdItyyiLw7AbFG30LWjWYR/EApHLHH+1jozWjBy7QOIcOjYsfmKzgO5wAYefWobh++7WA7loXitbbEv0zUc6vKTOCY3vq6W9fAo0jNfuQ9aK4bf01HmAtYSM1ADitfI2fJnY8Pxg0/51pZzmPX+362oqwLMmqqzXLdoT3YMtWJxqVp6Zr+njFicrL/ODhEnd9ciS6jn5ehHUaH6KYbgdN5LCyUCQVRmZLsE3U1qVa+6dZzdsBvVc0FOXZ64Q31Z0miZfuIwmPOXZ763jwYmI2CMXMCzO5xqes5lylZ8f1L96sG8U1WOP5LE54OwdpCSd9X62bxk71/Uv4wzdlEUSitssNOwfGRfTsnPDBXz1kz2wRGQEl7yyTs+A8mQIpHq6tVwqdJ8wrg0362LVkI5w9vhzN+X3xS5n4rNCs5efBNP/ShYJIgzbUJ0Cn+wdrgPesi1NEFnFtOZzPr+40IhEJyQlt0Dx1bcBISzYDsDvrEz6AAmkRDIV2+4lJOZzQ8g9OJO3qDMIMDOCQo72O9njTqcfOdkX7ghA7gAOY9A9S+9msa2nMX/2bYAIYq4l5PULWKIyPY3CzU+i9+nyh1p95myzp4Oj7EpzvnjU7fn1U8Q+xngL9HFfIPEX5nGjnEZpORVxpx6oeNB7UOQfvMp5kRhHey1sQw1oxZlI7H3Q90ihUbip2IQ8UFKn/KUncGErpY7Vd+RWV3Ms38LCa62qd9IVs/MIqb9sLRqGH4GSeZZ1lVo1NBa3WODf/h9hSr0CUEEH/ZZJnJKOOF9n0Dp2MPy5Gg0e1m+e9NTKXkpMYdVFEVk9S/RQbXPTHslXtuhxjmAGagsNUBpw6HvP+z4oWj8LiX0ziI6AtGi7zetp3+rqp5Fcgod0mdyZ8v1AQQIHEN7VmVkhD5LGsKdOmcU2oKun/eglz/firVr74HmE0+PrczB/s0Tr5aEZw1IhLBN3vZSlQ6vA19xR85kHm1uHcm3HxAG7UqbspfUzPmqBdRY7wJj6lUgUhn9m7dI5q7tcH3MX+FvWnQut0xbuIrVig286CBzfDD1LKhZdvOHeN5b4Uj7yCZFtneusSk2jts6Hpdfar2KF8JDol+Igp9gbksew7Kdo3fd08kvB2FDFan2ahbAn4yTsHzybDWASLgqWAICpZTHCjMqdrj5DLxcLZmyXMVTUCAwBpP0T6phsa0UYX2wGl+PT+MdrwLeH3LQCjTgZuvkcK+3umuBxJoGDIvPC2CGLpQ+A6ukgIkYdNCDVq7DaBGldtMwT6rBXYcaE7LFGgQHFjUKyBoJGWSKTBMZifbV10DD2eElCdIkidf0ADqp9Pfjo604jMoIypqafAdwrQAlAyai67g1cEezkCI3aRoluN58jNhEcQ3FwLjHtEP10X/DOcNuDh7SHQ7uv2puvQtpTWUNs/QwNQfFpD59TA5WNh3oj1mHwXFw/VJycPXEIRot/OvV0XLUteLxWSJtvnvqQVZyYx2j/Li4d+cG+8kN69Ig1K/IXJ1ShzPkzCc6NHaJL8DHk4Y3n6w61QLxJmemhGDtNmfZNn+ZJ005hs0FMGWT4ua89YGmrCc+phRNYNRSbsisRGei3mZf62tg/yi0QV/NDJjPfZBrGPkvgwqqsNHmQqQdxzlU04oN/p49BUN1CPGaHr4WH57CLrdTVGL9mS/VVgRvfftZcclWN1QiMzGjvWjArNPCKuo0uwpneNImxrB5AGJfa7a</div>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlLAxv+miWhDspHja9/F6ua0n1R9vuDi8yW6HMsge5qgkPFN8UBVoX2El+7DP9ljJB7hjY2mcbcJiFsUknN8Stm9tbBeP9KnKo7qSWuRjPqrIIX9/JOzPzThIJJSr7YRsr4eu3YGZpdiGhjP3Jz/URTZI7DpAaOcsDFj5Jmpcoq+iBtMv7Bu+CO9T</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZii6xZfRZpNSkRj/Cp4VACaY8NdM8mXkN5RCBGOLJVPeVqyK+0lBozmOeNL2CHwH3okRnE3v2joR+IIY/SRHW4dSr8Zkv9Z9iuDZlnSLN4kRhzstex8rZeTeJvl/43El9yLvoAI4xpYAWM9qLiJeLutYVZYrZlFqyOdCcAfsx37PLY/KkQzO79+CQ</p>
 
-            <img src="/travel_pictures/hemavan_fjallstation_30_08_26.webp" alt="hemavan fjallstation">
+            <img data-src="/travel_pictures/hemavan_fjallstation_30_08_26.webp" alt="hemavan fjallstation">
             
-            <h4>Montag 31.08. Hemavan -> Umeå</h4>
+            <h4 data-encrypted>wWNx/++tPWOJSgKIBVBZinb2Bi2lch+lWIf/bIIXC5aIUjJvaLZnBUFUVO+sItinXmDGSeGxWIYclhkazDm+ZGOztL4d49ofVs4=</h4>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlLfKqu4PKjxlGiuFwAgvKU7iGBd2Wu6rMnBeCe06FmZyMc7tZMiUM6A4UMr6FCAzJuOkqVNzNgYGEykEAtundpSnrKuHUxKFw5IlIjEDVfhmph9g0TIbY2s+dYJ0ACpFD4S7Nz3b1qKtCPuH04pXPbDy+xdv0ZPZKU+1/jGa0RRf4XWghHdiGJbQUAUjqMAEtwpA+hrAzTmE03OsnWldcGHGZBj1nasIzSlRwYjEMXX1XfB+QeYvgb9ZqHBKCrRKvbpjo9mAeoqf5Op9xhIRLIyXwYrCXynS5ZkdcK6FaTljLnrIKPvcTew1pVkzZbZm0lXo4/cAsefd/K8+0nRfWv0dauXc46SZnubgOrFPnDk+IduP8rPGMHUx1sR9TBlgW82eZzh1MrpTEGKqTo8R/ZDM+1772wix4n+341M4ovAYErUgXKqg/L1j7uyqBGuEaJc5WhEQMeK/Ms+BdbkJx9xdpn/GoT9RqSwEtinBmPfT+mqZIBfDLJ36lA2l8dE+cmxGplxBibyFaDeHw3k5fgA2f9MdJAAz+AmgOR+96QuToPsgrNm9wNz60ocpZLc9iY5J508xi2JR8LVftEWQq8f2grx9YZtPZG75n2Tn6mkSLX+lpgr9PLB/HRdFjscw+WnfgAxIroth</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZinz7+cbA5qhcsLo5dXc2YJrQO6PNPjJ0EQdP7RL2kFBI7bnutW0gUfAvGUAjiJTGr7Dq9tgD4JG1UjOk8mmGRLWRwdDUEjr7++OnCFP3E3nm0bSCbtB9mkFUiNpvmopNrsBIWM5PNGNW1zP3W3rV6rE1xvQKHNsIYposrpQXyKFaiwo4ZpEDKKo8uHdqkr28R6bux1KN82I8xtjLF2/1T2hH82ez3gvnaKCBE0Y9fjNu/B3xyOA1pRvmMdDSDSUsP/ergN9yXb539lsyxocgcDTA/AEVe3XpcGw9N9Qv2NUMqWfb90xMaHuL0gDD2kReV2XUdVjiE1vyUBvIhfPnlpYFDXwSfh2r0VHZQhiLDdEj/8nTLPp680WEKs1v/mepakUYQiolgQnTIqUGCp6IurjuSiNydN2ed618xlqIQj6EgxSJ4bzZQle3ydqb/9Ep49gtM/joVcCP9lzP8gdbzdizApVwX1eijMlYiB9HttGmuGSeP0RmB+uNE6j7WWONUCtCF7eJES0pJ4u7CrmyHChpnVKdh3ZvpGD7pzE0BpVqShIgmYEdAxYnZCPqlDRhYyw01ANojon6kBdM7FRmRXOGqIudYz/Bs4PddocCWz1SAXa0WMcvskD0EbcD2CLGawBrc92hYLCe</p>
         </section>
 
         <section id="02_09_26">
             <h3>02.09.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlLTCNeuL9rUmdkNh1sb4Ww6AGL2MyOtVmQf5AoWEyv4G5rPg8Yc0quaMKwkQtcaL2dHzEQLwoGYM1HqKfqFre44dhqW47Y0vHomMRDIIXxpBj/kpbChtqXbui32GTnGl0DJTSmSPqrg/3+ME2LZwfmoVmGQMY+l2vg+jYG1RK49KPjjYHgiZpBHXtDUYpXe6SC5t6/zG</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZihoYJ3e0wZjFkzEtoMTglolMO/NCxP1UcNrF9q/ihfuWbl0iTOZO+8mhzKvAXtXYgdrZ6M5PgVbT5FftSPcaMe8yI3P3hL/csY9+8zOxrQpS66rdzOwlX3PBzw/gJzhnYgzDIKkQSAbutpKSS7iDUdV59Y7cKnxK3zGU6YYodbvdZiuf4CIOi1HXACgAZXFNEvWXHyjA</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlACWHrv6u3O7P0n1lTro6fV8dITB2dvdnormlUZmITjzYBC9JulXJukzItQRXZj3Xcb4oMKuOv9W6dC1PvytU2v5+qr0vmxSIgG0G3iEc/f8apCmAoa7+nMt+yos9b/iisPeMJcPYM75+SQ930pEyt2b1gVU/DMZJxOGsyWOnO0O4XQ56+8T7tDp7heirxrNQJlcsvRuEa9p/bIuVM2XwoUwnBeN68cd/qosg0DawZXY7BrCW+ktiMjN8D1GkukpVke5wR1WFwHLuLjn5CtYRRGMS7r0baYjBvt06HQqU4OhYSu6ooIiicJEwZxkFCm7ZRWsT7BtM2MbKvWFQS+WMIA5+NKbopeqkxRw1UFr5s2wgAZqD1puynRDsvKpJafcjV6UlIW9Z99qWHbvCGx7cG3+sd8Z3CsvVMGeR/tVfniQ8cuNUoFOL5RXZWumB/2KoSQIylzTk0VgoGG0JJfdHV72fy58+BXeKh3JLMzkixjI7SCVY8kFEP8hAQOzTb1yUYg0jnabosoZLwDw34fcd2aWS/WOSZ2CIO+7T9G6H1uixAMyQSxQk1hnrMTxaUg4b2UfIri9EfbtB06NQk7tZ3uRdSVkiK1y+gO4TWXCTgUDyrvcWNQI+1FDW7CdHcTTso4E2zvUIPly</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZin3EqsL+8ltyNMzRav/wr/y3kX1MCAl2gZ4Lr/tEUa5kJ/0rGNC68UcU9JZLEK0xYxm76JRJ+yIFvWtt6uofNcl3o2kOv1h0WP+PY2MbDCmwm/eaqYpE2MpazjlUepeymHazIzUkugN8aoDwQ0xzKq6IAXkCn5yHgEFN3zigriGsDGIm2sZH5zWGoCUuxZTqPpzTG5fRPyllYlanKJTIeW87LrGkC3YGNydBkL8nRzNGoSMTZxz2xX2yvd6K4UT0i/Ea6m0SJLUUwOg/QTJ3w19e6koJFmId+Qu0hrAJstUBjSjVMDVXYQ/U8wRyOMZBUw7Jah4/HxZScfTkZBf3TjQh+0y0Wo9FiAIU9mNAAz/ciMCiRvt5rOiP+yF+Ua9XYW88AsiiLXOj/e62NUZjvtRrXubXm/7hsX9xoppdTfHzQcjOXZflsKREzB8yOHKRSUOEpkynWxfLlqsGUIdwTvaOKvqUuPIkT0ugWP6adnJSDa3WCZF+hAUFNlnGCc+PUGRsA9eGAKFqrgmCNKDSabs5bG64chYPtdYfi5WWHMtOKqX6LLAd2kDjY/IfOH/ONMeKIbyXa3NH/sAuMapZmi+qjBztJ7UPrkgDshQWU0PRtyVldBuwsVsLVLF0njdAFzjNrDKuSCPe</p>
 
-            <img src="/travel_pictures/darts_01_09_26.jpeg" alt="darts at orangeriet">
+            <img data-src="/travel_pictures/darts_01_09_26.jpeg" alt="darts at orangeriet">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlBRHEqy1tJpIk7OUZrWDxkKohc1aMfPV3RehLHPGuL0zuSEwDnFvG8o1gqYGNKx5ZhHAiYjbDt8s8G68KzbrWHJl+NMbdT3fXCzcPcE7heQSDzgV116RcYuxIX+5A52g2ptLPeQpEwInXsNPb5Evp1+clUwxNtlypMBmqA7SaZMGZaEvb07VDX6i7cUKidWa4LX+HX3rKVYp+X7CGpU4bZDjlVnjBV6IZRPcR4cJdSeEqJnpzSlC8fqS7A+l6f+k6REHakPH</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZihw7X7djjogfWtGAOASINadjSg7Jq0uaL1JN321Km8rbFyyNt7DQp60ra6RLaYfabsdc+6VHGzbLVLWhAzlbaaVV45zOBXthTngiuv0gMy1iId6CSyEdNWwxNViqENw0+1PHGsIWX/hNcNpJ4a+/OGMWmQa96G05XYTDHlWuQBRyaQ/OjePCWIckh09jILwUxZ0nn7mFxXHpJmAixqNJT5gL+/mYabTtHTejWtXvLfviwFm50NNc0T3elyfXfbklX3Ahmdam</p>
 
-            <img src="/travel_pictures/umealven_02_09_26.jpeg" alt="the umea river">
+            <img data-src="/travel_pictures/umealven_02_09_26.jpeg" alt="the umea river">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlCat7Vo/M8nBA5QRM9SwOhx6fL54S29l06yECA8P8YYxE/I0pjVQNx0Sg1d8CUBuBcVSM8OL6q1DatVKpqg5m3hQSLOFeIGi1SKq6UcI471edbm6+1IL6VaY/EsuXj6eFC2gmw==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZijylA1OHWuGYmWz2KHfjZindX59g1gummaFy7asbh7ENQQyiton1dladacB8XKqP6fqWophMuU7YMbljFMAWnLmu/Lz8GTSGy2PE138ET+nocoBNoXj3IYBTKA9LsadYkwJCAQ==</p>
         </section>
 
         <section id="04_09_26">
             <h3>04.09.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlHn5l20dqrLcFjhPJLoPhBmB5MJfc2TtZc/eDk5RChQpKBWrAoqNxHxY0c4Kd8/DsO0kbH5NkR4DZmFFeL/yHnCsIZaxLUt6E01pAEWpOeAn+AUQe9tTsBFG37sDf3DwFIY4steDp9MIJB2/DWNYLHFmYprQny0Hg8+cZHZOv1zDe6SoI9csalE8uJFTTCakHjumE+YNyNWDVSI6yYy1IQ6l17w827mAK2N0pGI1AYu7RfUVhq5x95ohNPfTrOmiGb3ePRxNbGGtpQEtSH7h9fKCQZ+wJzqPyGn1d8M5rcnPbuMixMqjzLVnAfICTDc2HbITU6s+dlvzatVeA52/6zU7fhhVKH9NzjB3E/o+l0hijXK66QPtTTtuvb4WIZxL/qBIKHEAzpMsu6OJm/7LaCUfvdhBWFCBgS3xUrWbi9ca2MAnq3cbtqDWWW35lcL760+dqoEbkISpbpxbTxsgXcn+O0K4rF73sd9Ty8NnehSFXy7HN9IeD306VLFsJ5vHaIc27vR7M0AyEggUDjyW57HkSKPtABIsS5KSr9vNZRaDiuObS28tOc8poZ49lZhB2eT7iLPRZPRS</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZih3CMYeZwb/CtlLHcICYg/fZMUZYnvJHCNb7gDAc3+ftiqTPb8Rwbr4yB/Q+LbVAi3e9MxlA+rbQV9zb3C0uETTXwQuAynS8i6ZOpiENk2wHRN7c30V9810kvVX77nD2bHfamqigYHK7CtX/Hi3wNvRA3W0L+my3SomeoHeEJi+3UC9d5m5Df+qI6SMIk/6Wa2f7nA8fDNScINv98TMknoeX//4h9PLmYMO+puv5tjt2pgQXOaKleqNGyO+2gIRt//4e6n/4oywuvjIx00oq4mrOyDqFn2zgUhPMKruDc3aASEqPnRMx2VxcD8/pmr/TbSWKKJ6snevet9kRhH5zgxB9len5F8ZD4vhRECN7hDj80SszanD2h3qJkoNQ4mPEqgZazkGGRJ/tYCTDSOBK7hJ3c/gGeaccGvtpuMZYZUOT6maz5WTxnKBjcSKOWi/t3s5vvVnzovXDXt5eEGkuKU3zgVUp6e8eRW8XlIexlNivdh+x3IJWU20ISv7c6WaIt/osqcHoucVB+teAoA8iH9/AW3Qt1/yOTbIRNYno6Msstkmxr4LZXZqfdXzD30UN3swEnW435eos</p>
             
-            <img src="/travel_pictures/zucchinis_04_09_26.webp" alt="giant zucchinis">
+            <img data-src="/travel_pictures/zucchinis_04_09_26.webp" alt="giant zucchinis">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlHN+gNNaRv2xdIddhRK+vBqDTYorVDLmw/B2q/Z/25wtzeYz8Pw0NlwCJ2Suh8RRYIcXGNcPlVoODTyJnhHuJOUvvT4rHFrD6JXxqqtHQEnsuVDcbUoOfm8K0a7oyjYUxWNIJlL9SWTG43TtTy3jyAirbHwfazmUSPD1fcPOajiAXc4AZihz2OGSTt6mfQ0Zeso+SfstJnUQuMNocy+IipqY+uenILs1RlMz8oFROANfpssELECoZ4ND4SWSBYL6uGaw/wBprIVtOlSRD2Bx9LYFQtzaOMnjXCBk9ahngqNE2/T/+rTzM49mDPsu594tM2r143dq2RXZXhSHoiQmlQ1hCXRO5DZKchHTrpkLkiZqrvy/1S5YZ4ngBLbH9WzA7iIPN5Mv2UAj2W5NSrgfET2mej6JsTKVr68OrzrVEPU7Q/AkuuX6bO3zmUl3p7/+F6VDi1GmvTB/q3MgNK9RdXboE1L3cVR430xuAuvgLA6Qxih2BjOvLTtcbg/A/+7t9l1RADotbhY212BvWfoVLKsnOdZNeW9D84m36g1mRl3XDqV5nO9FX/dQXzClS5buicscgS9zUf6pjYm/hw==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZipo3mtMsbihSqWSl+waQkJXuILvFR0ZsE3wbts+3u1DPgBx5DVeLhiAjDDAuE/Ouew99zrYRLpnuT6RGaeAcd0cwNzqBumHGu24Hg9Ewla4Yj7gMUwhdhlbPCiN+jiUOfSUnJogY/IO9r/feClvkRRnNxY671/NygTalskUvDoHwoxYBlRQekOEWGff3W4PSsUbcewp/fVNPca/j3tSNULtzVIdSnyP1wp1pr9iqno/V4/dJCYRodsyabsjmZd5pp/0UYbrAT5izlDdwg0P/KO6Rch1Cz/KLY5YKY0ddQMyZbgLTU57Yy0MesMSbyESJFEg8+OOyTFL31wmvMBWPNcxphVwKzgy2toqgFerpGoC1G+y548i1uVdLZMKUVLblHiwRsKT3qh9XFd0YvrRFTSag+mu7by2ivefDNWXQI+J8krEWd/Z5I5vQnLVPJZUTGP0LDKVZvD8Zc5HxmSMtuZHB9aCe50FPVP068i3CWygcMzEVlWUCe1ZkPoNA92ZzoczI0D/TfWfEkaABnke2hRcE57UxsCaZ9LlwXjVfJ0vKAiSXOuFr1RYfeqhjk667haa0L48wpgiBcz9egA==</p>
 
-            <img src="/travel_pictures/hogberg_gard_02_09_24.webp" alt="hogberg gard">
+            <img data-src="/travel_pictures/hogberg_gard_02_09_24.webp" alt="hogberg gard">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlBg74oSsVv3HRtB1Ew8Mrl4y80kfW1M6Ish4pzvrW6Rf+QbjEFCXL0I6uiatFqtsOHFQOe4PTNkUS95UVw43cVzNFXGdV0B9T8KacMsTbhoOawZ96KWAqMllQ+yNOWJ4R3FixwPbeyLBeMUaeiJDQoDKqDV3SjQw38mYLBo4W3g2AZnrBCyKCCPcgzur8scNKGYHbwXCuPry6uCHFkrqlXBayM0oP4DUHoN9N/xC4AqeCsMocbx2VQ3PAX/uRFdND7ERSlvmARzwtQ6eW8HCiBWWI3tO</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiplW4G7Jj+68aIVLB/9apwWYfegDz8XdFl2sDI+/X8aWjWgsDYihyO6lCsoT6ccLTZxurCkpSr24sxr++cDLajq7cEz/A+3+ZOumMJ/1Km2uyWNFituS3Se9QdiZG9WzI6d5MyVB1CftuYW6ZKcRqwLlR7w145iSqTeY6EvNAGWuqNg4PLFiUhms9KZ6whbzD0gdMgLuTeh+xMT84blAbF3JZuXtPb1c/NMMIcizRuX/x9avfd3IbG5zwesIKVKmuG+ca16f74ptQF6eNbN9WpEzklTF</p>
 
-            <img src="/travel_pictures/Judean_04_09_26.webp" alt="judean">
+            <img data-src="/travel_pictures/Judean_04_09_26.webp" alt="judean">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlPJOyNEDHKa3kqukrtsuqFtJ/3imPjM5uEaUS0uVtSsin7AGTtUyfjNYRPU2wIgVETi8KfW7v37F43eFL8Ph4uptvF7QzxA1382m0fHl3joP0YlpYKyCjryZVZb5t92q/83p23huZbd5TzVaVPqKscOMxR5jigWS5zp7lUL9GFtQWP6btlTGmn6wZjUJ1+D9AppjZS4gKkkxzk22rA22pZdMHnYIEhQRWB67usxCLjQiFU0=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiolBX4P5RMM9a5f1a5aP/Er8dFCeWs/YZDJHuS5AEK7UYHmL5FdFY9rfQaiqjUwlawGkdJMY3ukAku0DphRkLbi4P4nMUpS9dAG0Eef4p4k4IgQ8Mlomhy1YaiaAra7r7d2Rq7mHgTdzayU65GbbYyFFWFAfUtjPTZqxtIOQpCZUlndElsdcS+txRH2BbiF/kcr1DKbm1wMtSKwzk/+qHdNH9WIvBQo1A1jaNktNbadEvB0=</p>
         </section>
 
         <section id="09_09_26">
             <h3>09.09.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlGKoY6YaZIlnZQzBKUGzAGFrjBSqUgs68PGU6UtvJB3LTbFPcMq+3NjXBOxCZCqDsJymnY7QJXEivI84gbgNMm8A+Mp+</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZirNo6AybLqubW7JkBxKOOim3Cm+kooQrywCkasaorNn20Lrz6N82iXsU1L3Rbq+zFH3ILznOgul7UnhS/e052DFtv3d0</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlKUmm/wp34RH1iIkawVxdbvt9uQvbPEm+nZMdIQVzi/KoPKvn1L8duquqJThUouLamMfMs6u6wpUpiAqKj4V++S5dql+hzP3PHJglGuFWu/H4ORIixzwJ/XBNgd/XmESm16dw1HhuCv7/75Y2Ut86SUjnLpiM5tkoOOIvKpg0Gq1a/0RnXZ1oIPKWOcjjFVwfPfejOTerjl545lRwMkbvfpUJfz6jUZEnrbJAUwmhOFN9vk8ocBtfAs08cy4TCU03xrgsbxCmUm/zCu04Kw0MVZbfkKxkkx+gQRoHpukMSXjPQdG1y9xGbZ85q2CYx5wjRYZgThb5v9Zzdw=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZirzh4/FzqMjglXkvTOGYUWfaHXCpad/e3GIXuswmK4hdlCwhRi8f/xKNdolEw3kO0quO2oHLyNpBnJc6KAGUpEh/zTrkGrF6s7cBbaIn0S70tS8+uyWS2/qqFdLZNUHAnV2a8H1TRQPj4I7xdQXYKZAIOAR84mb3EyTvHqXv4D7T/6W4ooSEh7YbmX77kK/2uPxhZDpBjrfx5b6nd2db8lziyC1TBz0rKjMQ1Wf9CON22bqx//cIN74h/36XKV+w/I+MjVSYMlypBXGVWKzxh1e70kPb/5MUbRKVCKooL4iSaYoVnZkqb6E89XW3l0OjdrwfcoQQzi0jGYE=</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlLRkwChFzuPYA6axhD16pk5lD0y/+GLZZaiMSCpbhKU0xk5s1D7mGKNJ5CNZ+8cnF50YnnraAgPTkHZJVBoJvP26zlUAdoxM7p8mfz3saCiKcT5jLoHKDaVJO93Hp8xnNdJ0FlN0WRIQYUQQmny4X3JuITsk9ENP/1DGoIoSyrsOB3mkG/k92zihaTMhrYsi/X6wRcMiJxUQUSbz5bQ/1q8KQww5/rGy0XZNputE8ZKHRzmAcxzcr0p5C/5v3tgfhDW3zibTJnDQsUOpfZjJD3R8Cxl3C9JJG8ZmFrRkdjWuuBDL77Lf9ROEZGFWqcaVcV/5D5gDWZuw9w7FpulZkVWUiy6i+baimENIeoSbnn1OIFdm7ztccmXL0eZwJKI7FWdp6SgucvtVompZUqJxGG+w8+pSIMh+VhS3esmPHNeW6hkohugmFxWnua2+tVLbcEKvvKyLuRChWNPsHh/I8nsO8EofYCCbGzi28sQmxEluUXUtxCbexuk68s6QW6y/engYsC5HZBvodzrFVpLJ2QxsxuKuHph2u1XZ/KSOGzhXOba1oLswCgtRndg98fhpgCfqzYoxoHtwHubo/g56dXznuCpRLLLE37hj2GJajKKA0z/A/PXUhZTLtVF0mLw/GExc</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiv6Ezdrhj6wgWzCgsgYFXKsYpQfRsVqERGQ61CSGLY//9kIlXzx3ma6jucE2QXDAMRiGSy08S3RUoFPB39s7y9dYO7jahsqs/dKdnkmH5ApASKgEIA+RBXIX2oYNy7yr3US/LqLWgVdKVUgdislaZOKOy7xSRqdDs/IMywCZIJsrP06swVYichkTIycr5TzsEvL3napeR6iBf86xnO9JdUoZeMAkQpg7wfVJZASKiubee7fmex9FrYdwAMS8U5goouQ06yIgNrt14Ao8cOjqeWsT0mp3hQBhnYEJZ6ad5hte6z9l2VZRAYlw7IjpjJfttgbmtYSL+vursbtEgHuxY75rMdCAKvAfHD0HkVc6PbA1skL6v4czrpIipI8jiABqJC0Og3k+IUeP51JVVDTXrFEBApJsuc3MRi1heAgZoj8g5lLvUn8hWIOWGUvUw46x4RNjd3z50rw+TPOllWRnbErSHyasElkRvAg4IQ0KYQvkIeeKFQVQgVPeDA01NNdVEftH1KxqjJGuXRcaE3R9oaTptDujmT4Zzhg/NyygjptdGz2VhxDRlujMDGPQZ0YxzwfOIgAVruFZuinSmyCrFMLEa895iBQmJgPt3mvAsihhVSg5n8gH8pMZYkJsh7bnV2wF</p>
 
-            <img src="/travel_pictures/colored_wool_06_09_26.jpeg" alt="colored wool on table">
+            <img data-src="/travel_pictures/colored_wool_06_09_26.jpeg" alt="colored wool on table">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlEuyjUQN5kpfvVgt7FcQ0VwQTcNeVF+B1BfUCRh1HCmk9plnNpBHa7OTSayJ+SesGoGSjhaSRYMlEzCBe8oy74t7MWHJbiicxIqILP8jzm9M/ZSRvPBF9dDi81bDumWH6Ow+</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZinzOw9fqPyA/KtL3RxsnRH3KyaNUuir/2dZz5Zmox5Zgq3BqTvasLC6di8ZgkSI7X4kzkchCR55px6R28XvAfMoLGs1CwVqiYf1Mr2OCPGT+R9HmHYwzSbz9tO+EfnwUuDkC</p>
 
-            <img src="/travel_pictures/swedsih_house_06_09_26.webp" alt="swedish house in garden">
+            <img data-src="/travel_pictures/swedsih_house_06_09_26.webp" alt="swedish house in garden">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlFYFe8n3/UWybuM6a9cjKxGlIuLt04G/1jnHPw7bkDj7BseFYsSAFAwzU767E8G44ftgMFqoPdbd4BdjLWM2joiIxhPVJ1EjfgNWzWcLWknHnmtNcdscVnGVe8B9c/l/S85KJF9At0y0e3mSLfm65tYx3CjKU3PWO9m1AxoyeHNbc6aW4MK2MfuOJTTDl/4ixkRvI+5tp9joNZRIJ/oajQePS99NY7PFOTeQWi608FEdja6sUOqOrP/1FAD16AbFCibmnYolosny2iy8updKZ0foVw==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZigkeOMH78XHGnyymCt7HD7YunuQbqgjxm45WfibfL2GZQ/BV2MZuvhjvqXNrT5w2UNbH2mBee/+8trjTyKJ3Ixr0YmXryu3y75wYbKg7I/o8SLVs2Ar/Fssc7TEi5hv4/3Bk8TnTNsJdSH3/gWrb8GFGWX30FNl29KNPajkdzSBkGIfpeV0hUe3AqRSZUGgrPhp9IYMeXlq+kSoTTPeKuRYO1GeiCHgLaW3jmOUlsD0Aq5S7EZs6tOpv+/Lc5U/XufX+rIY73brJGVv7z+EzCSAqDQ==</p>
 
-            <img src="/travel_pictures/lingon_07_09_26.webp" alt="lingon in the forest">
+            <img data-src="/travel_pictures/lingon_07_09_26.webp" alt="lingon in the forest">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlBFKRXikmYJCboGGcdhGuhrB3I4NXe6yUajDzrX0aZj8680pm05ImjNltpGh1HUEROIdtKu9QCGSbgHkYTwE7Lpl3qMuHYSGvN23tfNFyKhbStAS+QQLtBF/3diWVUVQZULgtcAgP1mdTaFGsamf2BT1RyZ094/Nt2ST4q2jTWc9M7TT3+KYtJ6wbVPehHsrdat3xrs/Mdu1e8FyWjwfWqlUn8NLNGWlUVVLAGhJhHLrbYG/GfaQ6Y7kCPmUJfAjAUlycnMcy9gQuwgEN/rEb3HNsE9t8iyS9qTgsicbArUAxlanPSo67rKB/WAQrsiaZwKJYCxhh8xXwwXDbo/8mSBhZlE1mooDmQrxm2iHFrXBNch76c4i8JOz2XT6S/gkhMMozjkTb/vEtm4wFNWpxqwge3lds6DQbBgwCBLamgFWmFP66X6omeZnCvb4EHwnhnb8+gHZd8+5jhgq85qBigj0x+GE5Hqd1R6CSQ86FfqkBVyU6PGDndPTxL5TsMggRMwkG1LejqF5YsE1EtcQ3g5+bCtp0dhDmVKv5WadJjpkP8a+wHNmMEpkhOwxrhXKGUYK3cQ99lIkHCRtg4IwfSlP1NEvU7UR3y8DsztAd2Fq/48KGYb6XqMsLbtpbgvhx77+K6B45fIjSvLrFuGJcP12kg==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZinO2n2oLcC/OO8kzJrTdaKOCNGiOp4l7oSzfjKup8BZyWL5346iOouYuB+4LW6y6Ylv+7Jt4D/QfyB0AywfJMbAAasbYC2TxGphyOJIH8cWERcQw4hZdXnJPL8alS4o7FbpodsvFzhs1/eZpy1SvPyemmWFevZDafy0YnSbJHk9NCJQqYgHSbBNszyTJuNmyklDPXn+884Ct1gFOLi8EM8PWwsg8PGDNGoDmPk50L/VOa2nSMw2GyA1+N/mcdnZ8ckFvVUfpo+aHDOY6tecdFmioQPX6yPitfiIhgMxF+xYv2Wbm7Yyh5Kjce/InkA56jcmTJKthhRLpPxH6YhZMzTNhW0ycttigXMb6Vm0iFSVBri+FTdI9bOVTo2Wg2wbU3UP0SW0IjYu2KxmUYMo3ZyHM7Ll5E7BfSrPTlP8mMEP0SQbA/s7GRKQHIh98/1a7vtsQdZV19a5Qcq7wlgLrawabg6/1P3ipCpGnysIrCexinyDPJUZoQAgPBLmIPSjgvCpR6BXTcZmqu2Fpk+yQdmbvc2S6GaP5ZT9UsifYau7XYkSxNUih5QoKi5fSvyTe4IjFhybLAb+/ugFgj5lRFyxlOGenznCE4HbYC0+UXzrvgmjAaZqITEdazgxZQJsLFOLOHjCZTDNl0chNQcEazXp5jA==</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlIluRQ4JbX2WAPYG0Gwls44JnPnFMLyARBmGjNp8cfy7sX5yVWSOXr3eDyjAKYk/lYYxgI8sT/Bt7Mnjj1GM8km6DtPlWkG15TEGD/yRS8t2A2jDTBen8RhlaqPiXRoRZQrK0nJ1BXQOLVyG29UVpGbgZcbm/B5Gt4WvvbZNVkHpab1F85sQxsVeRG7kwEhAow==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZioOg00NbZwMOpYFkmPDZenI5rKkLaeCQQvmAEsxX+WRqztoo0Jp+OV3rtviebxesvAWA23i8G62G1xTN8We190xH0nc74mFICsvulJTCTBdeDycUn7faXlWWbmIlzIVhvhv9kKdlvpfyBMIq6VWOOQgPw7OZc+VdYsUrZY4xh4Axt/K2Wwj+eZmJBTMb/S5VHw==</p>
 
-            <img src="/travel_pictures/kimchi_prouction_08_09_26.jpeg" alt="kimchi production">
+            <img data-src="/travel_pictures/kimchi_prouction_08_09_26.jpeg" alt="kimchi production">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlCrMFOfr3TjwzP23CNmwf7B398fsU5A2C11CbMw09GW/oReMuXOCr9nmOZqMN+zow1NSfYs4QLKBjr0dsAeNeZElllBuWV7KG3/EQ0zo854yoI/wnXh/DZy8eJRM5z3AOnBffqiEQRuR4v1FRd+Ee946byuWvx4uy8REoRlfNcsCTA2OWIXcVWuARkrAogvyd0Lgi8dbk9+N94EeITSjrh6rXmSCEVJ9aeOykPIwfD8HN2m7ARV3H/v2P67FLIHNj/gyyG/rVALH2zsyhNRXXuUlcn6ceNv523UTMD3PCFeCxeutbWnIH0gAmFNQ+J0HN5uzCA+whx8TlonKOk8jX7qOwG17obmcn8w/+6LBoDf+RkYKlv+sGagUlFFcYvzLbQOCjIpIbUlh28mEPGrqGIJkF1/keAWQNIu0SwWHRalNMDrdO1+yY+ziom/qcywfnmLPcBAYlY38nJD6bY6BneBmzX5DsnzYvuFbIFg11e0bSxLyrNQvIerWUFWAKiXauqUiPg==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZimtwqzs91IQR39tVZZ258h9MknK4gop0dj41gBMCclQOdYaQdCztOloGvmaJAX6LM2dZhnu6CUalsu+crvUFbbRtqWlCm/jDIjU4TIdfN3GhNoiBgu8OlEyl4I0NQdcnvfrLdkcCdva49e4ihYMpodBKkndcGsG91sKpCHsCjBjbimm7WInL/npvqWEFdGHqkPV/EBZFqkLjp5nSz5uda35LPtWfbddZcwGJyh3iMjCleSrW+/edjpVP/tFv5u2lCUufDOSAuIoQxusVgopYunLzFeGolkLsav18rmYDYCEhLB20cGnpk3kyY/dPBPZ1CN9pAZFSsmBzqhvM/SsHrshDvvINxkEe9KuLtfvF0dlwOPKT1gDbgc6hKKQfSwS8qr63U6BbEmbbGzt+ZZyxAPL/h1N3FI0bpToII0NOK85lScDRDQnVUmWnktEGgfakMWOWVR6MJJr6kQIrZ5P8MaDQpCquQGhT86we+amPrpnqkxhx/9Bkax31xG3IgHhZB1MEgA==</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlNi7pWb3Ctw0wNMpLIzqLZbrdZpBQjPhbuL7O0JoGpxX99hncGg4JT9q97xuApJh1w4SNHfDxIm1Ut4TJSaC8XSUOaWFMSiCfukq39vo0HGrk6HJT0Bvv/aJhYLQjL7qhXbgnBICOGo4xOzzFA56/N1aXYI2E3yFfIMCS6QMUV9KgWx4Tol8r+fqcWQFAbVW5JkDNQP4qtMYgxlSNQmUYmItVTeYSk90gOIX80IntErZSOO1nCN8WCkJXT1e3eP1z5MToV6S7nhAjrk7xyO6bJBbcb84k06N2zj10f6KRs7wgardBDxHhEYEfqQTf3SNmH0DZKXJDThVmCZk</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZijdZBBMo4oWyx82HlW+qbWrrnVKXuWQjo1cOMR5WegS+8Pu/z/+Z0cvWvV79EAH4OND34Ovcv3v9srwUoBNx9fqwBbjtm0J+V47t1/n0a4Lfes8waHFatGw17pcT5gGqWS5IFiuLanfZ8cS5flrxCUX8KCbA22Jm/7ZHyt8V/OV42JVLvC2wDRFPkoVxYm8l3pCboxP3yN/6QcWtrKdHSzDnq1rL/KS/zXBotZBF7QZvV/uz+v12wlrfjB2U2AqCwnDWI39Ufz/JFGtYVODJU25gLh+n1kahn+ApyqGSdjHL8jhZrhdfd8qsY7wPgeko71BA/gqGANJeG+Al</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlFgFUS58mPO6ttM4qvAPLCr7He3YXVVx6L8yqwh+TFSvfJQPHPa9BPFDltMr01yz1k+xvIwI/NZuVozILoD7zgMTmKX5ZMB9Act9dmXT2L8lej2AkwjfNP4yIorZlshlzHhTyUlHtrMe0fvF4aAAt4BUY0jSOEBio1s=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZisyFy6zl08fx33SolzuqdFwrNTfMgFrK/8CPMR095qEZaRS44Nl7wtw8UF0b0go1DWS70DBSoWMCp8FLs4y3yjQ6lUzRUCIWahgXM21+JE+pwNxXMdNGUMUG+A28aRiX7gf1u3bQzp1oP9126Atacp3LhgTtSGA2+qY=</p>
 
-            <img src="/travel_pictures/toff_at_the_window_05_09_26.jpeg" alt="cat and rainbow">
+            <img data-src="/travel_pictures/toff_at_the_window_05_09_26.jpeg" alt="cat and rainbow">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlN+dXi4mTP+zScrQS5vwWBmqvG8+7/a6hz2Cmm7gNc/oUpxOjUP9PjUsF6IBfmOZ9QqHw8dR1iDUrwpp9JZry5CfwVrCDbHr4Ln6HhOCOUpNoWSOwgMmhmdldrsLRWKsBKXw8rb+JYtH4NVeOu2LYRQWPWWXjF5OYVJWrUG5bSwGIrBKPYVn2u0NmTw3cP24rcSdiGdox5b5JaTWEh7uSyF7xCtz12JEZC3cjiHdupysrJVE2KsGIHW9jGf5mVWttQ4bCYWmjnulql/PeJONIuo70GVDE9haW9K9hgoKNPtn3o6Ef0QBNoRWht2tfsvq8x0l5l02plb356Iyueeu79m4ScDk29m7X7Pig0+oDkWzwsgOXXYKp7KMuts2rOThmz7R2g8/25vWFkQpM4CHqLHYaJRkKZ+/WrDRHHYWQPaolwbqsD2JTnLNNlri7j4djTJePv4yb3WdGBuafQxE/x4BgFoe1oLa5W+HeKVqTTyYWJV4UelrDinW1CZT7D3PbwiRRLqxJHKMv8THIBYRMFoTJamzsk1rOTvbT9P1CtfPrbONAs6yUgDEdzC/JGEcvsaDOAsVrcx+PHx5NbH1lYYBDogQLsNmL1xpprroM3YXv0zZPV6m3JUgYHaDab2Zn/J9ias3NLkOEcyck6dplGY=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZijf1Pi4XA+5gGNwuQD/1beiJgb887EPlboqaElhoI8bX9yD4cr1DS5EBByS+5iVRMmEQE3e3ERJHsSGqR8w05UYa6rCNWl1OYfAtqFRWXObZ8X68/k/oDv5mgqaxqF0Hjd2FkLwIm4nuxigY9GKSwObKUvO9X/U67QVvUrBbL4raYGjVRfzcXsu6wzHtOHQFE5TJvTlHH84f5z8wN4EoTDGA5GXo6P0gTogLSyRBdeWNwTS6BDDCxpyLQz0DEgfRWepx/3FhWxuR9Yyf2dXcDwz8avbj1Sjfk4kKlB+f2PgT2k9isyVYxqfTECiP0mIKVYeJAZB3noEIo3tIhkq36B6bUUQL0C6NdPQwwKZAsSaGkJAwbS2MqRcS3+I4zA4pVYT6Qyo1Zs+3UFT0qbu/hokOdkVy57EVl8YvgvubO/mlJtQ0lnkxR0sEXXiPEtcxWINk1d45Vw6e9e5TOJMoff+5r3WJIiPxDGsuhaPxywOwF/INb897pKFK4Jb0kriFAYS4iA3CNcgakLB0JCaGEVslZaN7qCA4g1nattaTkmyGMOIBZBPKodEn3zeuAvelVoAys1B6yAw+JAT5tzC+X0n75A0X9Oe/bdc74bY7iR1FFFNuEDaqikyMyxTNZJKowvpfFZeFHkE2HLBasOgY1U8=</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlKjF7/0KCAt15SS/mpGseWkKzKYH6PQ+Ct+rZVjxbEDfy0L7ofU06aV+9SK+fW3s+JPPcM+e8BzPWPf0QUZYoxuTgR0WXuQB0R8T61KELsCgUIPOwJoNJviTPD8Fdm1oq10ruY5C1c3D4V6+8407RDCSY5bYZEbZU2tb5qwZnr54JdZ219WrAPoUaNwt/OszIUwvfDPJbqFzuXl8TfowU2qmnUOSQ3RP7Nz4Rz6PtVkkSaxIsXVsGYXbfre5trWH4qEmqq6VCjqMpLBc3/K8oG9jRDQ5inQxh5YC4bocnMejYHHSu6U03fha+9G3lyEQ12dUgu6BA/P+2frFom6kHS6As5oRCVsk6kq5AnGWPZ2+J5SLKS8SNS3UyFbOvNR36Enl0ePPjyJ9teffIaZ+/v83v1DvkgfKrcIKiaZ395mZY2NrJ2PGNbQkwV4GAhksV1FKSFPo/plYJ1HC0o9EVQ2msiJlY+eH4/gf1dWXCmjsQAzony6JmQeGyKPcr85yjaHx3zHM+r2ctLhyZgtCEu/FTORMqiv7wmfHSAXI0WJzD63a27NJ6tHGMDK0A/XSU5okgFPM5r2P0bV2HfTNRAfW/3WsImaMTLMN6nfvlB5qjWyCtx7/sREMIFbTg3KTcgvSM5NfdzedX0G0QgrQtILJm9Hu8e0QQAMWnO94Wbp2d6A1+pRYPiuag89veTAS/bmuxRTUNJUUx/qRFRsp0vQT8e956lDKZAjqI7Rk3NPC2yHu+cEOAbfLb2+gKX1IMg/DAza+69JZPl9UwL0uRli4YTpAFkfnY22ePKBTceGzMdhvSeYyzmhsCUFFh7uIKyoTGVsXOkgwTP16LwmPN2AW/y1RrmPGfEJ2CZNchPJ4E0ZYEowWBIeoQ+mxik74+xCmaz1GxBPxPI2rsTvJKHTvrZBWrxL1ZdM35KIeAp9dglrOvTdQMejh2ZMk1LYTmJsnRXI4BBthYhPv1SVV0kChZiGA8NtGiGBzd/052Pkx/ebQW4Q4CYiiCSdQLxLH+YBzO37oPYdjEhC2yllT+eWf3Hzd9tXVm9Vi3mqb3t9ZQGXCTJ4sEeefHI+T+PhTFBhLRulZSg88Eg1xgQEBZUbzo6JzitKhrDzBjVKbJKU4P7mplQwL5/HNnzDImycHy93zzbBhAAJa04BqouLAIlJmecn5NnT+dawL8PAcACPV80hCFVRjTkIOcolkAZ8L+r3HgrqBGe0GLS9FFaW9VVuQhOrYKBwCK04yfXxR0LrgSo7QAaeOqNuBMJKk2cEDMFOMdBaL8oTlo8NcXKq8mMG+7matVp6V2QSTewnVsCPjXlNBkiaGZNmnHKcYnF75pTmp9bmOePu1mv/CF9fM796QmBOFaa3pT5GpVdc2hwBfWImwcrEwvf4v8MSSA9vSLuVoqyp5pOg354MPJvGlBlKvFpiFqUbdVc6XmL3Ar9UcdqRM/gpIZYIxkEo0ixmlV74BwxleBFxeC6ooopybQuMQGYhvcvhy6E2JERiGELhk5n1AvsCTEy0ERfOthMoLEsid0gH98fNtvDOJoiLlYge7hksbOgiqbItTeHjwjP9UXifTGZzxhcVr</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiiinJJwHTIYK0Fhk5uJLbZUtvyW2brpQ4gtwzEz40eEPDzkuPuyApT6jLQeE0HM/6eCr5GxP6r5S68mjyk1g3mY6fNTUJdwuojz6QFRfbMmtW3OxjI4yle+sxzW6hIrJCKqleh/cw+MZlnPOCQVQioAS2qnFdBnUIe3fOGCtz2S2zAODEcPuLIWvpIiSDYcmLdML8oR2AZmDVXd9PO3m3+WFi66/O9pt3rmFNU027Lb3gntzyAGtlmVkY7HOXrHNyNFSDaV19b7sW4fiau7vT2UgaArs2cEW6PyjCk/vWimjbeflgwIOx1/1XQkdPobHANKQEtbCOaxHJ+U7C/9rPGBvRkJDj4OnV6k+15EHmcfrZEhDX8UE+b/x9Ey2p/pKl52WGGvSyAa+s9H7HIUXOh45EhCj33qTi1OsiCXSgvifEBoiAayODauPlICSfD8ulqINkSN7FV6HnoiD+XGjCANaFCioZpYtZezgFQOgCEtS1Asg6S/gjnsWdrxQy1XuBHIRpsXvNio/LMwD7ca1lAQP5LJhRGu8RgdTI8rR6GONn+HfWx8U4ndE0n++pHKilT85ge3cckU39eNJ+ugBigFNBMh7FnvUgTZNHW2X+XqrtVIvceaDLMREZAEt3Dihs3p//QkENKXwtJ3kamA5THL40iA0vO+5cwXh5MQ57MUXBYA+vVR4dYZk41fEtZIW99BDfOnC+w0sHhmnipIMpLr8QL5FOVVYf+KT8TmURIpzUBHbHOR3M1Yt59e1ZmF1bXCfvS36ZiUWWC2lMkj6zi5txmnujo5xoxmBS2JVcoytuOwZbTdqrHWVLM2p5QGpJYkDsRlBLk0A9h3H8BtMPm4gyav+UrVcL1xPILyx0N3GxE0uZ1dt8jwjQYjhCj65RORly1iWQNj70KzHiI/vZDX2f3ZJVLeka/levKdjubxMLd5A+XdE2PETF4P+SmuUQXPnYsX3F8ndNP/vJNJcLwdzlzlfr89B6CdsmT7d2pcLAlnOqTcJvRkWmFlOpT4MP0U7BF1MjsUUPsSF309yxRSmq1lc06iwHxqqrP0B3pRpSEVwMeAA1115FOgExgEFwwAXFVeAQIWKmCWKIzB/FEvc1kXWhGFeZOTF1oofWpEBqOgZ59W0vzC1yTC6rF2zyXipkhyA9dz/6trhS7s1/hwOtX1Kl7DDJ0aDdyZLsZl/zwFph71VVTrCsVm4ltBKXWBnDmxcgBxVjWt8lerBwnVRnaUc5Pe/RIGJJlSp2aAfsnfPvzhLMHnbOCzCspjilrbGaWdQkbOYPjF9LvAsCPCuuMigD/sQquc8yh8yXfeYmX94KjBvlWFazmN0cl7pzu1IU0ecsjoX8QUVx9lXQ9IjMuHOXlp3/PoBeJTcAxpAtHL3qN278aMIMeWAYE/vqrPEnO5PhQhJZXqEFr9uo/ZFYI0fhw9UvSaxIArd+R5YKaHlEknuufnyAzBU3ddA6BQb1URZnu6oi6KOvB4L9kIvdsHvwM5JZTAm+SljUNGNKk3F9eWi6W7QwGe70ojFEHPAizj+Oju6ZStaDoBhj6yrPjGEtrm8nmIxd2B3xPsyL8cg3ueQHr3h</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlLr5xuk5NweRf/hg0/6Ru8sHuGWM8e7cEjmh5eIBAWzGvJGo9XJL8fwIUK4idsRcvlVuyHP1gV2uiU8LTmwrW7C2SX+jAWK10Ukvk/s/2rUXYvfgmtpblP6HO36kk74btPoUh8GLZQKikU52i5pFr1v8fJpFBUnc4itX5UC/53wdGkamZfg3+MK7SOBWu3RHgPnuk8WJuSpIP80FNL7UbfXBuNyw5Cq64YfvaRYAoC/hvoyHwar+ys4Jpsdfhsl8u+2qto7RnQBez/mvk/YAhL6s7BVyx71Z9NoOvbDynJneJFz8s9YwazI3ox8sZQeJNy6mc/5eAobG6NlCK9J4ROi6uEHVZaKfCvCeh1GbU9ihafUIyWBEaSIwxyfxBZ6zUyW8mTjLzfPUfx/1pCbi9sbj9+UgMkxrlfV4hpY2HHqxv9kWIQonOjSQYuvMTrOC+rJHpRtTSlvZA4GuzJkrJRXjbe/9XVwsz+7Djn4VurB8SeEhEXXD2Wpxv8zl3Yi/9PsSnh2JnmJWTIeRxLjjJj2XD0l80qcHIPcUi2UsL5tnnQk7LPYjoJCasukpqfAGa41f7+h9bXmSgTN7wJIuxxMuermggKStzmAsAvO6HzAmksr6YCdxHl5sDYRSBbxXMD+Qx6hyB0Z1Lho6bl5YPH/tVXpPRgHZAqjZ6FTkatIXcDiaL0wWYBcMfTJGd5UpvlDJNU6w6asULKjjDNnRz7OtOfOiXxkQHZ1f4W0cqrlyYD8Ls5Zqb5A3Mc5PwrRyBsgc/CAooc//6cH0O13mUoluLxPVAu19PptcUKsioQeZUU6NRJFc9uNVtMBx11zLBX1xB7tvJAEcN8x609E9CtUW5HyLk8f13S85+yXCSmNNSiExQFXZeFZnkAnOZqGA8/qBUMSuK8u6dyLTLbbsIUoOr8ia0rmxAIAWHhRg+Z+PAJ3Fk589pWcicek+WnNJtqbDWYnKOJZ4xJEPAuW4eJEiCcm/PbkM6aqtK9jLBzn1JGERjUyPBt243opVyNWEy2K+bOjp5CwrhJ1qbEQvyBJ6Y5LfEuz9MJaSYkh2P29rBam1WY4RMxlcjKxNOoLQa2ZX1IyxhM0d4aUKDEra5gZwa8McRL8+1XGY5G3sk+223aM02j3GJ06XUR9zjGKLxuN54CmeBtcstqaHJOEatjYkYANWgA9jWEnCE5Ft3FKfBUisPWsz3O0CtJ36C7Esn9Y7QK4DX6ECPBx+WcnuhKfTW1cdpco6xrjYrlN0MFFNH04noR/wLd7PWp1PdWeRrwmsCB8qzaADM6w46hz8fy+qAaXc1Jtud36y/bmmEbpvFIFiceAJMO/XAmq8cQ4EK12pJA3rssM2cY4LXf0s5r0IzZXFN+moJZBp7GUb30av7Gq3lGudscMtv5ZkrsSRnx4uhJwFq3bd6qZ2kyhc3vrtXICT3bdjxTta0usb7dlRIBE8txcm+JhtQoBXdSdhNLk7oJYdshqrPId9LlCaqPer+cbxT7ZOEqAbqrw0ZDOBSg803gaGHjjBxbxMQRuDkxpWUM0PjUZqLJsRae76KnKwdJifKO1dCGNTfT5spRuhUr9avvAQlsAHnZKmJ8PPe+AQS2enSQ3faR/e/Opu29nb5DgE6H7f31kxYyD93HM3YwSJ8drnSJcIuIsiv8/pNt3yP1/wkLislJbCcIso/YT0QIuEvw==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZijm+PVRtxmhHIamDQZz0dG4+yPXR8fSgz7051zWxZQz3xQO4lz5FgTqPIH4cJ7YYM6/a2g3KyFvV7ra6XDZYBnX51bvb4xhb5zSHaQERg35LZFL35y+h+SgFmcfSl3N5hzyTVHEQuii3LHSAmm9QOxhbzteVJwcJg+boxKC82SfUzPSahEawSl3yqXB5tJroJqj2BKQmP29LdoWoNUkIMl96P4aGeZNajhK7XzmzdHoIV2uUA2mjIBi5aqroaXhNGXWs6rButOnuhzYjCqNAM0EmxkxiLGbeIKB9Z/D0xhee3kWlz0KkncpoAJsPCLGiZDVwOHF1+fwPRVwCFUUIZ5q+8KvfTjPwJB0T/Wp/JLclQ2OJ2fs9Yo2KwtoQUXmlzdeLSLGae7CMWAZNmgl/9pFrr7hd6IIaRDEpMTGaFOdrv9gDyAZLfCHJhTPq3ACO1LKvi0H9BJDR50fbfrWw5mDRdY36QRI+rYbQ/TVvSDB1YbMaT+mWHTzpvmTXMdb42Ws3g2uLEXVEbdN6qROWg6tTKsq3ch/x0dvnQPJ8/zZsliEd3yy5yggN+SoD2dOXiDgTIOXSdw7IQf25qurf2ecQUz+HPcsMFPL6ZGJg8HVV8rqo49NAnx7MvyW2nSOsfXXCpQlu1k9K3RU2Hg6p94QXJFV9TJfXOctu99Dih/+2r3sM3qvcyS2mTcO+Iiu/j3LrlWMua4QUPhSz8tzGOcw8KUH/wBUi3HWWH6V32WbKIsWX2GByPsBl8518t78ZAk/bdao3NdEJbGwxI9Vw/z/Tg+reW6dVUm01T2ux7fG2h8wwlPGCIA6Y2k0ha4E7pVxUIH+DNTSQxrtbvJ1bRmsqBbL/ZKVCGHr3zL0V/FI7PtSlaCPVbT5eKXlU1kx1mXG2+WZS4g/pkTFNlgmVZ3gDOq2kNr87fkgrvcoz/LMiR+6x2NS3vFTEQzGAbe5BU77rvYpCriEXuhlvyeMAkIrmz5bEVclihoxS6SZCNxYaa3cOc/plejAlAE2PrroF0kLet4MRwCzP8I9IykcZGdAFngPYmJiO+Cl1+awzDPuqh09qh3RxkGJYS7ocf0OFUOQKODQGsZgwEianKOjRFoHADGEuZJRgOzBAFciBbsLhmQnBDoVyaOMpJ9zjUiImMsmGkaSM1X1C6znLI2rcK5eeW+bhKF+UAxwwypG3f+2d+jP1Dmm0dVkzS5+icgGDjyBq6Kbt5vCp7HzFEPhiyiM6kwq3Pc0DnK7fPBO4H09bCvw+wEBm9m3kEAiJRgrXZhN1fgGaH4IifAqv0UseK21XPIH9dtX6pDxogEleCKoBjnjU/SrmMRtpGyhlv2lYs/tFfMleIfDM5tDBKlnD5h6xhEbfpFeGGh4io0REyEmi306ZKcqpE8S4oHKA54Kx9lfyDAHEn5PgwjksKQJHI8brW4gPMOvqyEgNNZ0aiz/kUF6bj5H9e9yhe6C9ygSHN4c3aRcvSnbJ3c1e7y5RFqPYs8HlSqC0xnQZ5yxdH9ACMO3O2ACJCfK79K6q7ysNMq7FesSwF3Wvrgxz9LDLRpZkZ46n7FhEjRluPeafyXF3JyxqWOxm32U0gFT1QieSps1NXgeeBL3InJA626W/ItSQ+6g2U1yVbqoYob9oOZLctkwFUNASWg4I7FBzwT9NWSjRhlRa5lznobvFL/HCz2fmAu91Hw==</p>
         </section>
 
         <section id="11_09_26">
             <h3>11.09.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlGTx9dGAjy0nkFgoz+4NeeDqQWvKjD0mPjeuKutsEQK3kulg8TUCwqIHAnoZU5YQRtLdQ9D7+kjSTKIqniDfzIFum77xAhws2JVfDcdrBd5i93GuMKa/RoYkm3opdqMPD0L2dDEJMCoz3Ly5oZv/6nU4NMUOZwWSrNT8QzSFAqBLM367SEgVLQUNBrlJzEuCrEJqEIkSEVVdBxL3knbXE+WwDG4NwC9oliP1Hou2ezZYcrPpFCBIPLt3rVhAV5AMo6kuG9yz97VzTmxy/UqsQ/L3</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZioJBthQNjtdPXj1Cxkwr3LpKfQ+lgWukOrcUOCWmxbAuMdt1VDKZWlHaoMJLRKL8PAzbVm3sd/s+mvsQ/gGhKi4gy/pYACg0hqyGFsVybWMAVbSp/QXEf1EzUQmX1KF98EKiUMZhhEtWiLl3DXACgQEMivr04ku6LRQjThbxQNnha1Vwi30HS/SaO+2i+S1Mb409QuB4rbVivTW9+1gcpcEFAIQFCiJoLKFj2ToV2h0I3T83aFPiPr20rM+dcGfGDkuh5mo6NqUtyyRHrnf/uWDz</p>
 
-            <img src="/travel_pictures/espresso_house_09_09_26.webp" alt="espresso house menu">
+            <img data-src="/travel_pictures/espresso_house_09_09_26.webp" alt="espresso house menu">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlLdmakaBRlH0pCEsB+yKbHHO7AUnymfNtoenIB/3qUmCgR1TWiVe+esOUNcN9g97Xi9Dc/Sy5lskKdXvO1KWez8cupARiZFfEs7V8iSgp5Bev0PgWJFTSOmK6WG0eAfVqBQSD6nQdUvfjgsdU6jHOpXWtOlphZm+LWv/RQZi/mLCGZJu/aJT3JffufntIMHsp8Wz6zo4cahRrZkCQhaI6a6BiyEgjqRGMrW8IhaxMrBhHVJA7FjvZYu+OS7OFxOR9MSIcLg0ssNl+Z2aYIhFdBNCTrQsDhyfs3H7Uq4iXt5B41KzZlx3NJ/QiQL1RaknjFexr3vvArL1ncmLR+rKjgk01yaG/1rn+Sttvqft+HG3doQbj2+JaN8G9NwXGTr+I1pcFIkPkUQaMj4MCJSUM/klvrICJY3xfXUZEQJUGGgFz1iIp/B3EHVrq9Z8KFstFOM8q/wNV6xD9h5D/G4oPZHD8XBUY086ga1e/olctlVUC5ztqwwpAbcFhWn6t7NNn0/5c4M=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZioUa8eonelIMtqlQQspzS2+TxMbmAOjlAZa/G1u7PYj4FTy9L1UUjaSXx9fmx/vOA+J7dzAmxYOAG9lWOTtMJaWPOMiJ0allSCeLbUAF7EccFTP9NKtdsKe9Ui8kUnr9vgMOF9GwnyxcozJeISLy87rQOX4pV/HAq8fG5TX6OoIdt3WQ6kzIb3z7PMYjfqpBBzELcrXDojqpi9vAm90dHnzOgPCYZZFLqcX/gw4Rk40ZEKX/h/31ZKdOChRlOVvxRGufU+p9cMAmb1QY6F5yJGL3OEuTsXekoAHqDpNKHq9YQ7AoEnNnUfk0oy1YoBgz/DEqHPXjLnlrJCMOGdg3ARPfA5PT+idYSNYWh/eijyuIpnrMF5gEwoMTsD7GfDYVt78HRj0/QuVEVFpu9dyG4gb336Qa16W0G1J1JV+a0Prd+HZ7O/dAH2qsgCsPQEJNkty8Os2QR0k6+bwNbssx9MH8MXJexNKnvaSt4ZVjDDFd+N8iQDZA+w3xgst+TOdHKfnRmNc=</p>
 
-            <img src="/travel_pictures/harnosand_museum_09_09_26.webp" alt="harnosand museum">
+            <img data-src="/travel_pictures/harnosand_museum_09_09_26.webp" alt="harnosand museum">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlIJmowm3POjj5j0WPF8VS4apM0bijKcOlunDn9d3MOPeFxjuXDEBmnmuf2hrty3VDDiB8JR/NuClvdESk823zhJ8iGq2yeY4DiyW+UcapV/8cU7ENWHs8Vm1iBe4NBeU1k2HkT/f+iTUvMRoObsho4I44oxBH5GzWN6g3aDv14qdD5tF2s9ium6zojTzK/g24y6GKIM/yQ9T/pa+uaHWltGnwXOYe6afVZ28Y8PTriHBzW2uTkQeygtllR37CDRmJWwtzqtgIWd+jAiIQez9yDuV3rhCopHsk7eyGI5qATDJwZEJCmtu65BzEiB7fZzXYUeXkaSgNNlWsJO0BmA+f++ukSpatukvRlBwdnPKu31UhEOTIKIXL3BYonC2atKSau4wYSLCjNMuTwPNmD8P192UnsLlvOkhBC3igFAMMdgcBmB44vzzWJQUa4pptn6TfgJXzxq3y5TDCPwLbOXAwsiKq3dCBVCfQZJZYnSBJtFZ+hXL/d8=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZilzkOaYWcjKvaxs7quL+RxM8t+3K6w6gIlq8j7UmRuE2urDjcH0s1fSIAwVMNIdNTT/gkD5OzgSuuhUvZ7aYW3pOhL6/b0VNSd2Z8b5oX1oOHThbMhx+eqFME1tKpKaYHzhASrYOtkV/P7C0VuiAezWiSbDezEqmdhF9d/12jBNHrhLz8NvIp3/G5S4FfcdDoGmoihyPvcyPmscM8C+WHA+LmtrKu89EkX/QeTqXZpMKlAC19oJcHWMWD1Rhz7Gaps4e+AhvA9BK5wSwruqUnfXiE+KzmdrQwGK/oQUnJWvQj9+plO8en1xmwJr7/+R9zBqzba59CmySIZbN3xmtKGC3IYhyPwDvHblivi7eXOGXruekWty1LOFl8c+dBOcTs250pVu87XybgJEQrgWJV3HJPX+hQxvaNbeqMJlBRR9QpBn/rus2m6nOlLkbU2A6SRvZYYJtHIr2m30DVk579+a/4ObMKurcgIODbKy4bvaung6xuHc=</p>
 
-            <img src="/travel_pictures/port_halledal_10_09_26.webp" alt="port with water">
+            <img data-src="/travel_pictures/port_halledal_10_09_26.webp" alt="port with water">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlOMsRUMCXbhYHv/3D5bhbsxyi2owkMgr8ibj2W8tY+SnHrbn+UqHfPsGC5aA448Xr+u1EfbP0R+HE7HIvnguKaa+fD2KgDfO/VlpSuGMYKYZ/cmKNipLym1+meGYmYt0/vtLCn3qyVE6onjZPiEYYAhKw2lOK0COprFvw09cQBLgp9nLDNHsgJb+bWuBMcRUqbnWvSsotxxcjhXxeH4j2XA2kBfooVvKKeevtaxEYwiP/LbmccJHq69RdIATnFD7ih9Rtv/7EMXZtVpMj+avxL6moaKyZFOYH0v2MY3lwVh9rjOvM+MTj24wy/6VNzfT9xib8ghXHI/vS/I2R4CADNUa5beE5rxcJ8WglkoThMRQP9L7c5HBTLEsktZe/I6CHQfbZXUwo3m8nDB4/9xcrve3Vhdpz4BYdQ==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZio1SqHhI1cHpvCGG3qB+bwPpN4VqXTZewmQXDb5frmlPLBpkRslQrmoE225Y1rb0oEQD7iXdlj0KJUfMOayQREFApLse3lP61lEF4DnKjCiIYtwYfMAEqPgjFeA7qvo6T07XiMeJya6Hked35mznWZtivF/dEx3A6bvdWZ5BSwa/m7vyMva4yQiwL97wzjenN0iQOpJX5keZdo/bLOb6APZv/ufn3zyCjeF0dK1Y1DepPR19ndfpri8GQxsmrOAmTli5x31cVYTjJv4Klmiorv0pQebza8v6ZkmnhHwZ5zARDjoVc+rNOpHPJsCSuf862ndPBZ5yzh5eB1MCh/fMKVRZAYA5NuJ3sLIvnCjkKaK2K4sw8wGGX4q7onSlU7jOCwmmX77sLKiwGSTzG7M0IFhoB+4mlRZKzw==</p>
 
-            <img src="/travel_pictures/hogberg_view_11_09_26.webp" alt="view over forest">
+            <img data-src="/travel_pictures/hogberg_view_11_09_26.webp" alt="view over forest">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlNZp1tbCEhGEu8TA4bA014NA8cUPpOmTVR6aCFWbCFBJC6QtVvOiZmtE0DygSk6rMLjvhE6pWbRAdx4MRCdqmLUUgkOYyfJTfiI2qDQo</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZir1go+MN2ryIID77yrOfQHESvhK9s9O11Vd+w8oWbbXeu+Y15TcVtNsGaUVGhGB8khjS8tjUGGrmlgxs591qh7QJAm1usM2aahEAJesW</p>
 
-            <img src="/travel_pictures/blueberries_11_09_26.webp" alt="blueberries in a bowl">
+            <img data-src="/travel_pictures/blueberries_11_09_26.webp" alt="blueberries in a bowl">
         </section>
 
         <section id="15_09_26">
             <h3>15.09.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlKtVEDFsKQGBNvuETnOaCXdyMzzhS3xShtxacgAhrRICppu5ILvmCA8y6ciMdiCW78MzIz57688zb7j+/VAluB8yiGzuntaJWkaxmOzfW+8ETmzWPFO7rmPj5MgxupYxac3S/c9Nx6wKNR+fRu7KO9XOEs7h7zNSZJ69ZbJceh0ZBOFa+wMU1QlBx395eWCnGcgEKGq2keJW749/BGqbzmelR4PjuoEOTnYtgexI41d4AHVWpXWKCtqdfLJkE4xucgi97wqzX8o+JRLdk3t3IQLzgyRCgx3f</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZirlaooXnhgeUf0ftAE7vHC3x/LKYXFeY8V+S316jbPcxSITyZKh1e4Swb9oa+erGTbJ6Wfa9YSZHbUdmmqUU1KMpRowGVNKGZ14dRuk4oFrcMYfCaFoWpy/8/I2yvlXKgSycWBLLydksfqYfgBI9mMW3dPkxb5IzlYE/+e7ZlRb7WKbRdRApYlXuJpaTiz0T2CvlMbiEenx0+9VP6jliwCuLocnJPIaCLOYmuwTkO9ylW0GmNM+gc2ZnnIdDoorvaPTVEVPtNwWHjFAhSduV7FVEEV3W/jAQ</p>
 
-            <img src="/travel_pictures/gronsaker_12_09_26.jpg" alt="vegetables at the market">
+            <img data-src="/travel_pictures/gronsaker_12_09_26.jpg" alt="vegetables at the market">
                 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlDZgiptDfweUw9za0YO8iYoltMTySHdr31WejuulhpYyRjCY1zdnczz5IPyGaYvAy8R4Ci9q0NDEmYm/51hSn92rWbHGSc+D+RuZrURfHya0Amisyej2Mx73q/m/9vfWeb+qTi/ow2m5VKgCRqn87iHQOJ0P4Ig8XGPOKn4ArNbMmrrQpoY0o1bTSOaEQmlNyxHxphH3ib8rdc2iBjJGwaxHIbhoF4+AotipIVprgnwQ1rj+/UwJN3gDzWFhxnN9f85Qi4XXWY1akHCiSIsa1cHtYN6HP6iPpJT1npcQQprBgZBL8X84d/PmGbVa7YXtXTEmSwaNshg3wqQdezF+TuyiEPa/bjpSI6GxdKBQ5aZWg7XewwDXnu8URnxANkqKM8YBPr2/ghaqPJigROHR1t9t3iyHDi0AoGx4xByN8lq7zhpIGn2UX00O8eUbBt06hG2QnsFX5nUx2THv1n04mNbmzXcWgwEeG01qy43MyZV0xc+JxuO/bAIntO/QM1jHWSEHxUMbTQxn1EZgP/QeHUyYhDskBnnUBDlBKbNXlJU+eg2j0+Pv8UdVKpMVh8DhTbEir/VFADdiXMIsdT+j17jcwlUH0YWeo67xyuWqnhzLV8maKnEacQXO6EdCXJBc+VRR/YZpOHqf+Talkmk+lqSCLLKtkySTiDYHUgYuZNpRmvi6NgWjp5jhJWXGx9IjQK79iQnXRodgm3UiNRcZyasa/PXmRqmOkQHNAQDf9udK3KRYa9NUnyK+sexeMi6DVNsCUD12CP7B/Ep9uS0WoYbiTJhW5mpXvm7r2J5KOVccTZJLaEktatLwldIreXLznR5Mk4JoGD+DSX6MXhjW7JArPURLMehTJ5QGImsYAVGFVbHv8248/lT3kQE8oj3v9X2A63PFoOlC+XEHVx+8YyaspA2zNP2yaGTJeaW1gHxSyF+qTKXUsaQUPJHFTCnQ1eF165gq1Mx12JaUB0GB0rPW21blQ3iRdE/pUuK2wuHU6ZN2N+PcGAD79EsXmMxXzpeKLnYi9KqOX61HZh7XDHDMTh9b0c+CCreH9ePDuCt6BoykFlc8VCfJ3Bdvr41rKq7F0aS5gpUdECB3eHAa/8iiK+mwBSf+3tNKgcfeMHcupznIFIdHywVojrmAgCS8ZjzzckuTy07ohd2ul2uDF9NU/b57r2TPkvc6Mq1dWLubcpbmi53JyvciCRT+ZI+UkxZtPPIr1hjdw4BvJBIJqiHd9LWUv5/laTvr7XNm/UJfIv8ekLo6lbqRiUOJtm+FsQGF68GgzNeTz2rm0UE3m6W9NABYhmGzq5fl1S5KqWh5ZW61B5jMTshXOEvOEUXjR2zlxET6ukZZPbfhFdPCkQG8iRzZe1RUP7cixGYSoJ7cSQ1guvphbUolf5Xn4Jlf1+qOgbyhPVKITmcwec5WfsolZinH2K7FIVaZSEeu2vP9JTNMPHDlfxjr0llfl+BH+1UR2RF+JzMuDAVds6NsHrBvyd7bXIaLuQgo1pOAgMZw6YVNal76o78/gOuh/920WAI+JgmL3Qu2Icmz8GSTwqX/ZYZ9CKW/MpEtTzDf6pvXdl9Zvj/m9GaGOaEsfNG/bvaxgisDTU9ESlqoK6qalHcLqQ9tmfaC6aqZny7XhPVlliME8aAe+pBNj9AcVl71zpCLK4ixZt/H5sVUA9+dSTrHUOeSR0ftK8q92ckWWI199w6yVZ8drIL1</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZil0oUsD+wpxU5erP4BvctS7LIhyLyrkDYAR62o3sIiJIX3EiKDmNtLouJkemwRKMpF3ClhcEOGri72rDYo+HuGNKraBxpCOyXgRjNKJ6Fm492yRvcMfeVvNmsMcJWa+yS8jbHFBh3Bvl9J/Hf64BgsaFGgPCb2j0N0tgHPKE0QeL4DPQ+WN1WSD15PC/NBx420GXK3Isya4S6NM2t2I4FYFzhUAR8R4CjlkIP7/YPTyQkEZNIWdY8aDgv3MSi8ZmE5QSxDyoFBacb1LhNbW5qroASnFYZfAwX38/fg7ASXnVRb/BDV9Rt3nUP8ZblekVMLUDFBvTdwkN31tjiUC/L8S4shP3q6LJ+rk221DTCE714L7QS2Z7SuhxUUZQEYDr7xFaBgxoe9s/3yXroI7dRVR6VG/4YqHLmMukZdkaySCpeeI7tixJvCgs2xt4YLLm5q1JDcpMsNw2YxwHMA7Wgv1c0CZh8E5Ar69XLLIzQ97D3JTcQGcBsm6JSFDYy2f03gltzDCPar85lc/414KsLDJBC3boZbwGKjcNVcTvUbV0t02UqishCbhLvPvii5FzY97la2eMg3vLcE2YSeeUHj3o5E7TcEGZJDOqdHbaJsRNCxR1Kr/veJ76bOsvIp5m9omtUL9M7nwOzoNVsJT4pAKpygw8rzFbfKa5sLNcuylSTYHvdMRXe7Qw4iM6RdPg2ankYsnvuyEFCRjo2lwQWHODuDf1kLnQvlwew+n9qZx6sKd+ohLLFVRlwKDvT60J2XGbPdpUGgip693QjqGnY7kSNyaMiQ2zjfG2Co6iqZUpdnSWDWzgu7Wa7x+qpQslDXXbo7k7ajuWW28Wrb9BbDPcOY36g02lRHRsOWiQc0TlUsbTWHPqke87ZyTeY4YxNEF71W+QB55dKVjDWFFZXgeq0OmRBvpuzlMvkjDjAYVFOflYlBS5t2Uaot7DeXw54VLrR2/EBo/zrEBHroGQCAw0Q3vXQkHdvJOB76ms0fQvwfIrNWuf5DjBSxXvdIKWD7ez4VVsElSeIZL0VueDt3RDDFUJD8AQBOXbfPy6GKs9NgDq3H+DeRhk/udnibp4V5raRK94TlnfXTHPrNHpjyg+8dpKA9qXPrwlu5aIzeJUbPpJyEJvWc0MN79PlbXB2GeoU+HtMbcMla5XEAxSIdx48tNkWm51+RE496IlO82DMZkX3QuimFJsgh8JunmMjkJBPq3mjySCws2PX0Hue86HxMu9QCeC+wiAfouzpQRLOTvKAW5NXDbI7j5b7dMXr/PwLTLmZtnjBhHt5Gmg16Wfgh7rb44v1Njl9WAlEjhrJ1wjDekWCZEiTgorY1wfE0O641RTHQk7CIShNygPJRJKAnolZ1JooJ1aOLCtSG1kjy4DAZtWdEiolPnMCqbKAHppIsmdCKpvr12TgbSIJfkQdSsRn3rdIbnBuIxzezb0jTY5MYrV+rXzDUDA9ZvDcVEqhDckHT/dSs1WiAmlJOpVU4J6mQEYPPiDwM2MpSFLM7osIoUlW6UfNmVVuTXIjyaCICqF29RYFYx079TLl+mJgWOPZhbX1jKRDXN5DvttulQX4BsjPo1x7I6bpJHt2Ck6ZmBOnADflDpM6HVvUc3m3lVfaHeGReyTztY4XW+EyQ01ywOrbCGo7paXOMnRycvUB4GC+if6Ix+Zs8AxgUsqHjeaPMmIc3FdIOdc/Dqp8eDBuUPOlQ0j</p>
 
-            <img src="/travel_pictures/Harnosand_12_09_26.webp" alt="Harnosand">
+            <img data-src="/travel_pictures/Harnosand_12_09_26.webp" alt="Harnosand">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlMNdcUCA5fuHjeU6FcwH9IJW2QWoGnm1y1wWXSCBFbxpTq65T+izNPZXdR+7kLIUyksFLqLnQLkN1QeP2Eu6dFqKqMkWj+PmYcKWjIwiEupVAWcBrbpvuGvQ8g098s8PXDt61c6lFzNhFUtHElxCN9T3hvz1QXx6GhtojCG3pZ6qBHHTWLIUDZSYPgJ4BS/IvF1iOol+7odkogQwwNCzgqqwxAnV8KSTeh8bhe7uwgAAAEpXTSLk4z+VVuGHZNssMvePB/6UxIumqApADeq3faiZ7sKtMUOJNxq+JTticCahB1qjCvnlA+tsZqVlZLb1JJltTRcfT32harESGrZB8tv+zCTIB1zZItnFUBx2JQPxmJ/54xgj8NSOR3Xeb/Zg/tNqAY/Zp5fRMMD6vqY/06iSNzL1UJ8/9yXwUWY5kd1ecOU5fMETxHjCP70dilWMUXOmlaLVYMRip9rOcQSortNGkwBO+nw0KX3NKxq0CA1gJFif98rD0HQHEMVzJxRL/iwepz6bd6OQkGwu/Nx40wJ1oVjzdDtPiWe2DZ1yR/m7PbUMimXoLRKe0hbUjBxi3T8U3mWypJLhZpWT5xt7PN3Hwf5PcaIRYzq2wsj8jKi0mti8myfQ4SnX/Hf1jCM=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZige4pNnJp0ePOZm9CXUsJNLbx5OxXcFWVq9BiNNGlp14bPQORAOO6grQTM8J/BPqr/FweZA49lPCkDCLirhuZd635Q8/flp1r6HnK9+lVT+Ve3rRE/+tnfIG2TmpCjkWjOxcfFMvfW7FxODnSHySSDAs/9rdDDi2WmJC7q03maEQ2Z/adgHFSBRTYU/cK2Hh2g7k62gUkE/v8w1Cz33So6UfxV67ZM8BLu4dMc1Ti2vAW7WNHldqWPag96kEzaLHzmIce6oHpeH1QfgtCRmrr+WCFFcG5oofcM3/aLMvxuPzz3DGV2ZSy09mxk4bmunWzr0NYvMY1eavKwAxaM5uLd+Bd/SQUWTflrHS/2ETq39cbwKesQWEHYb3emasCCh0ay0SJWO9mQe4uFxq7QadmuhCnQdpyBqpz41WZyGLTeI17lUInOcvngLhMLMhdNKzjFj8bM0lYQCFgj+tc1nMCIUUOZJs6KjLe5NTQeDdf7NzjmD+diMnC4EO9UyNLIgMAhOEmlqZI+Dn/lFtR+i7dUbwL/CAIfZzX451JBkA8qnstFfWsNfoZtLyHpUAKGB1FUAjJGY1hgSTzppJoskC1nOqatCIDDSALD7OIvgPTyZq9w0/SP4ikcLSDwldDQU=</p>
 
-            <img src="/travel_pictures/tzuro_14_09_26.webp" alt="Tzuro">
+            <img data-src="/travel_pictures/tzuro_14_09_26.webp" alt="Tzuro">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlKz8RkXswTozO08r2zS3hJuyi2DF1oC7G2SV7e/K4NDL/Q6EmZw/lGIwQevQz0JK3WNViKlkjIN8ZTBwgYaRHfEwe0V1AJcgeX+iEV6mO9jTNJFYLazZVMbNMSxZCOH5haS92+Xqa7mnPy7PKGic9vjZsUTLh2/nFkSTTW85DQoA8JA+MWjojoi3XaLSvtzKpQoGrvu7HdIt</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiku3G/C+7nrPYvjjUXaR3i4H6G8XXDnAX6Sp3M4AnLYW+CpxNppcEobWiYPCnecpCNLhqCXnZDinubVXyCxnfsg1PPqNR0vY/rMvwkVBtpCJGhMJmVS1vK2ZQspGDwilWHHJ4PZoMX8DqxjxqIdAqdtv/emwSkhK29tiLbh/ofQfWNtmHniJ2QN1vmMzCMcLOJzUSWSE2YpG</p>
         </section>
 
         <section id="24_09_26">
             <h3>24.09.26</h3>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlDqyDE3LoCVbGGpLr9Eqji9hoqG+D+ZTmj95z0oovEu45WC0cHB2ra9PlM8h86svM/Oz+4AkMIHgYWFtx3QcYuIpYCp112QvPMbu+QDV2ULZ3XwtEO6XyZRAvS5O3Gm7skvNupHddtvJLX1Nn93hAfbe+u1BjkKc5eB3ttrRjndCvTyn4T9tIkHVXR+Do7jtS7b4vvRIBO0idULyA1NMx/zp70deOvM3dlYHYtkjqj+jKZAX+S3DX0vSFJii+NteD9xl/wGnCE/kEXhDGYi2XIA8vuN0ULJLXoejG40EeO/nT5zcWzAKHDMrBt5XvH8WSeJzf2uHNgLPubWVZ4aFLHi5E26fcTW5g7QHMHrIXVBx6MPv9cBG8ABlo6s0OoRAKZXOT8I8uDR+2BvzAfIMIki7Y3T6yCBi+PAFRF4S+C79MZ9Zk0Y+gLUGdLyvYfPoLsQoW2wjQaRX3W4wmy6d0maP9bzzzNuKGUgzgmSkVQUaqzm4DRBkIRvhTUWH4NaFq6xgtVKBadcFZZOYDKYHd2HicvLsjhJNqHHjpsHJVDR4XzbPNxoX3Ywf6RdDUl+n88MQs0B6ThiT4QwKMvLdJzTgTol6dkZTLh2dNQPyLbQO+UQdoYivw82719XjDnn0SYoTxKsLQBIB+LBnxkwdeTLKqWLqXzOeU9fLyAo5q7pHnca6lTWaPgpJF1WnH0eQKukuVwhjXz4pzKZTFpzNskzhd/DJmNsyoXaEb1VEWoTVzSkJxym8IwX10oWkw7gt4Gn9NYwV+EdEJNULzgSbW6dYPmqV1LsqjJcO4VBNMskF9WuE3OFssXlvuufxfB7XzOEvNhZNTZwXTqopzgWuc66SqJ2HQ7/V9KsptLw55XHhvBsKgWtk13befqmFmxo9n3IjmXHdo2+wSO8qzJOgl9B9yvcr3QMWlYF0OPVCDTJYcJWDlJD1LBBUSR89B3OsR1SdxO74H6aSrvvy7XMs3D/YY3WL+CEl/+DRSw1OhOpSupc8aUXNV+uuJQq4Zu+3rgepPHYPZexCsxWCNbxZCuHUYYgzIldGFQOkCyQM7VOnhnbXHfcFMU3YSGNhBi655Gz6b7ZHRmnUVYJPKH3QGAyCPzsWzYjrAWSmiGpa+PFM7cP0khbhevYwcUzslY1a5WsIt6Jpjwk=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZisa4bKm/Mv2vfbxTw/SFplDLFW52p4uZ+gmJIsb6GImVqDJjWgUrO2M8vthCQspl/rdnJgVBugq9AVOYClZQ0w+5NVev0//F7LlnCMuDTGr+UOb98NEdr9DCYBVKVMottcfDDMVMNZ1KHLWTxKBpRpjgORBlRIOef9OD98YQ+dg95NxZHq76vwdp/T3dtBlxa0DffAVnTw3XE8qlez9ut36O2p06n8tNUZq/F91tLKYQmdctEnu8i1YqF6gfVlDnhOlBzppvlzqKk+Rf/Z0R6GMq294C2UoV640zaQt2ZfTOCob+hHdDJ7ThBxLcdLm9ava1/+QOy45pNjuvV1+DzwqfWuzXBrEF6/nRr17/q/VNTFcNd8JgAhgia0F5Ta4Kj3pwj0Gr+ahOpzlOqYWDaxCQjKgwyuJWeMKdECYjLtrvUo/KjZwPlXEsApvqo86anGF1TbItyZkdV2Lrm3o3yr/eGAAcM6Tqid7E2SoMReMTdbDXVmn96o2XOed9QNFF468E+m4lRFtx9kMZLeqikvwDgxYrNjH0+LW4/txGBAu5bWlfKeALDeaAfHX1FPstfJaU62gncjyvLA7dlUgY4FjXDiL5jvR3aOwd+DHBV7eyHHDi1JYz9Rr0HQeNN6p0CQpCHXI/wrYUEibRVRrMVFdZUYibkezzSbMhic0H9XTJ9ZQwFdTLK/PQilM3FUtX2AklnJ5gbLS6GqcY7k8y6wSdjL8IRELzrwfnICjbUoeuTvgSeY9mx0d5qh+Zx5EBuvkrGa4ulKorMGr5+zb0+FRVqHChyAWEGW4VD1zML4UzAVrbKSiZX3jKb7WGfdZj7wfIM0cLWK7R+B8Ehv59B2rpDHo0GziJPbruE4RYHAjZ+MVDoEt46rmoQOmkpw6z4CLRnMgWfp8SHzQAbgWYDG4G8NOjIiXkeqVymSmIHFyqaDMIvmiAdJcFHL384G+lsvy4DjEMTHoUitnWSFMuvlz3nC+nXNwgrAH/uKpaz8ZBb2u5bNKiEtu1W0DodxyJqoCmJCTPwwb64xietsqdRJQjKs7FJgd3oGR1kQ9ZtjruLdHPp6ejysEfLPndRBsoHALPNJ5O1M+2qVKNjMP3FDEpfnXwNaNQKxex+cFS90fMm8ry5/eT8xUnGh+nTk90b2q3DIFMrpU=</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlD/VxdAbSzghPF5wucPC//yA4daTOMwMXHdPClhM+1nRclWQSrmRkkUuHCMv97u+RBQ5iCF48nUrSsQL5aEKgL4DJRqXc+s4i+KOC13sxD7kpSQRzcme2lUBc9gnc/jym3G6+IwckfaSg8S89kzaM7QMFyDzcs05x1sX1zlUhiigGhN+hTN50MkISe3rHiM1iCfUICDlZXwBUX9W7fj4K1DIlBHB2a4hJQ7itB0eiYgh670+dyO3zdx0zXMWJJXd97MFSYFRaY5JQRJMMCF4c9wBE6X4HhOH98O8nMvB28EbLem0YF1PnS11/IKzMU7SGx+IEReprtJEuuE0+UKQUpznnmqS7zyzKueO/tpAbA2W6WLMHg/q3qfkPMIGX9GNfV+DqgX/f39WQ1ciR8Edhf7tc8APaA7rzmzRgPD/iB33AHhZeki8sAnpIIySsRqEfZ6kVsRHnd2b39qS8zrXnWWpjNbjYBeeFyHuXMmiIOskVTkoTTB4qxkWB1DPFVODm/pMGSy2N01poUYZeoljiszu0e1Xu6Xhm9Grify8B4zawX7LUjd8xoY/uJl40FxMF9Q3tWQOny2p4yQYS0iG36S0ATlybG25hfQ7IFxySk436P2GqFCkL7o/ZyoROk+JqD8SJJePonrqSHWdZq91s3UtV6/tVTVsZfe0FTZm/kYE1hDtZCyWvwtQrNdxRTJLv2stRyy+JTuv3ZzR9Qlyr2jhrLEVRaBp1CbPyHeCQ3AKRVzVbfzy0zT7wLpjznc=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZitIil1z9WvlDbZrNXORDZuGq/93MuLhKQXcWasINWii1x1e7NGy9g720M+Mff50Q/2XmEPbo9uakfoMHVTsFpMLxQrQyy+k9YutIqeF5/VbzCzgc5kPZ7MofXl2ZjFNo99K369k4JCE96bwJp7Mxd4MaK2sKdV0fMQ2AZ8/nXaAkFqJN/iof/KwJdf3ByL0mjfu9MSfsgm+CtObl5QoggBaK8Pa1bF0Q0/H8K/l1hTUaFRjPi9yuL8fsNWZhpc7sOFdOSMSIYfWbMtrU8J/zUxafRVxUmajdIVOOAs3BDxqhwwp1zmD/tSvJ6bJUjrZ60xbmVkxen9prQkqK/hRaan6sqBwHFyX/QnRV9HrJjZz4ymFU58tfkM51FVJHaieWKL3+vyykxD5wqaiY4Kn7PXz8Dk3vZSEEZSQfEGBanvCcu5pOlqPgOyQZwiDe9uQZqnnoObMiuIpb9uj6po+CG0FQjjjKlQu9V9xi3XmevLh11Sl/wDORWwk9EGqxUqeXkQjCh+2oABUDxTVh/hkU5reeWpc7TbmDs8FOOuHMlswFuG8+SAOAu1tiyaAVAO1i7BWDcNMBuJDBu99PXpg+j6IvgVMVn34AdEXypWcKnrVWj7Ibua7ffaovhYdz1ciYuh1e5zYldQFx8eAfPLKnDAuFNi1NbO3vwgEqaagImPERSuqexH29Igy6iUzHAvCJ9KR9BjDF0UX3slhHlwbTeeVfcrsUygayLCkZgnlHOOPKCw9NU3J4ZB4vS47U/TU=</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlHpljUDwzoIy9/78bQvonw/RYyv/laZ7BH3/KJZhsK11Il1zJWYNL89t946h8aKBer6hfR5Y5Wa5Q4r9YZuf0N2zhkBnaEv0fpvuPjT8HZGkD6O7I50b86fm2hGRj+qt6fUWqceXgGvz/WetnOOZNuQTpLEX7llWpGOzrjSPL9nePMq0kD/eeJYsqL8RljWC83uw3zLziJMJbAbGSA3Mj47WPiEyhqx7VyOifOYlmN4xeegGjRDcYzJQH4yMvm/yYEaLMsWzZDVj601R4xdKDelB+DRrfsfraBa4Gfe0696nw2zxVCKjC/EgO9J6d8+FMuLfzTdD84gUnQBTzzFsW82lxndZ4Gey4WdnN/Tqk1TPXkdeo2FwOjD4U00ZrvTOES9m82sh43MjkBs9Z0n6gYCT08aIRm0iq3UgZD+AX8n86lpYT6kv3UQwSgo5PGNIpjZZeBzoffPUsF9SZxnE+GDUNkrqqAIyc9qSTZICJpR6GHEJuB5aeI8F54E35arpvUsp72Ns5yLp7lo+3SRn8GefyKA=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZirfYDbVJfiAeaFeOS2alZNJUq4N0nNidPnhBs0zgUZyKogbTsrDYBormjTYGkgP4mwYZKgz/T9jNRtzlViLz5hqJ/+JpNdKBId2yNIxBshDCjkpO9Tlk4Y0RmL0tmao5U5hpIU25PJjPfGS89adOMVZga6X4zyFU/Db8fU5s75e2Eof7gibkODX3Jt3hon4EOIBbh59ufH5pjFuI8MNeB64C7Y92+PqLWTaFYPFdVIhr4L2XYplYDp4s5SiGY706auYS6NjthUHeU7bk6mHqj/oQJivUnqfzcLPiqHeFf7yzQG6Am3fmhvv7hf+0llkgQ3MeZR4kHNee2vjiMGJCDIog2q8CtRx7Gg1RKQa1jqH3bXuoIWVdoywx6LsRrmtl5OQ67jCpG7Cns7rI5zK1OllOZAqB4GNeSjnOczvplv+AabpwcmSniVnNOBndMLORcAEWvDP0zIW7bGkYSO8rirQDUhq9zXySLddsLWUdHSssI/QDXbGK4eEN+meAFNfXJhCy7iELf7moHdJvNe7c5KRvSzw=</p>
             
-            <img src="/travel_pictures/harno_kayak_2_21_09_26.webp" alt="kayaking in harnosand">
+            <img data-src="/travel_pictures/harno_kayak_2_21_09_26.webp" alt="kayaking in harnosand">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlJMhq9RcuMIuegWeYiF7GjFGve6GgCLZ2mnJ9BAdmH5brwejXM+sOUo5hODCGKtMyqMsQvIQHUq6bulCRd9Nsn36DelX7RyYz4Mj1FP03A==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZippQ24RbIMLDjvFlWa3+vRU1yxvQcNfSZoXDWhA7UlrdiuvYqAtD+zKr6CJEHxGZjy4UzzqYUJ0iB82PwypOJYTVwNIwwf1/zdr41n3I9w==</p>
 
-            <img src="/travel_pictures/kebabpizza_21_09_26.webp" alt="">
+            <img data-src="/travel_pictures/kebabpizza_21_09_26.webp" alt="kebabpizza">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlI6TWCylxTCi3FjeRsVVcx4eRzt5bXehzRXS6r0ckBCwaH3VyvElHnb4TeciYoEAac6JuIIfnO3Eg3uVUB/ZtHVBaI1NVlSquh4dNmcSZN7dSCftM9T5uM1g2IIXYHPeSCzbINMJM7sdD7lZH7VAAwbbJcWgty//PUUqX3eVbGEXOjayC9jHhVmo5srR/n8UPu8=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZihIj6Caapmi/aHDEh1OOXMAxV83VZCdunobxA+WuzFpGhBNJ5LzBNq4VBREAsBoh6N3HugVWvRslOrlUfHY8Prvgmv+5ODvJZUjHzxwz9H9fXVmo74T4ngXzUAXIIIve6Vxw1nUvvyIBUI5GKdfyhmA9An0CQFwF1mcuSUnVshhGnEwMdh/A8fZ6wfuIBRs9oiw=</p>
 
-            <img src="/travel_pictures/skiing_map_harno_21_09_26.webp" alt="">
+            <img data-src="/travel_pictures/skiing_map_harno_21_09_26.webp" alt="skiing map of harnosand">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlDcdYd0zNDnkVzHg4iNXEf9Od+wj8s+MadfosfvHY6YxWQ6u1CKAUhmC3f9bUu00CadQVH0j0CqP00U+2RCpU0b4hLiVSg1L0HmKhWPAeR9eufTeNx6aEumZCkedjxu1G9EhFQmcoAP/</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZitO3YR11qNdHPdvXJqK1IVErQNHjmOXrD/kEh8YUZqmWvIV4FOyIILPSaOPh1z4uv4NuPc83sWEXnsFbzSU3sy4tUOGVHTAUxV8Ufm+MJhxPjPktSWugyGAlPvM7vrgG6O438UbJBX3K</p>
 
-            <img src="/travel_pictures/harno_view_21_09_26.webp" alt="view over harnosand">
+            <img data-src="/travel_pictures/harno_view_21_09_26.webp" alt="view over harnosand">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlP1aT+dQZ9gz7cxOdmi2jlf4vtPWdyT12EMXWvpsYsnZf1wLOOViBZvB5LJdKs603spVkxUjTZypbQJCTgMZvV6ggfoyheruBaQJbG6LMnmRJDHpdLbOm9x8puS52HzuXK0qNcpYxbFGXAhSKCy6O/dVutTxGSwvc7Pc95Rng9XdTNq7svfCiRotkj73dqvSyRT5ha/zcZajcUcC7Gpeou1MAQt85wpfheqA6iJBD3pRyNPB+zpHh6i+cf5C3OKgGl6mll9O2NqrazhffjBIA1J0W20dN0nDJCyOyYTz86dl6cvcbA==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiibzP/TExbcCJ49MHS3zJ4XPUnSVd0rgtiQ1ZJIRbJ1FKIi8MRMSWEeBVgqjJhRsq864HHVf+UHPDpXJlIXekOvczhO/kFRQ6+vnTGnz2+bGyQna/nAXpW+GwVprdQtKZZRGaAlhXHQ341v94bHpIxRtkN1eegUs/iXV+16WCnvv3MOyc9TzfPbknSnEaD6RdMn8sJ2tyiNdfFTBcDBIfsWseM/de7hYuTINoal5Y5hAI5+Vh918MzzLiy2JC10fOOEFkoAW1LldN12kY+2Guh5/FP8mM0DEHJ8hhTxMHedjtL+ZDA==</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlELNZyRI9OPfjIKYZq124zHFYFjdxnEumypkx/8pO6m0OhC0lPmixQNvb+18WsVuei66t5E0FUK2LNIbhMQqs7qKwR9CXBJoD+J1HlTPIARmYfPsEVIOm9PgX0GNntmsSOZabPa4UlDWAVzZPm5BgFarGw==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZirpmw32Yx65tlN5waNcAvML64Rv0hDwG9jsn5g2O5aevKYzsY8Ep5PwSrSuZcGmNUDuihPREkIEOkD1WL5YGzBprBdZgSGtRoAYeGn8HvXpgINMKFt0bgkBHj/FgMT9w9tXYmXTaj/ZpQppQ9jRMdLdBFw==</p>
             
-            <img src="/travel_pictures/swimming_pool_halledal_22_09_26.webp" alt="">
+            <img data-src="/travel_pictures/swimming_pool_halledal_22_09_26.webp" alt="swimming pool in halledal">
             
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlDIqwTSqX7H6AG45itZPiEUQ4uNt78BJAcQeYSMBrdE4nqasSo7JLY0UKsd5YCpB1HENLyDP9nMvr0lMmOHvkOJPmKJfpx8suERwCLRhjjybCCFvh6D29e7KXXFoBsuGC6F80XwEO1eT99IgWE68AZPiTRnuGxNWGiH5F0p+GFccxu7r</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZihtltVEwk8bFmIt1q4Xnd7Y2v7kZpsewqrae/T1PyiqceNwZRc90W/RSFvzDB0edN4oadbtyr0+TAvxTW9+KKd38EuUeraW1n65iH1DD0B4GLUk4pIj8Vxvgx7Isux76jWebuwV+WL9S76qobWPacth6AM19DdZ7YvyKbgtt/rx3PhMM</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlF1tnwy7yde2fMKrGBypgum0LMGfM3AQC9IVV8BcT2/G8LnpT9M1+mW0v/0CoT4GeQPXO59LptOIHVR22JBq+CZWTiunYhFzDCzIyEDYSCoay2nnAbADxLIDGusDhiXNmuP6qvPNKagiZAJWrT+1AURF/8F8JS9lCaCrbNioC5dUNawbZzDtjrJyD0gyymjcMqNwjz5DJC/Er7HzEDhKjMQGJpMAzKPVBEg9L6xSip0bDCDGBOoaUh2qtZpQuePSUn2PtN8eL0MluscbOOWe1K1Bg2TDckcdlthOeGj2B4Bf+Y0dDjRxVblFQQWzSXh0+WKYvfvi</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZisa1jSaWOF+oFU+zdAb4U/qF8dIkaLF3v3H3KMCc6Hw9POJvhPAA/buvnDildoWc8/P2qx9YTVXJTbav5h/R821zhgkBn+VKKX18IECPQjKVCXF3g6A6cpfWbFEu/DW83wCYLtFbOOdUXjO4hwlNS2nO1lLi3WaxVRUb/J5jlR+b2eX3mfiMhPEcG8DJVhOl1WqZ+dq7XSMRGnhW2dF9QI/lY+rFbeJFG+8lWAIqXOSFaLf29yFnjy010+DAPzH3NattPB69x9iql4jI/EBWp0bJ9E+8dnrDinhYb1YI3Z+L9mzQGoU/hxoOe+bQUJQ0+m1AorzB</p>
 
-            <img src="/travel_pictures/harno_bridge_problem_24_09_26.png" alt="route over all bridges in harnosand">
+            <img data-src="/travel_pictures/harno_bridge_problem_24_09_26.png" alt="route over all bridges in harnosand">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlO1ly3X5shU1deStkV1Sve8DT6PtgYBDXrIYAfEwwnJwG/nniwTsGWq1W9pusboZ4fXKi8fhSfAXltfGt3qihYirU+tpWeAa3r3GBVUryDUW/ikcejX23UmNXvbTpMPvM4QDqyUWwn61VwMS7gieFP7ccMsawxcEXNIjDi2kDNhNfoKqD1j2PHFGqJ5Ng16uHjwksls/D7x4FyxJssqnCjTbXx0veWl0lPU0bdJ1C5fNTpEQuPIkMudC1J9TTFzhZPxvuthgwKqSgYv/rE8VbxOl3YDDfLhn371O0tD3FPiKPEbFT1XCeeOVrqyQFhGdljEt/NuBcTNfximt+4ki7UVNe89YqRYlMrAfpYl7oSvzse1sR4P1mUANYEyWGGfEW9cMSmYX8g4UT9Jf4yI4+4WyopEErhWAWJGDGrOpG7cnn2pDhRjBS9wINP3s41Lha/TKRu8uYdmSI2LgPXNhp+0hKg==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZivDHYiTK/3izI/MsBn73x9DJQSOV0is4DBkgct4imXbj2P5eMVPtAyxSJsuOu25qoEYZCMHSTPvzwaFMV4ksY/ymL2GVE+JF20xSC5wwch2h8KMXsIa1MkzRCdQphpelJPNWzUL8kJr/mepTGH/0ubn7fv73fse1SLeMy1BYq9gmuNoqkszUNBQBjdG6KX9JqD+bSmhe5tt9vf6IGQFl4a3Eg3S/oeT/eb3KcZWWQ0wNjtruBV5MLxpk01A2I084xLs2r5lcYYhAycNEnmfNzSr/w9gx6E6bN3kNj3bPfpWv0lA7zpgPzc+w1eXuxx+4f5NNcIT352adXzTV+ZJ9y70tuPI8mhXKhhxYJERnxNvLwVQNQA0Po/zoKrFfLFKrYr/CkIg8xszbNCbt1sg3ocHNvGPu5VAr8Xnf17LuI7l48KSe4MEmtdHdkSmigq0HMeUpnPzzUTrEXk7Nb3q937IyTQ==</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlAu0UuR47mapgBaD8tFEWx2Cn5K59xQgKCjod2k3d7oyAgAR1K4mEK0G4Y6z+LPiSdTU0DZHFIsTWvU8eUHvzk4e/rIojeByzMfAcUIiZp8w5cyvftwLPSSH4x60XZ8=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZioSCL2f4rJbiCr65U8hOY626uUBTcFdsIZEe5BcO3rflI5/o58Yypt9r5FAzbVnbeA2VzPOj5HcYfjFTD++oDtO6Zz4xhEg+NBVbbD0n65iqY5o6UgNx2WnH9PckyDQ=</p>
         </section>
 
         <section id="27_09_26">
             <h3>27.09.26</h3>
             
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlIIzaAh2yiYWcvmVrMdYjjsflAJqJ5y4vzE2nhzrFFHxL7JTPhI9YWg40wq6ScrQ2ATU6ItqiI5KGVY4Jz2JPGqY5B00cKWQLrIJ6sNQgG4nbTc5zW6U8AqSXrSPQQTBDqbY4JjbVwO5yoRuquVc9TN4UcvDIx+3Zs3v1vt36e9TuKvTHdRXmZe8+G3SxhAXoqs/ZSwNTppE9cgtnqUXAYuWx3LMRIRdMw+9H/PN6OpBOjYkz6FX/9MeGP4GOD5ooG5i1NEKm+4duy24sG7eXW1YUxtj59lLF1MsgV1iHfnYR2Lh1CH7GVpThRqoVFJVjPxLgUegbHN2cxPYePurKYS1ZaKvZFXmjhv/hz4HgyTcL5wCDJTNaHTy39unqovZRW/vaIT6ZAcSuQi/fW1vidlpFFNv5WpT0he3h7VYglMOyXp35ncDL8bpZPRbwNOnkNzHbtxQHm4V2erj7c/8F6AwLRUJojPeF/6JTCujc7Vp4sYD6wlrpA45tU31B2cVNS75kb8i2cTCfyvOgyWUwH+02MqHQfWWDBOkw4kYnMAcNuppeXicrG+fw38SMY7flEFxFigxBfWk5MC6i62/WYkQ4lHmxY6wyx34/TuYeg806Vm0uk/sHQ0hYedkLSyh/X+FXQfjBumAbT0hvybuWquyfb86A38/B/2V94YbL1fWaD7AC5AEtxlneC2ZUlSy0aqj3ERNa/3CZvaYkdyvgH7wVwitrDdqwQhk0Z0mxMDUrJ3i4GlIoiw9ol2RGiIUJt92VBzoo0QflB2eFdrjwj2/IFgGv3Jn7NDg2rwlHVxMfgxycC/NLU0WSkYwKLrgu50UKTcY5nRbQONVPus0LIkQbWgcVg==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiitN2pVrhHUkOW1JwVvE1JQpef2aidZd/kQ/6CCWtKE8Go9l4LMCIzAZ/Gfr/vxTcnIssSmT8slFKDc8MfHr7sBWHML3wXCFU/Beo0WAhjTqTGUCGaQW2DoIKSbU+s3ZCs64AKCgtzGrrZQDzj+VqLYXsw/KxxLGBuNKY32nz8t0gNjJZHXkh8QcSkqKpbAZeePmvCBnBcLjPu+G3mx3GAphTHZBWxSXFbGLw11aUESRIUA9pTcTCkgzh7+2wYeRjfKZ9oFSu6u+UbzpV3IHzcoS0KXiVwuZMrw8i1Dxgz9uQFXzcIfkY0ucQzSI/Ah/ikxBFiX1dPqLp+/vJT0eWhd31AbNk0Ap8bgzF2hwMebWaJrYxearNxlOG11uC5JzX/+2bEAvSVNIg/+6x+qd5fFXoBkjREZg0aw17bs8FafHGgMxE4tGaNtfFRxiiPlmwvX7t93Hs2GARjNKzojuYdWC+qoRvD6za8rJd3MV//uN5UR0JC8F04X/ybHCq/zAo43+DOudfxakZ+E1Ytl70O53/C4U/IWiQg2AN61a56CHYq4QmvU7xfbGhbwPUsyRj+TXZjbBBH3m18OjIutz/pLiE+pK1RbGAHh9c+zs83EiIexSrSulnS54QwAILzH3caUbLjfJFkaghd0ioYmUR66EknUh95d+Sfkl14H30v1s7eQu3iloH5mrxEero3IcH1Rv/ztELA6hm80wfPEFpPY8a0tcLoappYpJi80VXH+CJ5zzF4xSdttd82KzJTWElMvW6tmSqp2SdrD35MJ6bffTMfTAbZskSp/euawbC5aWQSVBuXrN9AwZr31LSHk/DLeMkz0krZ0EM4ekYjpUhLnUkaDR5w==</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlJ2e4bBcTO5V3IWAUtXQgnB2BxBjJaPz/Is3Tv5yB0bYenBRiNopq9sZI19ytoNpQjwOpPrfWI9n4jx707cBMRnoNl27D7KacAYSMd9PNrUOjdf0dtiN9VcOk+3RNNeb/k2VyVThYD3L3mipWlPF65zRG1faUjrj3p87NhmqjUz4n/ER09sieFYXNE5sx1ZrLIXuF60MnfVeZmzgFFtS045h0t3WhV3xDg0qx5NZPV/cgeOUI2oeUz72GntIrvnOoKvkXFxYMCV7P3G7jmtw5fVyRJaJuUCPeRARtyuf3drw71PijxxlVW4uipQic0raLGKaDWxCqT97EtekxjyQZfcXuXL3ZZl7TLiZdwQVylJPx2hUJeG1J3jnuR+x+Nd8S6GIzYPMYZVOs7QWQA1gtfjiJpUov6sSCEK4FOx3+yPkXBzQTslHbsx6OfPCy+c3s0osurWxFCfpx3eWoosx9dF21VDOZ0I+KJX2a+s2pMIciOtMc0vTlOCKg/7FQ8G0smB1Z5mFJfUs2lSzIr9gNaocCCZNdn3Cqp3T2KVdD3OpbEy5CcEg4mp/QOM/r0FUp4M3hOG186jSfigSJ9OzqqGfCSOswoL6wGnfNOp84uELLrtlBts6BfZuVqijwX8iRjdLn6TtUP9EpTxmUY9l9xleQ7jBY5nrZsBIdnx4FZKzeljUSNLpUG2yLvhwVg==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZigspBaLTYqKVskym0SW04j/Yf+rl+F2lz41sYRwO3wUGAVplyIwFRMwIMDJRlyUioA4xKJQ1WnnNuJ4dlfNtDElReBWrgY9SErSnIUywKZMSFcXqOuJzcK/ST+5ltQocxnzJt1AslZDp0mPx2v7cZxF2NFldxr/8rzsZGYb+q+jsY2AvG9WauMhqQKL0iHI8+Zy0BsO7TJ8k2SSwMbLtZz+pQFBLmbnAp6FS6854280hWoLCbny/ZYKodRiWaqIrtBJx8sVoZ6v37NcwuPxlYzFK9sgJs7acmccZUPd4lbGMcqWZWzcBz3o0HNt8SmwxedyAqqV5r6kJS5eEZEL9pQU2/wfm/Jt/FTKoJgT9Ok6FjUWmZrhanomDHK/dWkauwNxnYJLmogq/HgkHzvypLeh7Y0tDsQW3CtDM7x+0umkEQOvJELKyFdVnm0iYEoz+yy7Zwi1R+pgYnn7r1yisV/Q1+Ho07KK1ozzn2kP1GyxbTYmFBWjozjMn3+rm6/GX0n+XkUuVQs4SAHJ/NsLX4m3TBy8oNk2lB836TlRDz9xNsgvFo9PgrCSzSq1hCTERbc2TayrZ6R9uAei7CN61xooNl8vH9d7RY//oPXzH7T1HQYhOb6A4xzpXQNqA6qa5SZ4NPF0C61WnjYHhsc/Wr+eG8povF/AZPyg5t8MoxB4osgK7qZ8M5knkdqurjg==</p>
 
-            <img src="/travel_pictures/glas_workshop_25_09_26.webp" alt="glas workers in skansen">
+            <img data-src="/travel_pictures/glas_workshop_25_09_26.webp" alt="glas workers in skansen">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlO2V2F46H1iL1ttwikp+3kCSYp5R87rB104z5IreB0a0J3K5sVtBfRvFmYEjv+5AlNK3mP9neHK8/jkjlsCMKzSzJTiscKOnvMM2y4yGy6DQ/xK6d/tP22RYPxirPhDWMeQK4i68cNyYQF4eMWlNKbNA96RkGegvSoGu0YDPUx71HjVxjqJjRBwLhqCs+J9elkTJ8O9hiXinw3FGXapgsweyaK8JZmkjqQ67T/w111oe/0zBQHuwhKLiverqxCgJhL65Iw/Fh/XVQHamJEkof1yTXvJW+NHbPFIRgomStnDUTH16E6cvUgI4MI7p6/kYtwkrQaqxO1QXhEsf2GRKwKL8lRl/uWDX10kGQwvpFxoL3HdNxf65zFe56kmUJucv26hXLrFCXDMPm0dXenBTcx2SVgiE71V8/GLfBvTTgWQ4fsjwpL0gLfQAMYTKRWc0CryhFPlZajnPh5BZolvAYh4nN3Zpue65hlSBjQYIMbHvAOrx0HZBYhelgfz3KkU7hx6NcNgmXuKXSlUeDjg/iE8oI7G7HowH9jAUy9AFD85MhsWnmh5aI1iBxGtBMUUi6cNersuYooBJdQnsqeuvt6jM2fuWGdZtKQ9pD+Ejmjkgo1o=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiq+lsIeaCk7NS+iQgwlQxwwLgnJLSXoHZP4OYYrQWML1YL4moezMm0scPpm8jvDLnUEJpp/n+zurpUHi6W5/lJhZbKmSDk4IaIq/Vu23IskAMxzZ+OR0xzW09TSSj5Y7Mrc9azxBXfPFOifBDuV9s/qsvLb63tIgC4ofFz0GMEVPKg+EZFZomouN6VqUG3MY+VexKfrTAMd4bp8ng8pevXR2UZw6/HhRFXSgBDcwRzhsQ6RiwHdopVxrhLyQzb3o7e3xzgcV/Md+2ahgFrC4q+wu34ir5BrE3jZ1yxlKCMHNX3gxP0vmafIJG822vljI8A8q3tjwbGxy8ogZjnunq0Pe7KJ8uCdSdbEuz5ZENaE8NbNKBJQQznLsIq82u/3Sjrw12Xd3erL1RTjm77q/qa6xEhxc+lxLTTAtxEYX4joe80KjustwvOIwVCwBwxFQxllmIN2UXFuRLYnZkZ08jFFN2m/PpY419MXEM6LNT9dQ1o3TCzqT+Cl5qDBiSZitWcB1zJp2NWa5uPY5LtHntfuj16W+dEGyYSmCEvXq7qMBO61EVCwrI0U8Ssl09cCYdxettmjWG4OkSnsHd/pL9X8Z9M+YGYq/7womJMnNRuxqhK0=</p>
 
-            <img src="/travel_pictures/skansen_kitchen_garden_25_09_26.webp" alt="kitchen garden for 18th century manor house">
+            <img data-src="/travel_pictures/skansen_kitchen_garden_25_09_26.webp" alt="kitchen garden for 18th century manor house">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlNf/tM90D9MC4WyzzVAdaN4ynoNJMmNGJq7bzG4XnpVgb4UWR/UQ9VioO5NLFEckvCnScqRueT5QLYaYiFUs+g7zsIL019S8iRsj7JxxD9NRfwu/ykgZNkNHtTAQRUWukxwk+KPhdL2AvG+D/UkQPatgRKrzDzAwNPiKPKUmIgVv99A+CVsZKD5ph3UDXUZU1hqYxolQQQC9gv0oyio5fx9tiKaxJ7ghUeRaNmaD99GIJLQUgPvW8or5W9sOsijxscqZGvagnBsQJQJKcG1kZ9lAdfRGiB608lwccCvvk6+6MpQs+COqvTGrQyg8HC3qpc8fkerIo/jsmfI0SDqlTPrltv1bKLM+MhbTK63DgYtH7s42lu8x3NK0z7iJjFfHpWHcfFEveZGCFoRdsDOhUXYvCIci398OGm6fxB8CjCCbsKlaWOuFIevMqYfV3JXYGMREbwpYAdvYRorkIMEq2Yes0N2HKcsrdDoPO8jpKB9RIDb6C22g7p6hpm0IVyar0p4dvMUHJcOMsfp7WFkDJmG2q0mRLFJSdQ3DnrHBzwwysYgyJLIyH7YUodWM+xqQ9sHa+wxjPpcl5/sAtRhhK88Zn7egpJk2VabOefLtmtrzR71STFfSa659BvnHSRj99McwvsrV18elUqKHpArY5G0dwHr5DVnQhdexYq3t0w==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZijPDJU2f8H92JVX4YGd+3Bk886HeW9YSVd4idWvIBku7I/5BA4poGVRKYLzhoHY3QN7bEn8dxdQJbO5qfv7szvADqiXR2RAZKCyIv6vHtX3qPL2feCiukTEOCLzQdSABoxM6VirxX/phbgRbMzqWv/WEEZune/vzJChf4HZiJKrM0mDTv/3jQX5KH2bDsZbZh7LWoUU8V+ZUIsdbmWzix0Cq0KjfI1BreMUH4L6+ALfxEdoZRCIbAebe2Ni3enA6bdqVVZ4/pICBqPEambwo+y7JwS56kNxDWR0ePaZXT+k3et72vbuwPk3rp5v+nkOYqeZRadLYhPx2l0aZrPaP08Ef9omuDpa1YrNb0Cj07JG8vaN4wH38VbRAaoLdHCtJNNGGhqLldPGyumyGL7LdDXSGSu7CEo9ML4yMeXvQfq65ZAETTciODHPo5rolDFxidads4/2o0f9C2j7spU7la4cdinzldF872htBJ5FTTXUjd7IBHYZ1sc2GjZPvKm16NlLO5zj1lCoKWGaJL2LQWnkIOkTTjbKb7WmO0kqmYadwRaCiRG1G/pYUzp/m5KYU8krXdbCVaxmLSW9Ks6zJ3rZyk8rZ5QxvpLRKbqKo0sV967AqlvhiEw58wKmPOhh6rLYXmsf1HnV2oo0F7oxfMu8PTYLpyR3wpCihAu5xWg==</p>
 
-            <img src="/travel_pictures/piano_concert_25_09_26.webp" alt="piano concert">
+            <img data-src="/travel_pictures/piano_concert_25_09_26.webp" alt="piano concert">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlLro+/SmlAs566YgG2ExQMjFYWjuE5UzpbrTxAjY2AheoTm8HO7yzzemaBV7MeTiisHHqd5j1wUMx025EkYuqw==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZivLrEFmSJ17RCrI9QGPr6yPlY1OpJWmDNHNiGWYWduFgLkdwlC2IJQ1phQygZHZ6RTQnkT752jXjvIBfrKUgrg==</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlHUA/sBAYaAmspRyuCpdEV9c0hVMnH1zoECtB0PvBtXb7HdmTnZuiWPNnQmegNZd0hmQdAsaEskjBEuuOJSkmQjkHA0XE6eRJf6mJhhqHgGy187Rv3Xp7zg3WLCE</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZiuMxW1vAOYnWvKhzE1uj1AbfGhR7ZtchHvzxTvUJh68ZFEk0+y0aKAEJ8IYrytp7GTfB1j3MmGaNzrYvW8uJEwWZ/wdbhCkv9ZoJl2iM1n6JzsepSFcQgX3rUD33</p>
 
-            <img src="/travel_pictures/malaren_26_09_26.webp" alt="maelaren">
+            <img data-src="/travel_pictures/malaren_26_09_26.webp" alt="maelaren">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlMOu2y7sZxA4JMCIJRTQSUII5+nF0+QWV0WI4wPvjhKBaZDZqecQcHkpQ/FuBcUr8nJUXahKbaYUrLHchX4jmwIIle81HWRDHKhqFqBYr8TjSrIB8/jzj0BFuDGdV8PYln+GJ9hOVu++u+2RN/PaXHMb3GZ48d+OsJSo+NeI24BoYlzrMxKxHV5bfVGEkoichTDTY34krzvE5YaByoXliDzrhd2NLXglCk5ghlhMOWzgDONV9XQaYjK/CqhLEVDSxjZNOri6SuOWR7a+99xbmO1qIX9t1H4y8GUWTvVm</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZim5W546rJHZnUGm+rFYCFRPAP9/z0LiFPjFtoZuqW+DJSa2jUz0zBXLyRxvp1Q8EMgwKTdXWh6CoeVpQRzgGbdngEMiaxtG8Sr8IrOtKblHA7S/nyl15CUVCEfgfLHAn5kLbDFBh5fz404QBfo/cMHV5iv32JBkH2CRGeeb/nz6HkSUy2xZpRMMV9AnSHIwBYSKQJagArmeS63+1lPVj9cx5f9j+VIkBL8o87JaU1CtbgwSVOrCvLAqo7LHJHNcbeC8DrL44KyIiLXTePzd9DL3IbR3Uf+CH/SsrGrrk</p>
 
-            <img src="/travel_pictures/apple_press_26_09_26.webp" alt="apple press at rosenhill">
+            <img data-src="/travel_pictures/apple_press_26_09_26.webp" alt="apple press at rosenhill">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlNUnDY1pl19fzVjuBoWVim8UiRRlo4VlelKLx8obKNcrKlhYlcNs8swkKiDh44zQkFeKyIoBVO2ZocHvhgtVl5Gr0vzeacE4lwsyXjTQBxtq2qNezPYm8uPgY4f8uS07KkJ7ZjiNTt0z7PN4jeoEOSmYnEQiQIyvVsvum0naQmUCI+ATFANpdFCYHpfKIrMZDhAWJNh0AZ9v9eW/SIwjlE+Ye9Kvwj8OH1g35JkA5UjS2rj8+z6dUDB8wKoGsb3m2NKG5p4hV3KuXGcu3tGYpwrfZHXaOG0BVuInc32prr22UM7Yc8P3nIvZawh+WNrpIsGL2iL43XXdSMZA+STYFp+5ymNKjGid/inEy4UI5F/OMLfJkHPQ9AcbgIUDtgzmrBmscUlxBfncq8ymC3kah9tQ4XQuZ8S0kO7iuS9A++B4BxzD8mI/JYiOor3mqnBWKVZ7968ys8X8aliTQoIXgIcBSLvqn1p+q0CBN3Wz+wdweNIDdNlaW48RrVsgBofBQbNLunE2BkUyMoEpzqUzCb+3BMSQ6IW5aAom/y4kt1uBt8bPRGcBR1R18/7bc0oYLQ0wP8N3pAFTISPJrwjAkFPRWkK7cfvbWHsZH9pV19pc4ndKT20V5qoTcEH0BWqvsHE8XKNB36XAuKpIv5t2IhMO6uLitRXIM10GteesnfloziX8djmrtBeeCfJ8BS43Jyo0</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZihS0RsCLUxKNSID/Vzx0xXBnohQxgx2i2EGCtk5rPv7W9lXAJNXPEefjqLO9SRsmhn9OUYQGu2aY90gRjMAPTwxDndEyLISEqddafgRWyy+kvAn4KoUCUTXNcSVoIbLbe0KBJ7sJPGXNXtikIvVYaGEo4DWDrZHCjrCJ+YAvgPHxxvSGaU+VCiagQwzRIZ0oOuKQqRQQamxQC/fDM9E5MZ41qq+mCaRPuR7Yp8a8pitTFdZA7wfHnHgr5rg0Q29fDk14z1garuQlPfmwtWfqNxocAf/xeNaPQ3u1Z11HE0EI5FSFUFsMJRd3738zMYytI+SZG3VzWafJLBnluX5BRvEPUFVEgpslN6NsFKXQsQbllGUEJlvYwKp23DZnz+xQDN/fVZllJpU6M2yYW3rEB+BFhAqULFB8P9KxJLPx97n6vfOOyx+ZBhqYwZRpgVaN/NBubYT/fwvPMDAtZS3O4rh31qt5Bz+m9i9Naa4Sv1o1+st/KMqbd48Qod7Eo9m3aS+DEIx5tE5R+3hjXaORl+Ns8UKcGvNAR1FSi9dbrzzivmVupUEMCPVQrKuMkuMvGgQCxqFM0MuakiArtmG/eRbuYQyEHvV7AGNDJfoRHWFe6eDhObfK2oB8IT9jP6KqghZJeK4dhwNwulDe7GJBO0FcJosGREEJih8wr1D+ixibJZci0uwodzYlsjUHwflKXl4r</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlNZeui7WVp5KSVkES3u97GvTPnYiph3LMxj4LuzX5wteVHeUegMQznTd6gBCgHbwAq1O4IVMHsHzGUYD+QW63aVfDMrCQV3XijAQ4yXgtfkXSbOOK1woKDAvA9EhH0mA4N1CwdJZ8qn8NTlc9sMMi8VSZ3rbI47zvyMIovxdJYmK/LFn/0PEdZBAq4swXYy1v6swgDhWGZvyewsznA2pURkBHz6ezympRgVedSAh+GCGou2p7m9dwi/iz0TBppwDT+K3DyuQCu93KIFmnk70ta1M1XYD1Yq2B7iXW99GYDmhmwXF70fTcWQMlevQ</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZijH8saYbMCmwxzo+AGw+HGUYBK5CGWT0XaIYHxLBDvOMXJWm7sxQR+xICMb4s7k2a8WtV35biAbDmyqc76W31nz5lGR7BDOkIMJb/rWZvtJPm3lz1NOCHhM36JmOT3lMm6xvtGl2PMUZV5MwS+FLNxk9XMmTRewb/pZ3UMK8FrC6AJzCtbug/xYVstXTGdkU5b4fYTfRdVYVKYaLBR7vtzb84kSUDu0CuPYhS+1R4SdA+xSXzOYAZzpWx0JdzUk++DL5mUgNBZgm/NkPbLUMdi4tue4d8F3dMyW5Q9RqVE+ip4GdJtaKPA3e42VV</p>
 
-            <img src="/travel_pictures/rosenhill_26_09_26.webp" alt="rosenhill">
+            <img data-src="/travel_pictures/rosenhill_26_09_26.webp" alt="rosenhill">
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlOBMi+MZIURhzPzA2AxL9t5OB2V6vFsDoXyd0fBUmMR+KUKlNslHO3dJ4+8++Cyapb/G+/YgYXG34fpV/nmoPMBcJfFB65rkDgmC/pbztDLy3ookbwlfx2dDLFXcJeDEr4NrLH/Ey5LXksreCXmh7LqoTM3Awf+X9TtJNfvA7PaLlIvR4fE+y3yqWcM2CvS4GISA2Nw7mF+ZkC/QiEQPkEVKym/TrhD/aAU+oVzxDoM584FWmJYiGkSZsYL6IksfFC9JNgZHlo0MmGZqcN/7hxcb9dmll+tv1I+QhJQjU39Osi7lpwoH38qyw7Dk7piHN5XPiIIDzLihKneqOkxyL3ZBROs/qGyUvHecgLw2ZwcgAfDF35/wB49y</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZirl+jagyrcPw0cF056hmI0ZBX+zFooaOXx9JLkWvrPlwekeMGx1gHMV+O7VqfvA+Rhpt/fVN5myhAaTbuG02xhlfwpwIOMLtfhkXALGmnBts2VYRjjtevr7IT0zWW32p08mi8nWpP9WIdeXMlj9pFWCFSUVCbTj4E578oUR+6jPuvx0jrh8giFC5M3Iw5owsfQfS6i0sgizvOH6B3hfr8rQXbPGl5Ne8Zpxw5vlY+ft2LRb/mJND/Mxq847gU1YwPHBAxMNftE7glDTAeA2hMIB2O80mDXRCwxFsywQvDGYtrEhjr50wFN7NbGQa/3o2lwkPP5ZJ3sAJIw7sy7S00/RA6UbE3hIEplzFoM6FfseeyRHkELchgPEc</p>
 
-            <img src="/travel_pictures/fehmarnbelt_crossing_27_09_26.webp" alt="fehmarnbelt crossing construction site">
+            <img data-src="/travel_pictures/fehmarnbelt_crossing_27_09_26.webp" alt="fehmarnbelt crossing construction site">
                 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlFOp7Iv91MYo1zzADFjXmWiBdPasRtgmS84raECgzvsS5uIXxGiGyfIj/fQFc/ZrzWh8+zltcaPB3IIjs0LF</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZimw0fYrYsnnCqljSAdytGH7ORIpIoMKkl99Fq5svQL5g9fs0abS/JNJn9UYpgL+H0aGlQI+vXPEAq54wLz7M</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlMNlieCJVOYwOz9KldF7s/JzNImBH8DpbiAnPNHd7cMlv09t/ZtFTpWmGlwaahr3En1IiPnAD6o5BKrUp0VuTkbxR4Dd2ZunN7iT13iAEUw4oAVJsko1FNefHkCrjGnqFUPCaaaimuyUlj7KfaK5tprHlM7PytNLuhxrpUweFJyBelF5HpQPW6z+8RNzpeYuEyfSIv/d1te3jCYw7VtVcl05YJhV9zeMDV9HozxQemHhAk9XQ0bfAq3ARVVDTrenuXNaytbCHyeOMlK8EVvB6bCkg6flFvQcVNNjnRrn/SfSxi6KH8l2+orMOmgwNJxSsD/bvEgABBdxwTQABzcfzjQAMi58WBbw2RO6F19RKWnec5Qe2QPhrMGKkwG3CM+VEoztAA54g4CZGGz4dLOba9rzOJimP1KJjhGZfTz9/8AHMpzRmqYhR/wwJ5OGyJljzRBVtuzXgRdbfwfhdjV4gVOgNQ0EdMEyKboQ9lY69Ip/MNTiXyjj1HhJWG8GDmfvGTNINmoqV8rOoT00oF6iShg0oWSio6LEMLqRQIwIP6ocoi55/UFPuUTbcUGM4vtgMVWDTR6POa46nnavz2FKuU05I5qsnKs6RTUDzY+W955XAEqyNTEkIcPB9ygIEHj2PdkgfM2MroGCvo4jkti4txd1hihqQIxZ6lWEYz0xmhMENMjR4Mt80tSiMuJR9YmQoH2e0LPzrS1Q/qInqXjBwVd+3ReDZVKaMkx1EW3PQqx37fcgQjcucWk9kHxhGV8lQUoqtxcTsm3zAtMpfxwKsYoKbO3G0fOp1r3Odt2kuio3FYnmiDdOQhzoOkQE8UYOXL5U/S2pwsfhm2lDp03I/5OzY5OjJMvIYn0eealXlBWHW4o3TBquRmHWPlk0UgqPFejBmJMIZDcLjwXyOglC3a9S5cZNUo2uxs1ldYLNWj7+0MiPdc5U3kdgDt1O58Rfj/PES/hv1wFHq6sWsDsPWW83fNFEMdCpk0nDUvphioGQGWgWHKhEu9MSW7ontKw=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZir8KjL5eL8YAxeHRjWlixbmHUlJG1mTeWL6Fwjj06nQ6gKng24IUCEPm7iL9lqcaUf06XnEGmYzDPy7OGBdGkStluv74iURnJokmoEi6lHLepMzPoQygR4EvR8uBPuxFlJWr2+7HO5wFDpe1F2NpTJ9I8XrGgkKJJoME2kog1c6Dj9Jfdky6WTemFgspEsOd/uJcE/Crw3xCApnZEWvzn5NWtIOctBFvh4sX7ISg76ze1fgHIK8X0pxWh01cSqMXW7wecXBs2ds1l7V2/NP7S7lekNgydmQHDzb6PAlocotVL4c43uwWBZdtx+wAs8rr9IFJaMu8OuLD3n5ukswMabEzaPLWE6T49NN1VfEzq0vffhE9R2Q20wPwXYKNo/1lRHEVBQMBWrioCGfTVBIfuiSY41bx7yAn5SlbRxAY/dwUH2yIalqFw8Shcb9ExemrcAwRvDQ74Ge9oByb8oa3+zIyI/tn3V6smU4AjGvgtGU/KPwPrxXxkFy8cmCZCsrapWwc7brZ5CbtLW7rsOlvWnVxEmYMY6wBsclvfCpdePd58qTFYNA5mHcrCfNtV2eqa6rK8GSW31JR3TRkpmFxohp56tgLjkVnMT7DsfbVf1FazevnaXSPjIypERAoquJiuJuXAyFkH+V/c9HLoOC/Zy69IYmh5UnkPme6KGCzezWC3ECuUtPFpbyXL9c1wbIREg7UsJQRStKx/bnKN+pQaV1zOw6qdpoSp/otem6Njc5eDza+K7aQ+Qvsk6VYx+0Mk9dkzlVjps0HoSBJFZDManYLpMtb+jX3UE1El2dhatZ+7GeIYky12Xns/qYndgLbt2fr8C04GtLcEffBTg5ya3/zVqw+oRguGRzYPTEZWO6fvzLRydrNLzCfAfTYXJPHCnvJh0F27Vt6K9+o/hjJKmJrMG5qKIJ3LTBYOy2W6/Uq5So/nTNtgblja7VJioQRiBRA7CeNAUPwdjaXMtV/h+z0q0knYhwV2BG7F2Cfl2UPhiObHaV815LErdPhVFQ=</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlE2BK6CMmcb1MyD3uIpb5kUuPPwC81hkHWQUehLIV0KPJMdEGUDSFVb4fPvBFy4GE9zvE8udJvBsjvlaC3QtibZLwm01iHTSYYyPaRlsZ4LzB+9CvcRdTmv7nmatBWSsQOUBZXEhE+9QtSi0qpa3rKQvp1sofIp1HaodWrc9qH2kymelsmDTHttvDdhTSGO3bcQ6Ue2XylE0DnRdFLszJS5IrkWLu7sywZeosxz5/3PhaehX3T9C8IaB0Pxz+FCjqe7ckSqSubAzfjUYfbwVZuILYOUoIRXbXpdxTpsDQ7R8qDGE5fRh1FBLpYYOQdYXx51Zqviq+ORugxNAFazTWwWQTsef+WooA80jD9FV2gW+fexa7hhjfWu80vov6xeWGZCvn4yJ0z7fQ38+/1kNFwPIsCiUuFLXwmZ286ofqPclykweLiNeDuOzBmpwnKqkMLxGF8th0mc77rkjWCMcyqxXmD35XnIxWg2enbNkGew3G5c61ZJxecZ5YPKdVHhF6QnxY0aCe+wnVkpG6w3EXcwtVMKt3UL5dm3Kp7HOe5O4UCew0ZmkFhHZctAwx4ivsokVj+Y=</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZioDtlhwp3NpQRWnvJ/cDBXnNDfPwnYODnH+HkZdpRmWQ0Wbr1o1JTfqXcmGL8ClcVJUXPPXDEE2U8Yu2f0InS25LeQQJ5+Ek7QiU8NfPoy7qiivC54Ew0bPtz1Ob//1ddEul3d7oGrKZw88DB/QMwl6jCl7B9j4jFsqAn0gISkOLzNOrSYwu2LXLVTPZv6n5oy1HKlmwrtPqKqJrfwLZwiV3ypKAVZzGNtm/QLxCcvCgQTXZqBpbYwG+htZU/K0xU33GmB+c4WOV1zSkrb+fiikst/FT2TO904pLjKVJjTD6yAdTsLZL+931g8m9//g0j09w6w55DCB+r6Zq+jdAsRK7nRPR3YFDyKBZQUL6ZQkWdYDARL3oKKkWzASp93QLn2PAF9+lRY5pMKfnrtDKD7dA27n5KM1O6UsPeByM/BtLK5hiNpk4ImF+v2sl0xBaBEWO7Xs100n11q9tk84VlLiWphyjWytRz9hgEjQBHvnWoO+iRBHbxrx9CEHJO+Vhx+cvzT3mA1rEho9n3jWfnPob7MNvqZnvdFNP0poiR1yEiVhZdocNc0Iw5Aa7bUhpb9WqRj8=</p>
 
-            <p data-encrypted>CXRxn7nB6dNifLyslb4MlIKQese3+aMPJTiCW8r2K3uaa8hPovB6uKvUj8QevJi/IVs9i4OjPck0w9K/4MUsoVKv+ug5wK3Acif4QlGEraTDz/QWFfZVAyAKZfWVlplLXfQW0ZFnlBT68XzjfU2ptX/rNzTaIJncI2yfzsYbY0yTLstaesqRrvrCIaB/6tQ7wMr5B3y+DcGsasiOShtxzpBbn3iFNY+YjBU0OXa93Ru0O8+rAhAHCtZptwqJQYxN2QaF5v52XAFexY0/96u4ac/TtEyLzfy6NIXDtqdY1VviO6PucAjAO+U103urmlWFAlg3Gmn+AoyP/8ngvh/PVDhx0x/5J18ggwJX0CfnWxSWAxS0zTP6s/4DCbWpwGuVh83x4TAJ7CgXOXLyPl2KwAEvDvl/kZeXCHFyi2AzrOzHjL0Sk72DNi8HyEAI7kDTQR/G+arOBid0iLoIw4it4fIeoqsPOBVSF+geiA4clTbOupp/nS6Jv9oPWc/Iq5rsw1N1xWYItd+hqaqc08wQRt+r8+cQN+i0ffmkCs8RmwDP/GJLSs4CjhxWz0CuULvhNmWO/mAa1PhKiyz/XQN0Bf+2VLowLCUy80HHOsPluDxSQkwFOTRogUZQHs8gVKr9s5FRINQ1Kkm1b9Qj2wldSLfc0vKbEk1cHUW3HVLEG9WNIWlHfRNPRIpNKniG/sgoba26qoAj7wY67RcOlflBpJOQ1tlBfXKgDxQbKCEq2JENzNVxLuk1DhLzVhtrLIIA2zCAGdegyoR/BmfoVgdZ4tCpS2giAL2JwyJvF92WwG/zHEOo2S0xFUmJJG29WiI50MIwLsyQV+btVI6EbO0B/+rsuLjFALIS0ep3XhQ2pZOOkUrDUBuxdBPIl+hSjA==</p>
+            <p data-encrypted>wWNx/++tPWOJSgKIBVBZive4EXjknwVyH50C3WbmdzZl/tKQnfADlwwGSe/8FwbRDL1tlwoJyhNCm83F0CfYzUdv5CbCM3fJE6NdKu9jXWr63r4ZqL9jYwPlAhspiXoywe4VnQ/anpmEabGYA441u3rR6CC5Muw2Y80Y3cz5KcDFoiEaQQ8Hxudtca5nuqKnsAFKZ7XySylqHns13sip7c4ycJnN6b9L5648Ixi12Of8F5rT3t42lZr/F2jq3zAcAJiVI/AAwXZEcG5TavOrxyltCEDRq3oBDX/fyNc7is8J1yBKA/30u5/cwC/iS9HHjidmbViES4K9yPTyaWy2PNGM8Ykqwv24pELeel79TToEmAhz1u4ekvVUMZFS3zInHDCYJ/YC14hAQhhOaP8grRC+cMOqI56BB5i3rW6rBT2zqmimbM1+ZTrJ3co1UB9Pd49UxkAzL0mYweK5BCw8Q8zYyGP46XNdKYr0SRoVW6SF3X0UKlSDW5dZSCu8fwpfUzsbthiqIzIw1XUIszVG3HrkK40yGgWA/8JqfFKXtpX3EV0xaSuCXLzcCQGGzLup3YyAZ6NgHkqstTUelgAKtT4Za/WQMBShm0nCFygu26XcSWlz2bsCcEftxMZcpc/1XbktfA58O1gw/b8jTLLnX8Lsq5itre3ytHsQmQZksh9s10vpI09h4GHaN8SRqc1a9amTclkDjjf04vDZQqWMWGVQcIPziU/zLMwHyaGtPOWnLOf8IXMlb4H5ZUgFeNZaMZLB4Pe1ofOwms0QDTDPaSIcRMEVP30TOXlOUSTith4BQl7cTeXbnUrRTMF3gs5rsUtnJ/IAThqUedKBdkKeTsiBKte1k+AFEQGRRsPer/Tm2th8wg6dnmkVvhcg5w==</p>
         </section>
     </main>
 
@@ -685,7 +636,8 @@
     </footer>
 
     <script>
-        // Entschlüsselt alle <p data-encrypted> im Browser. Muss zu ./encrypt passen.
+        // Entschlüsselt alle [data-encrypted]-Elemente im Browser und lädt danach die Bilder (data-src -> src).
+        // Muss zu ./encrypt passen. data-encrypted="outer": das Element wird komplett ersetzt (Tabellen).
         // Format (Base64): salt(16) | iv(12) | Ciphertext + GCM-Tag(16)
         (function () {
             const ITERATIONS = 600000;
@@ -710,9 +662,9 @@
 
             async function unlock() {
                 const password = input.value;
-                const paragraphs = document.querySelectorAll("p[data-encrypted]");
+                const elements = document.querySelectorAll("[data-encrypted]");
                 if (!password) { status.textContent = "Bitte Passwort eingeben."; return; }
-                if (paragraphs.length === 0) { status.textContent = "Es gibt keinen verschlüsselten Text."; return; }
+                if (elements.length === 0) { status.textContent = "Es gibt keinen verschlüsselten Text."; return; }
 
                 button.disabled = true;
                 status.textContent = "Entschlüssele …";
@@ -720,17 +672,25 @@
                 try {
                     // Erst alles entschlüsseln, dann einsetzen – bei falschem Passwort bleibt alles wie es ist
                     const results = [];
-                    for (const p of paragraphs) {
-                        const data = b64ToBytes(p.textContent);
+                    for (const el of elements) {
+                        const data = b64ToBytes(el.textContent);
                         const salt = data.slice(0, 16), iv = data.slice(16, 28), ct = data.slice(28);
                         const id = salt.join(",");
                         if (!keys.has(id)) keys.set(id, await deriveKey(password, salt));
                         const plain = await crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, keys.get(id), ct);
-                        results.push([p, new TextDecoder().decode(plain)]);
+                        results.push([el, new TextDecoder().decode(plain)]);
                     }
-                    for (const [p, html] of results) {
-                        p.innerHTML = html;
-                        p.removeAttribute("data-encrypted");
+                    for (const [el, html] of results) {
+                        if (el.dataset.encrypted === "outer") {
+                            el.outerHTML = html;
+                        } else {
+                            el.innerHTML = html;
+                            el.removeAttribute("data-encrypted");
+                        }
+                    }
+                    for (const img of document.querySelectorAll("img[data-src]")) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute("data-src");
                     }
                     document.getElementById("passwort").hidden = true;
                 } catch (e) {

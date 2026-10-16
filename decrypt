@@ -1,12 +1,14 @@
 #!/usr/bin/env node
-// Entschlüsselt alle <p data-encrypted> einer HTML-Datei und entfernt das Flag.
+// Entschlüsselt alle data-encrypted-Elemente (<p>, <h4>, <ul>, <div data-encrypted="outer">) einer HTML-Datei,
+// entfernt das Flag und macht aus <img data-src> wieder <img src>.
 // Nutzung: ./decrypt findmoose.html -p MyPassword123
 // Bei falschem Passwort wird die Datei nicht verändert.
 
 const fs = require("fs");
 const crypto = require("crypto");
 const ITERATIONS = 600000;
-const P = /<p(\s[^>]*)?>([\s\S]*?)<\/p>/g;
+const EL = /<(p|h4|ul|div)(\s[^>]*\bdata-encrypted\b[^>]*)>([\s\S]*?)<\/\1>/g;
+const IMG = /<img(\s[^>]*)?>/g;
 
 const [file, flag, password] = process.argv.slice(2);
 if (!file || flag !== "-p" || !password) {
@@ -27,18 +29,24 @@ function decrypt(data) {
 }
 
 let html = fs.readFileSync(file, "utf8");
-let count = 0;
+let count = 0, images = 0;
 try {
-    html = html.replace(P, (match, attrs = "", content) => {
-        if (!/\bdata-encrypted\b/.test(attrs)) return match;
+    html = html.replace(EL, (match, tag, attrs, content) => {
         const plain = decrypt(Buffer.from(content.trim(), "base64"));
         count++;
-        return `<p${attrs.replace(/\s*data-encrypted(="[^"]*")?/, "")}>${plain}</p>`;
+        if (/\bdata-encrypted="outer"/.test(attrs)) return plain;
+        return `<${tag}${attrs.replace(/\s*data-encrypted(="[^"]*")?/, "")}>${plain}</${tag}>`;
     });
 } catch {
     console.error("Fehler: Falsches Passwort. Datei wurde nicht verändert.");
     process.exit(1);
 }
 
+html = html.replace(IMG, (match, attrs = "") => {
+    if (!/\sdata-src=/.test(attrs)) return match;
+    images++;
+    return `<img${attrs.replace(/\sdata-src=/, " src=")}>`;
+});
+
 fs.writeFileSync(file, html, "utf8");
-console.log(`Entschlüsselt: ${count} Absätze`);
+console.log(`Entschlüsselt: ${count} Elemente, Bilder wiederhergestellt: ${images}`);
