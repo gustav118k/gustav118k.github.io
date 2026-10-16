@@ -1,3 +1,24 @@
+// Zeigt "| text" mit drehendem Strich (| / - \) im Element an.
+// Gibt eine Funktion zurück, die die Animation stoppt.
+function startSpinner(element, text) {
+  var frames = ["|", "/", "-", "\\"];
+  var i = 0;
+  var spinner = document.createElement("span");
+  spinner.className = "spinner";
+  spinner.textContent = frames[0];
+  element.textContent = "";
+  element.append(spinner, " " + text);
+
+  var intervalId = setInterval(function () {
+    i = (i + 1) % frames.length;
+    spinner.textContent = frames[i];
+  }, 150);
+
+  return function () {
+    clearInterval(intervalId);
+  };
+}
+
 const vorschlagGeben = async () => {
   var uhrzeitInput = document.getElementById("uhrzeit");
   var vorschlagParagraph = document.getElementById("vorschlag");
@@ -8,6 +29,7 @@ const vorschlagGeben = async () => {
   }
 
   const text = uhrzeitInput.value;
+  const stopSpinner = startSpinner(vorschlagParagraph, "Frage den Techfak-Panda");
 
   try {
     const res = await fetch("https://mensa-llm-backend.vercel.app/api/ask", {
@@ -17,9 +39,11 @@ const vorschlagGeben = async () => {
     });
           
     const data = await res.json();
+    stopSpinner();
     vorschlagParagraph.textContent = data.answer || data.error || "No response";
   } catch (err) {
     console.error(err);
+    stopSpinner();
     vorschlagParagraph.textContent = "Failed to reach API";
   }
 
@@ -62,10 +86,7 @@ function generateGericht() {
   var gericht = "";
 
   var gerichtElement = document.getElementById("gericht");
-  var loadingElement = document.getElementById("loading");
-
-  loadingElement.style.display = "block";
-  gerichtElement.classList.add("rotate");
+  var stopSpinner = startSpinner(gerichtElement, "Frage Mensa-API");
 
   var randomPlainHerkunft = herkunft[randomHerkunftIndex];
   var randomHerkunft;
@@ -78,10 +99,9 @@ function generateGericht() {
   var randomBeilage = beilage[randomBeilageIndex];
 
   gericht = randomHerkunft + " " + randomArt + "-" + randomHauptbestandteil + " mit " + randomBeilage;
-  gerichtElement.innerText = gericht;
 
   setTimeout(function () {
-    gerichtElement.classList.remove("rotate");
-    loadingElement.style.display = "none";
+    stopSpinner();
+    gerichtElement.innerText = gericht;
   }, 2000);
 }

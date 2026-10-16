@@ -25,19 +25,11 @@
     font-size       : 1.3em;
 }
 
-.rotate {
-    animation       : rotate 2s ease-in-out;
-}
-
-@keyframes rotate {
-    0%   { transform: rotateX(0deg); }
-    50%  { transform: rotateX(720deg); }
-    100% { transform: rotateX(0deg); }
-}
-
-#loading {
-    margin-top      : 12px;
-    color           : var(--purple);
+/* Drehender Strich ( | / - \ ) während auf eine Antwort gewartet wird */
+.spinner {
+    display         : inline-block;
+    width           : 1ch;
+    font-family     : monospace;
 }
 
 /* Badges */
